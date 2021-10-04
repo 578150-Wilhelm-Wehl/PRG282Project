@@ -46,20 +46,34 @@ namespace PRG282Project.Presentation
             this.btnSignIn = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
+            this.pnlSignUp = new System.Windows.Forms.Panel();
+            this.lblSignUpPassword = new System.Windows.Forms.Label();
+            this.lblSignUpUserName = new System.Windows.Forms.Label();
+            this.txtSignUpPassword = new System.Windows.Forms.TextBox();
+            this.txtSignUpUserName = new System.Windows.Forms.TextBox();
+            this.lblSecurityQuestion = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lblSecurityAnswer = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnSubmit = new System.Windows.Forms.Button();
+            this.lblCreateNewUser = new System.Windows.Forms.Label();
             this.pnlBaseLogin.SuspendLayout();
             this.pnlLoginSignIn.SuspendLayout();
+            this.pnlSignUp.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBaseLogin
             // 
+            this.pnlBaseLogin.AutoScroll = true;
             this.pnlBaseLogin.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlBaseLogin.Controls.Add(this.pnlLoginSignIn);
-            this.pnlBaseLogin.Controls.Add(this.pnlLoginImge);
-            this.pnlBaseLogin.Controls.Add(this.btnSignUp);
+            this.pnlBaseLogin.Controls.Add(this.pnlSignUp);
             this.pnlBaseLogin.Controls.Add(this.btnSignIn);
-            this.pnlBaseLogin.Location = new System.Drawing.Point(239, 31);
+            this.pnlBaseLogin.Controls.Add(this.pnlLoginImge);
+            this.pnlBaseLogin.Controls.Add(this.pnlLoginSignIn);
+            this.pnlBaseLogin.Controls.Add(this.btnSignUp);
+            this.pnlBaseLogin.Location = new System.Drawing.Point(247, 26);
             this.pnlBaseLogin.Name = "pnlBaseLogin";
-            this.pnlBaseLogin.Size = new System.Drawing.Size(315, 415);
+            this.pnlBaseLogin.Size = new System.Drawing.Size(315, 426);
             this.pnlBaseLogin.TabIndex = 0;
             // 
             // pnlLoginSignIn
@@ -74,7 +88,7 @@ namespace PRG282Project.Presentation
             this.pnlLoginSignIn.Controls.Add(this.btnForgotPassword);
             this.pnlLoginSignIn.Controls.Add(this.btnViewPassword);
             this.pnlLoginSignIn.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlLoginSignIn.Location = new System.Drawing.Point(0, 196);
+            this.pnlLoginSignIn.Location = new System.Drawing.Point(0, 418);
             this.pnlLoginSignIn.Name = "pnlLoginSignIn";
             this.pnlLoginSignIn.Size = new System.Drawing.Size(315, 219);
             this.pnlLoginSignIn.TabIndex = 1;
@@ -217,10 +231,11 @@ namespace PRG282Project.Presentation
             this.btnSignUp.TabIndex = 0;
             this.btnSignUp.Text = "Sign Up";
             this.btnSignUp.UseVisualStyleBackColor = false;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
             // btnSignIn
             // 
-            this.btnSignIn.BackColor = System.Drawing.Color.Transparent;
+            this.btnSignIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.btnSignIn.FlatAppearance.BorderSize = 0;
             this.btnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -231,6 +246,7 @@ namespace PRG282Project.Presentation
             this.btnSignIn.TabIndex = 0;
             this.btnSignIn.Text = "Sign In";
             this.btnSignIn.UseVisualStyleBackColor = false;
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
             // btnClose
             // 
@@ -264,6 +280,137 @@ namespace PRG282Project.Presentation
             this.btnMinimize.UseVisualStyleBackColor = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
+            // pnlSignUp
+            // 
+            this.pnlSignUp.Controls.Add(this.btnSubmit);
+            this.pnlSignUp.Controls.Add(this.comboBox1);
+            this.pnlSignUp.Controls.Add(this.lblSecurityAnswer);
+            this.pnlSignUp.Controls.Add(this.lblSecurityQuestion);
+            this.pnlSignUp.Controls.Add(this.lblSignUpPassword);
+            this.pnlSignUp.Controls.Add(this.lblCreateNewUser);
+            this.pnlSignUp.Controls.Add(this.lblSignUpUserName);
+            this.pnlSignUp.Controls.Add(this.textBox1);
+            this.pnlSignUp.Controls.Add(this.txtSignUpPassword);
+            this.pnlSignUp.Controls.Add(this.txtSignUpUserName);
+            this.pnlSignUp.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlSignUp.Location = new System.Drawing.Point(0, 198);
+            this.pnlSignUp.Name = "pnlSignUp";
+            this.pnlSignUp.Size = new System.Drawing.Size(315, 220);
+            this.pnlSignUp.TabIndex = 3;
+            this.pnlSignUp.Visible = false;
+            // 
+            // lblSignUpPassword
+            // 
+            this.lblSignUpPassword.AutoSize = true;
+            this.lblSignUpPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSignUpPassword.Location = new System.Drawing.Point(8, 71);
+            this.lblSignUpPassword.Name = "lblSignUpPassword";
+            this.lblSignUpPassword.Size = new System.Drawing.Size(68, 16);
+            this.lblSignUpPassword.TabIndex = 5;
+            this.lblSignUpPassword.Text = "Password";
+            // 
+            // lblSignUpUserName
+            // 
+            this.lblSignUpUserName.AutoSize = true;
+            this.lblSignUpUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSignUpUserName.Location = new System.Drawing.Point(8, 43);
+            this.lblSignUpUserName.Name = "lblSignUpUserName";
+            this.lblSignUpUserName.Size = new System.Drawing.Size(77, 16);
+            this.lblSignUpUserName.TabIndex = 6;
+            this.lblSignUpUserName.Text = "User Name";
+            // 
+            // txtSignUpPassword
+            // 
+            this.txtSignUpPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSignUpPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSignUpPassword.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtSignUpPassword.Location = new System.Drawing.Point(91, 69);
+            this.txtSignUpPassword.Name = "txtSignUpPassword";
+            this.txtSignUpPassword.Size = new System.Drawing.Size(181, 22);
+            this.txtSignUpPassword.TabIndex = 3;
+            this.txtSignUpPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtSignUpUserName
+            // 
+            this.txtSignUpUserName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSignUpUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSignUpUserName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtSignUpUserName.Location = new System.Drawing.Point(91, 41);
+            this.txtSignUpUserName.Name = "txtSignUpUserName";
+            this.txtSignUpUserName.Size = new System.Drawing.Size(181, 22);
+            this.txtSignUpUserName.TabIndex = 4;
+            this.txtSignUpUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblSecurityQuestion
+            // 
+            this.lblSecurityQuestion.AutoSize = true;
+            this.lblSecurityQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSecurityQuestion.Location = new System.Drawing.Point(108, 94);
+            this.lblSecurityQuestion.Name = "lblSecurityQuestion";
+            this.lblSecurityQuestion.Size = new System.Drawing.Size(112, 16);
+            this.lblSecurityQuestion.TabIndex = 5;
+            this.lblSecurityQuestion.Text = "Security Question";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "First car brand",
+            "First pet name",
+            "Anevirsary date",
+            "Shoe size"});
+            this.comboBox1.Location = new System.Drawing.Point(22, 112);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(279, 24);
+            this.comboBox1.TabIndex = 7;
+            // 
+            // lblSecurityAnswer
+            // 
+            this.lblSecurityAnswer.AutoSize = true;
+            this.lblSecurityAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSecurityAnswer.Location = new System.Drawing.Point(8, 148);
+            this.lblSecurityAnswer.Name = "lblSecurityAnswer";
+            this.lblSecurityAnswer.Size = new System.Drawing.Size(103, 16);
+            this.lblSecurityAnswer.TabIndex = 5;
+            this.lblSecurityAnswer.Text = "Security Answer";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.textBox1.Location = new System.Drawing.Point(117, 146);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(155, 22);
+            this.textBox1.TabIndex = 3;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(217)))), ((int)(((byte)(227)))));
+            this.btnSubmit.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnSubmit.FlatAppearance.BorderSize = 0;
+            this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSubmit.Location = new System.Drawing.Point(0, 190);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(315, 30);
+            this.btnSubmit.TabIndex = 8;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = false;
+            // 
+            // lblCreateNewUser
+            // 
+            this.lblCreateNewUser.AutoSize = true;
+            this.lblCreateNewUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCreateNewUser.Location = new System.Drawing.Point(108, 13);
+            this.lblCreateNewUser.Name = "lblCreateNewUser";
+            this.lblCreateNewUser.Size = new System.Drawing.Size(125, 16);
+            this.lblCreateNewUser.TabIndex = 6;
+            this.lblCreateNewUser.Text = "Create New User";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -279,6 +426,8 @@ namespace PRG282Project.Presentation
             this.pnlBaseLogin.ResumeLayout(false);
             this.pnlLoginSignIn.ResumeLayout(false);
             this.pnlLoginSignIn.PerformLayout();
+            this.pnlSignUp.ResumeLayout(false);
+            this.pnlSignUp.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -301,5 +450,16 @@ namespace PRG282Project.Presentation
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnMinimize;
+        private System.Windows.Forms.Panel pnlSignUp;
+        private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label lblSecurityAnswer;
+        private System.Windows.Forms.Label lblSecurityQuestion;
+        private System.Windows.Forms.Label lblSignUpPassword;
+        private System.Windows.Forms.Label lblCreateNewUser;
+        private System.Windows.Forms.Label lblSignUpUserName;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSignUpPassword;
+        private System.Windows.Forms.TextBox txtSignUpUserName;
     }
 }

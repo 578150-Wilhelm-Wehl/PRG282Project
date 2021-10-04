@@ -118,17 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnViewPassword.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAFLSURBVEhL7dNNKwVRHMfxUTYe8py6FiywESIPq+sNKGuJYqUsSXYWyntAJA8pdV+CspaNLCXK
-        U6IoDyXy9P2NOTmdziDXRs23PnXmnNt/7h0mSPoX5aIDAxiL9KMNOvt1TVjFHd5i6GwJDfhxpVjAKzRg
-        Eb2oRxnKo3UfNPwe+uwsSvBljTjBIyZRhO8qxhSecITYX9OKaxxHa7cuTETS2nBqxzmu0KwNu0ro7geo
-        0oZVDbbhPv8tVMOuFmc4RIU2TGt4QEt49Vk+9vEM9wba20Me7DqhWcvhFemn6Y+k5+g2DnewaxRu03hB
-        +IXncIMCXThtQh/0DRadbcCtELeY0cUlVrTwtAvfYNsOfOkdutBiCHVaeMrA9/wNna3Dl2YOfizj64Fv
-        sK0bWaU3WYP0j2CGmvU8si4HIziFuYHe9mHo7E9LRZKSTEHwDvjZd3R1wsqvAAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="pnlLoginImge.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         /9j/4AAQSkZJRgABAQEASABIAAD/4RbIRXhpZgAATU0AKgAAAAgABQESAAMAAAABAAEAAAExAAIAAAAm
@@ -9672,6 +9661,17 @@
         3muWTySSRxxMuCoBJPvXOpv0fUY0B3gvjI4JP5VSldamcocstDZ0fxJrl60bPp6QwscZYEN+VdtZPNJH
         um+Rv7tVdPuFkSP5NuVyAv8AjWivOTXLLU9OnFxWruTK1P3/AC8molpedtSdFxHG4EVCbJRzk1MrbqVe
         etK4rDY41ixtH1qZfu1HUidKT6DR/9k=
+</value>
+  </data>
+  <data name="btnViewPassword.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAFLSURBVEhL7dNNKwVRHMfxUTYe8py6FiywESIPq+sNKGuJYqUsSXYWyntAJA8pdV+CspaNLCXK
+        U6IoDyXy9P2NOTmdziDXRs23PnXmnNt/7h0mSPoX5aIDAxiL9KMNOvt1TVjFHd5i6GwJDfhxpVjAKzRg
+        Eb2oRxnKo3UfNPwe+uwsSvBljTjBIyZRhO8qxhSecITYX9OKaxxHa7cuTETS2nBqxzmu0KwNu0ro7geo
+        0oZVDbbhPv8tVMOuFmc4RIU2TGt4QEt49Vk+9vEM9wba20Me7DqhWcvhFemn6Y+k5+g2DnewaxRu03hB
+        +IXncIMCXThtQh/0DRadbcCtELeY0cUlVrTwtAvfYNsOfOkdutBiCHVaeMrA9/wNna3Dl2YOfizj64Fv
+        sK0bWaU3WYP0j2CGmvU8si4HIziFuYHe9mHo7E9LRZKSTEHwDvjZd3R1wsqvAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="btnClose.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

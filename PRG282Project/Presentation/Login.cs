@@ -43,5 +43,26 @@ namespace PRG282Project.Presentation
                 txtSignInPassword.PasswordChar = '*';
             }
         }
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            btnSignUp.BackColor = Color.FromArgb(229,229,229);
+            btnSignIn.BackColor = Color.FromArgb(245,245,245);
+            pnlLoginSignIn.Visible = false;
+            pnlLoginSignIn.Enabled = false;
+            pnlSignUp.Visible = true;
+            pnlSignUp.Enabled = true;
+        }
+
+        private void btnSignIn_Click(object sender, EventArgs e)
+        {
+            btnSignUp.BackColor = Color.FromArgb(245, 245, 245);
+            btnSignIn.BackColor = Color.FromArgb(229, 229, 229);
+            pnlSignUp.Enabled = false;
+            pnlSignUp.Visible = false;
+            pnlLoginSignIn.Visible = true;
+            pnlLoginSignIn.Enabled = true;
+
+        }
     }
 }
