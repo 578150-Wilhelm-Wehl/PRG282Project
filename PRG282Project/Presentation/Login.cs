@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PRG282Project.Logic;
 
 namespace PRG282Project.Presentation
 {
@@ -63,6 +64,12 @@ namespace PRG282Project.Presentation
             pnlLoginSignIn.Visible = true;
             pnlLoginSignIn.Enabled = true;
 
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            DataHandler handler = new DataHandler();
+            handler.AddUser(txtSignUpUserName.Text,txtSignUpPassword.Text,cmbSignUpSecurityQuestion.Text,txtSignUpSecurityAnswer.Text);
         }
     }
 }

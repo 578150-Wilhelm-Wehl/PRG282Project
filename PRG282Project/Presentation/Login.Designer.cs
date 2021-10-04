@@ -52,9 +52,9 @@ namespace PRG282Project.Presentation
             this.txtSignUpPassword = new System.Windows.Forms.TextBox();
             this.txtSignUpUserName = new System.Windows.Forms.TextBox();
             this.lblSecurityQuestion = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbSignUpSecurityQuestion = new System.Windows.Forms.ComboBox();
             this.lblSecurityAnswer = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSignUpSecurityAnswer = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.lblCreateNewUser = new System.Windows.Forms.Label();
             this.pnlBaseLogin.SuspendLayout();
@@ -283,13 +283,13 @@ namespace PRG282Project.Presentation
             // pnlSignUp
             // 
             this.pnlSignUp.Controls.Add(this.btnSubmit);
-            this.pnlSignUp.Controls.Add(this.comboBox1);
+            this.pnlSignUp.Controls.Add(this.cmbSignUpSecurityQuestion);
             this.pnlSignUp.Controls.Add(this.lblSecurityAnswer);
             this.pnlSignUp.Controls.Add(this.lblSecurityQuestion);
             this.pnlSignUp.Controls.Add(this.lblSignUpPassword);
             this.pnlSignUp.Controls.Add(this.lblCreateNewUser);
             this.pnlSignUp.Controls.Add(this.lblSignUpUserName);
-            this.pnlSignUp.Controls.Add(this.textBox1);
+            this.pnlSignUp.Controls.Add(this.txtSignUpSecurityAnswer);
             this.pnlSignUp.Controls.Add(this.txtSignUpPassword);
             this.pnlSignUp.Controls.Add(this.txtSignUpUserName);
             this.pnlSignUp.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -351,19 +351,19 @@ namespace PRG282Project.Presentation
             this.lblSecurityQuestion.TabIndex = 5;
             this.lblSecurityQuestion.Text = "Security Question";
             // 
-            // comboBox1
+            // cmbSignUpSecurityQuestion
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbSignUpSecurityQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.cmbSignUpSecurityQuestion.FormattingEnabled = true;
+            this.cmbSignUpSecurityQuestion.Items.AddRange(new object[] {
             "First car brand",
             "First pet name",
             "Anevirsary date",
             "Shoe size"});
-            this.comboBox1.Location = new System.Drawing.Point(22, 112);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(279, 24);
-            this.comboBox1.TabIndex = 7;
+            this.cmbSignUpSecurityQuestion.Location = new System.Drawing.Point(22, 112);
+            this.cmbSignUpSecurityQuestion.Name = "cmbSignUpSecurityQuestion";
+            this.cmbSignUpSecurityQuestion.Size = new System.Drawing.Size(279, 24);
+            this.cmbSignUpSecurityQuestion.TabIndex = 7;
             // 
             // lblSecurityAnswer
             // 
@@ -375,16 +375,16 @@ namespace PRG282Project.Presentation
             this.lblSecurityAnswer.TabIndex = 5;
             this.lblSecurityAnswer.Text = "Security Answer";
             // 
-            // textBox1
+            // txtSignUpSecurityAnswer
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox1.Location = new System.Drawing.Point(117, 146);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(155, 22);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSignUpSecurityAnswer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSignUpSecurityAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSignUpSecurityAnswer.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtSignUpSecurityAnswer.Location = new System.Drawing.Point(117, 146);
+            this.txtSignUpSecurityAnswer.Name = "txtSignUpSecurityAnswer";
+            this.txtSignUpSecurityAnswer.Size = new System.Drawing.Size(155, 22);
+            this.txtSignUpSecurityAnswer.TabIndex = 3;
+            this.txtSignUpSecurityAnswer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnSubmit
             // 
@@ -400,6 +400,7 @@ namespace PRG282Project.Presentation
             this.btnSubmit.TabIndex = 8;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // lblCreateNewUser
             // 
@@ -452,13 +453,13 @@ namespace PRG282Project.Presentation
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Panel pnlSignUp;
         private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbSignUpSecurityQuestion;
         private System.Windows.Forms.Label lblSecurityAnswer;
         private System.Windows.Forms.Label lblSecurityQuestion;
         private System.Windows.Forms.Label lblSignUpPassword;
         private System.Windows.Forms.Label lblCreateNewUser;
         private System.Windows.Forms.Label lblSignUpUserName;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSignUpSecurityAnswer;
         private System.Windows.Forms.TextBox txtSignUpPassword;
         private System.Windows.Forms.TextBox txtSignUpUserName;
     }
