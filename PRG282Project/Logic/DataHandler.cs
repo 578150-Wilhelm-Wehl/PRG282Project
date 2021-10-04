@@ -20,7 +20,7 @@ namespace PRG282Project.Logic
             var regexNewUserPassword = new Regex("(?=.*[a-z])(?=.*[A-Z])([^|-]+){6,12}");
             try
             {
-                if (username.Length < 2 && regexNewUserName.IsMatch(username) && regexNewUserPassword.IsMatch(password)&& !string.IsNullOrEmpty(secQuestion) && !string.IsNullOrEmpty(secAnswer))
+                if (username.Length > 2 && regexNewUserName.IsMatch(username) && regexNewUserPassword.IsMatch(password)&& !string.IsNullOrEmpty(secQuestion) && !string.IsNullOrEmpty(secAnswer))
                 {
                     newuser += username+'-'+password+'-'+secQuestion+'-'+secAnswer;
                 }
@@ -31,12 +31,20 @@ namespace PRG282Project.Logic
                 sw.WriteLine(newuser);
                 sw.Close();
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                MessageBox.Show(e.Message);
+                //create custom exeption
                 MessageBox.Show("Please ensure username and password meet requirements \n Username\n\tno special characters\nPassword\n\t Exclude - | \n\tAtleast one number\n\tAtleast one capital letter");
                 sw.Close();
             }
-        }    
+        }
+        public void VeryfyUser()
+        {
+            List<User> users = new List<User>();
+            string userPath = Directory.GetCurrentDirectory() + "/ActiveUsers.txt";
+            StreamReader reader = new StreamReader(userPath);
+            string[] activeuserlist = File.ReadAllLines(userPath);
+
+        }
     }
 }
