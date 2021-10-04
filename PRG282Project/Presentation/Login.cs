@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PRG282Project.Logic
+namespace PRG282Project.Presentation
 {
     public partial class Login : Form
     {

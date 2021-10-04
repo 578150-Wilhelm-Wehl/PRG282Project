@@ -1,5 +1,5 @@
 ﻿
-namespace PRG282Project.Logic
+namespace PRG282Project.Presentation
 {
     partial class Login
     {

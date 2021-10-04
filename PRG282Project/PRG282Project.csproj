@@ -46,10 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Logic\Login.cs">
+    <Compile Include="Presentation\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Logic\Login.Designer.cs">
+    <Compile Include="Presentation\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -79,7 +79,7 @@
   <ItemGroup>
     <Folder Include="Data Access\" />
     <Folder Include="Database\" />
-    <Folder Include="Presentation\" />
+    <Folder Include="Logic\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
