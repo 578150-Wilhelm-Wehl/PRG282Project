@@ -40,7 +40,7 @@ namespace PRG282Project.Logic
                 sw.Close();
             }
         }
-
+        
         public void VeryfyUser(string username, string password, Label wrongCredentials)
         {
             Login login = new Login();

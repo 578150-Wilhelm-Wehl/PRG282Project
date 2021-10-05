@@ -560,16 +560,17 @@ namespace PRG282Project.Presentation
             // label13
             // 
             this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label13.Location = new System.Drawing.Point(14, 11);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(70, 13);
+            this.label13.Size = new System.Drawing.Size(84, 16);
             this.label13.TabIndex = 23;
             this.label13.Text = "New student:";
             // 
             // btnRegisterStudent
             // 
-            this.btnRegisterStudent.Location = new System.Drawing.Point(232, 247);
+            this.btnRegisterStudent.Location = new System.Drawing.Point(247, 252);
             this.btnRegisterStudent.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegisterStudent.Name = "btnRegisterStudent";
             this.btnRegisterStudent.Size = new System.Drawing.Size(75, 20);
@@ -580,17 +581,18 @@ namespace PRG282Project.Presentation
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label9.Location = new System.Drawing.Point(14, 218);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(74, 13);
+            this.label9.Size = new System.Drawing.Size(94, 16);
             this.label9.TabIndex = 21;
             this.label9.Text = "Module codes";
             // 
             // CmbModuleCstudent
             // 
             this.CmbModuleCstudent.FormattingEnabled = true;
-            this.CmbModuleCstudent.Location = new System.Drawing.Point(110, 215);
+            this.CmbModuleCstudent.Location = new System.Drawing.Point(134, 215);
             this.CmbModuleCstudent.Margin = new System.Windows.Forms.Padding(2);
             this.CmbModuleCstudent.Name = "CmbModuleCstudent";
             this.CmbModuleCstudent.Size = new System.Drawing.Size(102, 21);
@@ -598,7 +600,7 @@ namespace PRG282Project.Presentation
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(110, 167);
+            this.txtPhone.Location = new System.Drawing.Point(134, 167);
             this.txtPhone.Margin = new System.Windows.Forms.Padding(2);
             this.txtPhone.Multiline = true;
             this.txtPhone.Name = "txtPhone";
@@ -608,25 +610,26 @@ namespace PRG282Project.Presentation
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label8.Location = new System.Drawing.Point(14, 167);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(38, 13);
+            this.label8.Size = new System.Drawing.Size(47, 16);
             this.label8.TabIndex = 18;
             this.label8.Text = "Phone";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(232, 38);
+            this.pictureBox1.Location = new System.Drawing.Point(476, 38);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(75, 101);
+            this.pictureBox1.Size = new System.Drawing.Size(113, 101);
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(110, 139);
+            this.txtAddress.Location = new System.Drawing.Point(134, 139);
             this.txtAddress.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
@@ -636,17 +639,18 @@ namespace PRG282Project.Presentation
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label7.Location = new System.Drawing.Point(14, 143);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 13);
+            this.label7.Size = new System.Drawing.Size(59, 16);
             this.label7.TabIndex = 14;
             this.label7.Text = "Address";
             // 
             // rbtOther
             // 
             this.rbtOther.AutoSize = true;
-            this.rbtOther.Location = new System.Drawing.Point(222, 193);
+            this.rbtOther.Location = new System.Drawing.Point(246, 193);
             this.rbtOther.Margin = new System.Windows.Forms.Padding(2);
             this.rbtOther.Name = "rbtOther";
             this.rbtOther.Size = new System.Drawing.Size(51, 17);
@@ -658,7 +662,7 @@ namespace PRG282Project.Presentation
             // dateofbirth
             // 
             this.dateofbirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateofbirth.Location = new System.Drawing.Point(110, 112);
+            this.dateofbirth.Location = new System.Drawing.Point(134, 112);
             this.dateofbirth.Margin = new System.Windows.Forms.Padding(2);
             this.dateofbirth.Name = "dateofbirth";
             this.dateofbirth.Size = new System.Drawing.Size(102, 20);
@@ -667,17 +671,18 @@ namespace PRG282Project.Presentation
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label6.Location = new System.Drawing.Point(14, 193);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(42, 13);
+            this.label6.Size = new System.Drawing.Size(53, 16);
             this.label6.TabIndex = 11;
             this.label6.Text = "Gender";
             // 
             // rbtFemale
             // 
             this.rbtFemale.AutoSize = true;
-            this.rbtFemale.Location = new System.Drawing.Point(161, 193);
+            this.rbtFemale.Location = new System.Drawing.Point(185, 193);
             this.rbtFemale.Margin = new System.Windows.Forms.Padding(2);
             this.rbtFemale.Name = "rbtFemale";
             this.rbtFemale.Size = new System.Drawing.Size(59, 17);
@@ -689,7 +694,7 @@ namespace PRG282Project.Presentation
             // rbtMale
             // 
             this.rbtMale.AutoSize = true;
-            this.rbtMale.Location = new System.Drawing.Point(110, 193);
+            this.rbtMale.Location = new System.Drawing.Point(134, 193);
             this.rbtMale.Margin = new System.Windows.Forms.Padding(2);
             this.rbtMale.Name = "rbtMale";
             this.rbtMale.Size = new System.Drawing.Size(48, 17);
@@ -701,16 +706,18 @@ namespace PRG282Project.Presentation
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label5.Location = new System.Drawing.Point(14, 116);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(66, 13);
+            this.label5.Size = new System.Drawing.Size(80, 16);
             this.label5.TabIndex = 7;
             this.label5.Text = "Date of Birth";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // txtStudentsurname
             // 
-            this.txtStudentsurname.Location = new System.Drawing.Point(110, 88);
+            this.txtStudentsurname.Location = new System.Drawing.Point(134, 88);
             this.txtStudentsurname.Margin = new System.Windows.Forms.Padding(2);
             this.txtStudentsurname.Name = "txtStudentsurname";
             this.txtStudentsurname.Size = new System.Drawing.Size(102, 20);
@@ -719,16 +726,18 @@ namespace PRG282Project.Presentation
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label4.Location = new System.Drawing.Point(14, 92);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 13);
+            this.label4.Size = new System.Drawing.Size(110, 16);
             this.label4.TabIndex = 5;
             this.label4.Text = "Student Surname";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // txtStudentName
             // 
-            this.txtStudentName.Location = new System.Drawing.Point(110, 63);
+            this.txtStudentName.Location = new System.Drawing.Point(134, 63);
             this.txtStudentName.Margin = new System.Windows.Forms.Padding(2);
             this.txtStudentName.Name = "txtStudentName";
             this.txtStudentName.Size = new System.Drawing.Size(102, 20);
@@ -737,16 +746,18 @@ namespace PRG282Project.Presentation
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label3.Location = new System.Drawing.Point(14, 67);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 13);
+            this.label3.Size = new System.Drawing.Size(93, 16);
             this.label3.TabIndex = 3;
             this.label3.Text = "Student Name";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtStudentNumber
             // 
-            this.txtStudentNumber.Location = new System.Drawing.Point(110, 38);
+            this.txtStudentNumber.Location = new System.Drawing.Point(134, 38);
             this.txtStudentNumber.Margin = new System.Windows.Forms.Padding(2);
             this.txtStudentNumber.Name = "txtStudentNumber";
             this.txtStudentNumber.Size = new System.Drawing.Size(102, 20);
@@ -755,10 +766,12 @@ namespace PRG282Project.Presentation
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label2.Location = new System.Drawing.Point(14, 42);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 13);
+            this.label2.Size = new System.Drawing.Size(101, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Student number";
             // 
