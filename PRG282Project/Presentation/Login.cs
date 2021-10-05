@@ -83,5 +83,15 @@ namespace PRG282Project.Presentation
             btnSignIn.BackColor = Color.FromArgb(229, 229, 229);
             handler.LoginPanelManger(pnlLoginSignIn, pnlSignUp, pnlPasswordReset);
         }
+
+        private void txtResetAnswer_Click(object sender, EventArgs e)
+        {
+            handler.SecurityQuestion(txtResetUserName.Text, lblSecQuest);
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            handler.PasswordReset(txtResetUserName.Text,  txtResetAnswer.Text, txtNewPassword.Text);
+        }
     }
 }

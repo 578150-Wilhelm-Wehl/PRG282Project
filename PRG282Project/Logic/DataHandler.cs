@@ -40,6 +40,7 @@ namespace PRG282Project.Logic
                 sw.Close();
             }
         }
+
         public void VeryfyUser(string username, string password, Label wrongCredentials)
         {
             Login login = new Login();
@@ -47,6 +48,7 @@ namespace PRG282Project.Logic
             string userPath = Directory.GetCurrentDirectory() + "/ActiveUsers.txt";
             string[] activeuserlist = File.ReadAllLines(userPath);
             bool accessgrant = false;
+
             for (int i = 0; i < activeuserlist.Length; i++)
             {
                 string[] splitusers = activeuserlist[i].Split('-');
@@ -68,6 +70,7 @@ namespace PRG282Project.Logic
                 wrongCredentials.Visible = true;
             }
         }
+
         public void LoginPanelManger(Panel panel1, Panel panel2, Panel panel3)
         {
             panel2.Visible = false;
@@ -75,9 +78,47 @@ namespace PRG282Project.Logic
             panel1.Visible = true;
         }
 
-        public void PasswordReset(string Username, string SecQusetion, string SecAnswer)
+        public void PasswordReset(string Username, string SecAnswer, string newPassword)
         {
+            string userPath = Directory.GetCurrentDirectory() + "/ActiveUsers.txt";
+            string[] activeuserlist = File.ReadAllLines(userPath);
+            string replace = string.Empty;
+            string newdetails = string.Empty;
 
+            for (int i = 0; i < activeuserlist.Length; i++)
+            {
+                string[] splitusers = activeuserlist[i].Split('-');
+
+                if (splitusers[0] == Username && splitusers[3] == SecAnswer)
+                {
+                    replace =splitusers[0]+'-'+splitusers[1] + '-' + splitusers[2] + '-' + splitusers[3];
+                    newdetails =splitusers[0] + '-' + newPassword + '-' + splitusers[2] + '-' + splitusers[3];
+                    break;
+                }
+            }
+            string text = File.ReadAllText(userPath);
+            text = text.Replace(replace, newdetails);
+            File.WriteAllText(userPath, text);
+        }
+
+        public void SecurityQuestion(string username, Label Question)
+        {
+            string userPath = Directory.GetCurrentDirectory() + "/ActiveUsers.txt";
+            string[] activeuserlist = File.ReadAllLines(userPath);
+            for (int i = 0; i < activeuserlist.Length; i++)
+            {
+                string[] splitusers = activeuserlist[i].Split('-');
+
+                if (splitusers[0] == username)
+                {
+                    Question.Text = splitusers[2];
+                    break;
+                }
+                else
+                {
+                    Question.Text = "user not found";
+                }
+            }
         }
     }
 }
