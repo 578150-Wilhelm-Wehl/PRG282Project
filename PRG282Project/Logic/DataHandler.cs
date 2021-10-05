@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Text.RegularExpressions;
+using PRG282Project.Presentation;
 
 namespace PRG282Project.Logic
 {
@@ -34,16 +35,40 @@ namespace PRG282Project.Logic
             catch (Exception)
             {
                 //create custom exeption
+                //add a finally
                 MessageBox.Show("Please ensure username and password meet requirements \n Username\n\tno special characters\nPassword\n\t Exclude - | \n\tAtleast one number\n\tAtleast one capital letter");
                 sw.Close();
             }
         }
-        public void VeryfyUser()
+        public void VeryfyUser(string username, string password, Label wrongCredentials)
         {
-            List<User> users = new List<User>();
+            Login login = new Login();
+            Main main = new Main();
             string userPath = Directory.GetCurrentDirectory() + "/ActiveUsers.txt";
-            StreamReader reader = new StreamReader(userPath);
             string[] activeuserlist = File.ReadAllLines(userPath);
+            bool accessgrant = false;
+            for (int i = 0; i < activeuserlist.Length; i++)
+            {
+                string[] splitusers = activeuserlist[i].Split('-');
+
+                if (splitusers[0] == username && splitusers[1]==password)
+                {
+                    accessgrant = true;
+                    break;
+                }
+            }
+            if (accessgrant == true)
+            {
+                login.Hide();
+                main.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please ensure that username and password is correct");
+                wrongCredentials.Visible = true;
+            }
+
+
 
         }
     }

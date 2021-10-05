@@ -20,7 +20,8 @@ namespace PRG282Project.Presentation
 
         private void btnSignMeIn_Click(object sender, EventArgs e)
         {
-
+            DataHandler handler = new DataHandler();
+            handler.VeryfyUser(txtSignInUserName.Text, txtSignInPassword.Text, lblWrongLogin);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -63,7 +64,6 @@ namespace PRG282Project.Presentation
             pnlSignUp.Visible = false;
             pnlLoginSignIn.Visible = true;
             pnlLoginSignIn.Enabled = true;
-
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
