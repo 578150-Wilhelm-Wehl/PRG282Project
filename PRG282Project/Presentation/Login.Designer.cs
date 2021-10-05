@@ -57,20 +57,32 @@ namespace PRG282Project.Presentation
             this.btnSignUp = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
+            this.pnlPasswordReset = new System.Windows.Forms.Panel();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.cmbResetQuestion = new System.Windows.Forms.ComboBox();
+            this.lblResetAnswer = new System.Windows.Forms.Label();
+            this.lblResetQuestion = new System.Windows.Forms.Label();
+            this.lblResetPassword = new System.Windows.Forms.Label();
+            this.lblResetUserName = new System.Windows.Forms.Label();
+            this.txtResetAnswer = new System.Windows.Forms.TextBox();
+            this.txtResetUserName = new System.Windows.Forms.TextBox();
+            this.btnBack = new System.Windows.Forms.Button();
             this.pnlBaseLogin.SuspendLayout();
             this.pnlSignUp.SuspendLayout();
             this.pnlLoginSignIn.SuspendLayout();
+            this.pnlPasswordReset.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBaseLogin
             // 
             this.pnlBaseLogin.AutoScroll = true;
             this.pnlBaseLogin.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlBaseLogin.Controls.Add(this.pnlSignUp);
             this.pnlBaseLogin.Controls.Add(this.btnSignIn);
             this.pnlBaseLogin.Controls.Add(this.pnlLoginImge);
             this.pnlBaseLogin.Controls.Add(this.pnlLoginSignIn);
             this.pnlBaseLogin.Controls.Add(this.btnSignUp);
+            this.pnlBaseLogin.Controls.Add(this.pnlSignUp);
+            this.pnlBaseLogin.Controls.Add(this.pnlPasswordReset);
             this.pnlBaseLogin.Location = new System.Drawing.Point(247, 26);
             this.pnlBaseLogin.Name = "pnlBaseLogin";
             this.pnlBaseLogin.Size = new System.Drawing.Size(315, 426);
@@ -89,7 +101,7 @@ namespace PRG282Project.Presentation
             this.pnlSignUp.Controls.Add(this.txtSignUpPassword);
             this.pnlSignUp.Controls.Add(this.txtSignUpUserName);
             this.pnlSignUp.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlSignUp.Location = new System.Drawing.Point(0, 198);
+            this.pnlSignUp.Location = new System.Drawing.Point(0, 418);
             this.pnlSignUp.Name = "pnlSignUp";
             this.pnlSignUp.Size = new System.Drawing.Size(315, 220);
             this.pnlSignUp.TabIndex = 3;
@@ -245,9 +257,9 @@ namespace PRG282Project.Presentation
             this.pnlLoginSignIn.Controls.Add(this.btnForgotPassword);
             this.pnlLoginSignIn.Controls.Add(this.btnViewPassword);
             this.pnlLoginSignIn.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlLoginSignIn.Location = new System.Drawing.Point(0, 418);
+            this.pnlLoginSignIn.Location = new System.Drawing.Point(0, 198);
             this.pnlLoginSignIn.Name = "pnlLoginSignIn";
-            this.pnlLoginSignIn.Size = new System.Drawing.Size(315, 219);
+            this.pnlLoginSignIn.Size = new System.Drawing.Size(315, 220);
             this.pnlLoginSignIn.TabIndex = 1;
             // 
             // lblPassword
@@ -328,9 +340,9 @@ namespace PRG282Project.Presentation
             this.btnSignMeIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignMeIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignMeIn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSignMeIn.Location = new System.Drawing.Point(0, 174);
+            this.btnSignMeIn.Location = new System.Drawing.Point(0, 190);
             this.btnSignMeIn.Name = "btnSignMeIn";
-            this.btnSignMeIn.Size = new System.Drawing.Size(315, 45);
+            this.btnSignMeIn.Size = new System.Drawing.Size(315, 30);
             this.btnSignMeIn.TabIndex = 0;
             this.btnSignMeIn.Text = "Sign Me In";
             this.btnSignMeIn.UseVisualStyleBackColor = false;
@@ -349,6 +361,7 @@ namespace PRG282Project.Presentation
             this.btnForgotPassword.TabIndex = 0;
             this.btnForgotPassword.Text = "Forgot Password?";
             this.btnForgotPassword.UseVisualStyleBackColor = false;
+            this.btnForgotPassword.Click += new System.EventHandler(this.btnForgotPassword_Click);
             // 
             // btnViewPassword
             // 
@@ -412,6 +425,129 @@ namespace PRG282Project.Presentation
             this.btnMinimize.UseVisualStyleBackColor = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
+            // pnlPasswordReset
+            // 
+            this.pnlPasswordReset.Controls.Add(this.btnBack);
+            this.pnlPasswordReset.Controls.Add(this.btnReset);
+            this.pnlPasswordReset.Controls.Add(this.cmbResetQuestion);
+            this.pnlPasswordReset.Controls.Add(this.lblResetAnswer);
+            this.pnlPasswordReset.Controls.Add(this.lblResetQuestion);
+            this.pnlPasswordReset.Controls.Add(this.lblResetPassword);
+            this.pnlPasswordReset.Controls.Add(this.lblResetUserName);
+            this.pnlPasswordReset.Controls.Add(this.txtResetAnswer);
+            this.pnlPasswordReset.Controls.Add(this.txtResetUserName);
+            this.pnlPasswordReset.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlPasswordReset.Location = new System.Drawing.Point(0, 638);
+            this.pnlPasswordReset.Name = "pnlPasswordReset";
+            this.pnlPasswordReset.Size = new System.Drawing.Size(315, 220);
+            this.pnlPasswordReset.TabIndex = 4;
+            this.pnlPasswordReset.Visible = false;
+            // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.Cyan;
+            this.btnReset.FlatAppearance.BorderSize = 0;
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnReset.Location = new System.Drawing.Point(0, 187);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(156, 30);
+            this.btnReset.TabIndex = 8;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = false;
+            // 
+            // cmbResetQuestion
+            // 
+            this.cmbResetQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.cmbResetQuestion.FormattingEnabled = true;
+            this.cmbResetQuestion.Items.AddRange(new object[] {
+            "First car brand",
+            "First pet name",
+            "Anevirsary date",
+            "Shoe size"});
+            this.cmbResetQuestion.Location = new System.Drawing.Point(22, 97);
+            this.cmbResetQuestion.Name = "cmbResetQuestion";
+            this.cmbResetQuestion.Size = new System.Drawing.Size(279, 24);
+            this.cmbResetQuestion.TabIndex = 7;
+            // 
+            // lblResetAnswer
+            // 
+            this.lblResetAnswer.AutoSize = true;
+            this.lblResetAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResetAnswer.Location = new System.Drawing.Point(8, 148);
+            this.lblResetAnswer.Name = "lblResetAnswer";
+            this.lblResetAnswer.Size = new System.Drawing.Size(103, 16);
+            this.lblResetAnswer.TabIndex = 5;
+            this.lblResetAnswer.Text = "Security Answer";
+            // 
+            // lblResetQuestion
+            // 
+            this.lblResetQuestion.AutoSize = true;
+            this.lblResetQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResetQuestion.Location = new System.Drawing.Point(108, 79);
+            this.lblResetQuestion.Name = "lblResetQuestion";
+            this.lblResetQuestion.Size = new System.Drawing.Size(112, 16);
+            this.lblResetQuestion.TabIndex = 5;
+            this.lblResetQuestion.Text = "Security Question";
+            // 
+            // lblResetPassword
+            // 
+            this.lblResetPassword.AutoSize = true;
+            this.lblResetPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResetPassword.Location = new System.Drawing.Point(108, 13);
+            this.lblResetPassword.Name = "lblResetPassword";
+            this.lblResetPassword.Size = new System.Drawing.Size(121, 16);
+            this.lblResetPassword.TabIndex = 6;
+            this.lblResetPassword.Text = "Reset Password";
+            // 
+            // lblResetUserName
+            // 
+            this.lblResetUserName.AutoSize = true;
+            this.lblResetUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResetUserName.Location = new System.Drawing.Point(8, 43);
+            this.lblResetUserName.Name = "lblResetUserName";
+            this.lblResetUserName.Size = new System.Drawing.Size(77, 16);
+            this.lblResetUserName.TabIndex = 6;
+            this.lblResetUserName.Text = "User Name";
+            // 
+            // txtResetAnswer
+            // 
+            this.txtResetAnswer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtResetAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResetAnswer.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtResetAnswer.Location = new System.Drawing.Point(117, 146);
+            this.txtResetAnswer.Name = "txtResetAnswer";
+            this.txtResetAnswer.Size = new System.Drawing.Size(155, 22);
+            this.txtResetAnswer.TabIndex = 3;
+            this.txtResetAnswer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtResetUserName
+            // 
+            this.txtResetUserName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtResetUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResetUserName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtResetUserName.Location = new System.Drawing.Point(91, 41);
+            this.txtResetUserName.Name = "txtResetUserName";
+            this.txtResetUserName.Size = new System.Drawing.Size(181, 22);
+            this.txtResetUserName.TabIndex = 4;
+            this.txtResetUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Cyan;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnBack.Location = new System.Drawing.Point(159, 187);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(156, 30);
+            this.btnBack.TabIndex = 8;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -430,6 +566,8 @@ namespace PRG282Project.Presentation
             this.pnlSignUp.PerformLayout();
             this.pnlLoginSignIn.ResumeLayout(false);
             this.pnlLoginSignIn.PerformLayout();
+            this.pnlPasswordReset.ResumeLayout(false);
+            this.pnlPasswordReset.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -463,5 +601,15 @@ namespace PRG282Project.Presentation
         private System.Windows.Forms.TextBox txtSignUpSecurityAnswer;
         private System.Windows.Forms.TextBox txtSignUpPassword;
         private System.Windows.Forms.TextBox txtSignUpUserName;
+        private System.Windows.Forms.Panel pnlPasswordReset;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.ComboBox cmbResetQuestion;
+        private System.Windows.Forms.Label lblResetAnswer;
+        private System.Windows.Forms.Label lblResetQuestion;
+        private System.Windows.Forms.Label lblResetPassword;
+        private System.Windows.Forms.Label lblResetUserName;
+        private System.Windows.Forms.TextBox txtResetAnswer;
+        private System.Windows.Forms.TextBox txtResetUserName;
+        private System.Windows.Forms.Button btnBack;
     }
 }

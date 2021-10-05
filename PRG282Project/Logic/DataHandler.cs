@@ -63,10 +63,21 @@ namespace PRG282Project.Logic
                 main.Show();
             }
             else
-            {
+            { 
                 MessageBox.Show("Please ensure that username and password is correct");
                 wrongCredentials.Visible = true;
             }
+        }
+        public void LoginPanelManger(Panel panel1, Panel panel2, Panel panel3)
+        {
+            panel2.Visible = false;
+            panel3.Visible = false;
+            panel1.Visible = true;
+        }
+
+        public void PasswordReset(string Username, string SecQusetion, string SecAnswer)
+        {
+
         }
     }
 }
