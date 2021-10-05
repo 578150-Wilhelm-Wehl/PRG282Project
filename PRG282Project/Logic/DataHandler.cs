@@ -120,5 +120,15 @@ namespace PRG282Project.Logic
                 }
             }
         }
+
+        public void MainPanelManger(Panel panel1, Panel panel2, Panel panel3, Panel panel4, Panel panel5, Panel panel6)
+        {
+            panel2.Visible = false;
+            panel3.Visible = false;
+            panel4.Visible = false;
+            panel5.Visible = false;
+            panel6.Visible = false;
+            panel1.Visible = true;
+        }
     }
 }
