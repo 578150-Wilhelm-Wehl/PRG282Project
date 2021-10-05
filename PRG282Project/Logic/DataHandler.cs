@@ -67,9 +67,6 @@ namespace PRG282Project.Logic
                 MessageBox.Show("Please ensure that username and password is correct");
                 wrongCredentials.Visible = true;
             }
-
-
-
         }
     }
 }
