@@ -30,7 +30,7 @@ namespace PRG282Project.Presentation
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlMainTop = new System.Windows.Forms.Panel();
             this.btnInfo = new System.Windows.Forms.Button();
             this.pnlModuleOptions = new System.Windows.Forms.Panel();
             this.btnManageModule = new System.Windows.Forms.Button();
@@ -40,19 +40,14 @@ namespace PRG282Project.Presentation
             this.btnManagestudents = new System.Windows.Forms.Button();
             this.btnAddStudent = new System.Windows.Forms.Button();
             this.btnStudent = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnlSpare2 = new System.Windows.Forms.Panel();
             this.pnlSpare1 = new System.Windows.Forms.Panel();
             this.pnlManageModules = new System.Windows.Forms.Panel();
-            this.txtSearchmodule = new System.Windows.Forms.TextBox();
-            this.btnDeleteModule = new System.Windows.Forms.Button();
-            this.btnUpdateModule = new System.Windows.Forms.Button();
-            this.btnSearchModule = new System.Windows.Forms.Button();
             this.dgvmodules = new System.Windows.Forms.DataGridView();
             this.pnlAddmodule = new System.Windows.Forms.Panel();
             this.btnRegisterModule = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblNewModuleRegestration = new System.Windows.Forms.Label();
             this.txtModuledescription = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtModulecode = new System.Windows.Forms.TextBox();
@@ -60,7 +55,20 @@ namespace PRG282Project.Presentation
             this.label10 = new System.Windows.Forms.Label();
             this.lblModulecode = new System.Windows.Forms.Label();
             this.pnlManageStudents = new System.Windows.Forms.Panel();
-            this.txtSearchstudent = new System.Windows.Forms.TextBox();
+            this.lblManageStudents = new System.Windows.Forms.Label();
+            this.txtManPhones = new System.Windows.Forms.TextBox();
+            this.lblManPhones = new System.Windows.Forms.Label();
+            this.txtManAddress = new System.Windows.Forms.TextBox();
+            this.lblManAddress = new System.Windows.Forms.Label();
+            this.txtManDateOfBirth = new System.Windows.Forms.DateTimePicker();
+            this.lblManDateOfBirth = new System.Windows.Forms.Label();
+            this.txtManStundentSurname = new System.Windows.Forms.TextBox();
+            this.lblManStundentSurname = new System.Windows.Forms.Label();
+            this.txtManStudentsName = new System.Windows.Forms.TextBox();
+            this.lblManStudentsName = new System.Windows.Forms.Label();
+            this.txtManStudentsNumber = new System.Windows.Forms.TextBox();
+            this.lblManStudentsNumber = new System.Windows.Forms.Label();
+            this.txtSearchStudent = new System.Windows.Forms.TextBox();
             this.btnDeletestudent = new System.Windows.Forms.Button();
             this.btnSearchStudent = new System.Windows.Forms.Button();
             this.btnUpdatestudent = new System.Windows.Forms.Button();
@@ -69,57 +77,60 @@ namespace PRG282Project.Presentation
             this.lblNewStudentReg = new System.Windows.Forms.Label();
             this.btnAddImage = new System.Windows.Forms.Button();
             this.btnRegisterStudent = new System.Windows.Forms.Button();
-            this.lblModuleAmount = new System.Windows.Forms.Label();
-            this.lblModule6 = new System.Windows.Forms.Label();
-            this.lblModule5 = new System.Windows.Forms.Label();
-            this.lblModule4 = new System.Windows.Forms.Label();
-            this.lblModule3 = new System.Windows.Forms.Label();
-            this.lblModule2 = new System.Windows.Forms.Label();
-            this.lblModule1 = new System.Windows.Forms.Label();
-            this.cmbModule6 = new System.Windows.Forms.ComboBox();
-            this.cmbModule5 = new System.Windows.Forms.ComboBox();
-            this.cmbModule4 = new System.Windows.Forms.ComboBox();
-            this.cmbModule3 = new System.Windows.Forms.ComboBox();
-            this.cmbModule2 = new System.Windows.Forms.ComboBox();
-            this.cmbModuleAmount = new System.Windows.Forms.ComboBox();
-            this.cmbModule1 = new System.Windows.Forms.ComboBox();
-            this.txtPhone = new System.Windows.Forms.TextBox();
-            this.lblPhone = new System.Windows.Forms.Label();
+            this.lblNewPhone = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtAddress = new System.Windows.Forms.TextBox();
-            this.lbltxtAddress = new System.Windows.Forms.Label();
+            this.lblNewAddress = new System.Windows.Forms.Label();
             this.rbtOther = new System.Windows.Forms.RadioButton();
-            this.pcrDateOfBirth = new System.Windows.Forms.DateTimePicker();
-            this.lblGender = new System.Windows.Forms.Label();
+            this.lbNewlGender = new System.Windows.Forms.Label();
             this.rbtFemale = new System.Windows.Forms.RadioButton();
             this.rbtMale = new System.Windows.Forms.RadioButton();
-            this.lblDateOfBirth = new System.Windows.Forms.Label();
-            this.txtStudentsurname = new System.Windows.Forms.TextBox();
-            this.lblStudentsurname = new System.Windows.Forms.Label();
-            this.txtStudentName = new System.Windows.Forms.TextBox();
-            this.lblSudentName = new System.Windows.Forms.Label();
-            this.txtStudentNumber = new System.Windows.Forms.TextBox();
-            this.lblStudentNumber = new System.Windows.Forms.Label();
+            this.lblNewDateOfBirth = new System.Windows.Forms.Label();
+            this.lblNewStudentsurname = new System.Windows.Forms.Label();
+            this.lblNewSudentName = new System.Windows.Forms.Label();
+            this.lbNewlStudentNumber = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.lblManSearchStudentNumber = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnStudentsExtra = new System.Windows.Forms.Button();
+            this.btnModulesExtra = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.rbnSearchUsingName = new System.Windows.Forms.RadioButton();
-            this.rbnSearchUsingStudentNo = new System.Windows.Forms.RadioButton();
-            this.lblSearchUsing = new System.Windows.Forms.Label();
-            this.lblManageStudents = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.lstSelectModules = new System.Windows.Forms.ListBox();
+            this.lblStudentModules = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnViewAll = new System.Windows.Forms.Button();
+            this.lblCurrentStudent = new System.Windows.Forms.Label();
+            this.lblStudentManagement = new System.Windows.Forms.Label();
+            this.btnAddResource = new System.Windows.Forms.Button();
+            this.lblModuleResources = new System.Windows.Forms.Label();
+            this.lsbNewMouleResources = new System.Windows.Forms.ListBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.lblAddModuleResource = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.lsbMouleResources = new System.Windows.Forms.ListBox();
+            this.lblModuleManagement = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblSearchModule = new System.Windows.Forms.Label();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnModuleUpdate = new System.Windows.Forms.Button();
+            this.btnModuleDelete = new System.Windows.Forms.Button();
+            this.btnViewAllModules = new System.Windows.Forms.Button();
+            this.lblModuleResourceView = new System.Windows.Forms.Label();
+            this.pnlMainTop.SuspendLayout();
             this.pnlModuleOptions.SuspendLayout();
             this.pnlStudentOptions.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -130,24 +141,25 @@ namespace PRG282Project.Presentation
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
             this.pnlAddstudent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlMainTop
             // 
-            this.panel1.AutoScroll = true;
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.btnInfo);
-            this.panel1.Controls.Add(this.pnlModuleOptions);
-            this.panel1.Controls.Add(this.btnModules);
-            this.panel1.Controls.Add(this.pnlStudentOptions);
-            this.panel1.Controls.Add(this.btnStudent);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(150, 480);
-            this.panel1.TabIndex = 0;
+            this.pnlMainTop.AutoScroll = true;
+            this.pnlMainTop.BackColor = System.Drawing.Color.White;
+            this.pnlMainTop.Controls.Add(this.btnInfo);
+            this.pnlMainTop.Controls.Add(this.pnlModuleOptions);
+            this.pnlMainTop.Controls.Add(this.btnModules);
+            this.pnlMainTop.Controls.Add(this.pnlStudentOptions);
+            this.pnlMainTop.Controls.Add(this.btnStudent);
+            this.pnlMainTop.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlMainTop.Location = new System.Drawing.Point(0, 33);
+            this.pnlMainTop.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlMainTop.Name = "pnlMainTop";
+            this.pnlMainTop.Size = new System.Drawing.Size(150, 447);
+            this.pnlMainTop.TabIndex = 0;
             // 
             // btnInfo
             // 
@@ -156,8 +168,8 @@ namespace PRG282Project.Presentation
             this.btnInfo.FlatAppearance.BorderSize = 0;
             this.btnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInfo.ForeColor = System.Drawing.Color.Cyan;
-            this.btnInfo.Location = new System.Drawing.Point(0, 440);
+            this.btnInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(150)))), ((int)(((byte)(156)))));
+            this.btnInfo.Location = new System.Drawing.Point(0, 407);
             this.btnInfo.Margin = new System.Windows.Forms.Padding(2);
             this.btnInfo.Name = "btnInfo";
             this.btnInfo.Size = new System.Drawing.Size(150, 40);
@@ -167,12 +179,16 @@ namespace PRG282Project.Presentation
             // 
             // pnlModuleOptions
             // 
+            this.pnlModuleOptions.AutoScroll = true;
+            this.pnlModuleOptions.AutoSize = true;
+            this.pnlModuleOptions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(232)))), ((int)(((byte)(234)))));
+            this.pnlModuleOptions.Controls.Add(this.btnModulesExtra);
             this.pnlModuleOptions.Controls.Add(this.btnManageModule);
             this.pnlModuleOptions.Controls.Add(this.btnaddmodule);
             this.pnlModuleOptions.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlModuleOptions.Location = new System.Drawing.Point(0, 269);
+            this.pnlModuleOptions.Location = new System.Drawing.Point(0, 155);
             this.pnlModuleOptions.Name = "pnlModuleOptions";
-            this.pnlModuleOptions.Size = new System.Drawing.Size(150, 95);
+            this.pnlModuleOptions.Size = new System.Drawing.Size(150, 75);
             this.pnlModuleOptions.TabIndex = 8;
             this.pnlModuleOptions.Visible = false;
             // 
@@ -182,8 +198,8 @@ namespace PRG282Project.Presentation
             this.btnManageModule.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnManageModule.FlatAppearance.BorderSize = 0;
             this.btnManageModule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManageModule.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManageModule.ForeColor = System.Drawing.Color.Silver;
+            this.btnManageModule.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnManageModule.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(150)))), ((int)(((byte)(156)))));
             this.btnManageModule.Location = new System.Drawing.Point(0, 25);
             this.btnManageModule.Margin = new System.Windows.Forms.Padding(2);
             this.btnManageModule.Name = "btnManageModule";
@@ -199,8 +215,8 @@ namespace PRG282Project.Presentation
             this.btnaddmodule.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnaddmodule.FlatAppearance.BorderSize = 0;
             this.btnaddmodule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnaddmodule.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnaddmodule.ForeColor = System.Drawing.Color.Silver;
+            this.btnaddmodule.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnaddmodule.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(150)))), ((int)(((byte)(156)))));
             this.btnaddmodule.Location = new System.Drawing.Point(0, 0);
             this.btnaddmodule.Margin = new System.Windows.Forms.Padding(2);
             this.btnaddmodule.Name = "btnaddmodule";
@@ -216,9 +232,9 @@ namespace PRG282Project.Presentation
             this.btnModules.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnModules.FlatAppearance.BorderSize = 0;
             this.btnModules.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModules.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModules.ForeColor = System.Drawing.Color.Cyan;
-            this.btnModules.Location = new System.Drawing.Point(0, 229);
+            this.btnModules.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModules.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.btnModules.Location = new System.Drawing.Point(0, 115);
             this.btnModules.Margin = new System.Windows.Forms.Padding(2);
             this.btnModules.Name = "btnModules";
             this.btnModules.Size = new System.Drawing.Size(150, 40);
@@ -229,10 +245,14 @@ namespace PRG282Project.Presentation
             // 
             // pnlStudentOptions
             // 
+            this.pnlStudentOptions.AutoScroll = true;
+            this.pnlStudentOptions.AutoSize = true;
+            this.pnlStudentOptions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(232)))), ((int)(((byte)(234)))));
+            this.pnlStudentOptions.Controls.Add(this.btnStudentsExtra);
             this.pnlStudentOptions.Controls.Add(this.btnManagestudents);
             this.pnlStudentOptions.Controls.Add(this.btnAddStudent);
             this.pnlStudentOptions.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlStudentOptions.Location = new System.Drawing.Point(0, 154);
+            this.pnlStudentOptions.Location = new System.Drawing.Point(0, 40);
             this.pnlStudentOptions.Name = "pnlStudentOptions";
             this.pnlStudentOptions.Size = new System.Drawing.Size(150, 75);
             this.pnlStudentOptions.TabIndex = 7;
@@ -244,8 +264,8 @@ namespace PRG282Project.Presentation
             this.btnManagestudents.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnManagestudents.FlatAppearance.BorderSize = 0;
             this.btnManagestudents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManagestudents.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManagestudents.ForeColor = System.Drawing.Color.Silver;
+            this.btnManagestudents.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnManagestudents.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(150)))), ((int)(((byte)(156)))));
             this.btnManagestudents.Location = new System.Drawing.Point(0, 25);
             this.btnManagestudents.Margin = new System.Windows.Forms.Padding(2);
             this.btnManagestudents.Name = "btnManagestudents";
@@ -261,8 +281,8 @@ namespace PRG282Project.Presentation
             this.btnAddStudent.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAddStudent.FlatAppearance.BorderSize = 0;
             this.btnAddStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddStudent.ForeColor = System.Drawing.Color.Silver;
+            this.btnAddStudent.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddStudent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(150)))), ((int)(((byte)(156)))));
             this.btnAddStudent.Location = new System.Drawing.Point(0, 0);
             this.btnAddStudent.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddStudent.Name = "btnAddStudent";
@@ -278,9 +298,9 @@ namespace PRG282Project.Presentation
             this.btnStudent.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnStudent.FlatAppearance.BorderSize = 0;
             this.btnStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStudent.ForeColor = System.Drawing.Color.Cyan;
-            this.btnStudent.Location = new System.Drawing.Point(0, 114);
+            this.btnStudent.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnStudent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.btnStudent.Location = new System.Drawing.Point(0, 0);
             this.btnStudent.Margin = new System.Windows.Forms.Padding(2);
             this.btnStudent.Name = "btnStudent";
             this.btnStudent.Size = new System.Drawing.Size(150, 40);
@@ -289,19 +309,10 @@ namespace PRG282Project.Presentation
             this.btnStudent.UseVisualStyleBackColor = false;
             this.btnStudent.Click += new System.EventHandler(this.btnStudent_Click);
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(150, 114);
-            this.panel2.TabIndex = 0;
-            // 
             // panel3
             // 
             this.panel3.AutoScroll = true;
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.pnlSpare2);
             this.panel3.Controls.Add(this.pnlSpare1);
             this.panel3.Controls.Add(this.pnlManageModules);
@@ -317,7 +328,7 @@ namespace PRG282Project.Presentation
             // 
             // pnlSpare2
             // 
-            this.pnlSpare2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlSpare2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(242)))), ((int)(((byte)(248)))));
             this.pnlSpare2.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSpare2.Location = new System.Drawing.Point(0, 2235);
             this.pnlSpare2.Name = "pnlSpare2";
@@ -327,7 +338,7 @@ namespace PRG282Project.Presentation
             // 
             // pnlSpare1
             // 
-            this.pnlSpare1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlSpare1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(242)))), ((int)(((byte)(248)))));
             this.pnlSpare1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSpare1.Location = new System.Drawing.Point(0, 1788);
             this.pnlSpare1.Name = "pnlSpare1";
@@ -337,12 +348,26 @@ namespace PRG282Project.Presentation
             // 
             // pnlManageModules
             // 
-            this.pnlManageModules.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlManageModules.Controls.Add(this.txtSearchmodule);
-            this.pnlManageModules.Controls.Add(this.btnDeleteModule);
-            this.pnlManageModules.Controls.Add(this.btnUpdateModule);
-            this.pnlManageModules.Controls.Add(this.btnSearchModule);
+            this.pnlManageModules.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(242)))), ((int)(((byte)(248)))));
+            this.pnlManageModules.Controls.Add(this.lblSearchModule);
+            this.pnlManageModules.Controls.Add(this.textBox12);
+            this.pnlManageModules.Controls.Add(this.btnModuleDelete);
+            this.pnlManageModules.Controls.Add(this.btnModuleUpdate);
+            this.pnlManageModules.Controls.Add(this.btnViewAllModules);
+            this.pnlManageModules.Controls.Add(this.button3);
+            this.pnlManageModules.Controls.Add(this.textBox9);
+            this.pnlManageModules.Controls.Add(this.label3);
+            this.pnlManageModules.Controls.Add(this.textBox10);
+            this.pnlManageModules.Controls.Add(this.textBox11);
+            this.pnlManageModules.Controls.Add(this.label4);
+            this.pnlManageModules.Controls.Add(this.label5);
+            this.pnlManageModules.Controls.Add(this.lblModuleManagement);
+            this.pnlManageModules.Controls.Add(this.lsbMouleResources);
+            this.pnlManageModules.Controls.Add(this.button2);
+            this.pnlManageModules.Controls.Add(this.textBox8);
             this.pnlManageModules.Controls.Add(this.dgvmodules);
+            this.pnlManageModules.Controls.Add(this.lblModuleResourceView);
+            this.pnlManageModules.Controls.Add(this.lblAddModuleResource);
             this.pnlManageModules.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlManageModules.Location = new System.Drawing.Point(0, 1341);
             this.pnlManageModules.Margin = new System.Windows.Forms.Padding(2);
@@ -351,61 +376,27 @@ namespace PRG282Project.Presentation
             this.pnlManageModules.TabIndex = 24;
             this.pnlManageModules.Visible = false;
             // 
-            // txtSearchmodule
-            // 
-            this.txtSearchmodule.Location = new System.Drawing.Point(97, 23);
-            this.txtSearchmodule.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSearchmodule.Name = "txtSearchmodule";
-            this.txtSearchmodule.Size = new System.Drawing.Size(225, 20);
-            this.txtSearchmodule.TabIndex = 4;
-            // 
-            // btnDeleteModule
-            // 
-            this.btnDeleteModule.Location = new System.Drawing.Point(13, 91);
-            this.btnDeleteModule.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDeleteModule.Name = "btnDeleteModule";
-            this.btnDeleteModule.Size = new System.Drawing.Size(64, 27);
-            this.btnDeleteModule.TabIndex = 3;
-            this.btnDeleteModule.Text = "Delete";
-            this.btnDeleteModule.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdateModule
-            // 
-            this.btnUpdateModule.Location = new System.Drawing.Point(13, 61);
-            this.btnUpdateModule.Margin = new System.Windows.Forms.Padding(2);
-            this.btnUpdateModule.Name = "btnUpdateModule";
-            this.btnUpdateModule.Size = new System.Drawing.Size(64, 27);
-            this.btnUpdateModule.TabIndex = 2;
-            this.btnUpdateModule.Text = "Update";
-            this.btnUpdateModule.UseVisualStyleBackColor = true;
-            // 
-            // btnSearchModule
-            // 
-            this.btnSearchModule.Location = new System.Drawing.Point(13, 23);
-            this.btnSearchModule.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSearchModule.Name = "btnSearchModule";
-            this.btnSearchModule.Size = new System.Drawing.Size(64, 23);
-            this.btnSearchModule.TabIndex = 1;
-            this.btnSearchModule.Text = "Search Module";
-            this.btnSearchModule.UseVisualStyleBackColor = true;
-            // 
             // dgvmodules
             // 
             this.dgvmodules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvmodules.Location = new System.Drawing.Point(97, 61);
+            this.dgvmodules.Location = new System.Drawing.Point(4, 106);
             this.dgvmodules.Margin = new System.Windows.Forms.Padding(2);
             this.dgvmodules.Name = "dgvmodules";
             this.dgvmodules.RowHeadersWidth = 51;
             this.dgvmodules.RowTemplate.Height = 24;
-            this.dgvmodules.Size = new System.Drawing.Size(224, 81);
+            this.dgvmodules.Size = new System.Drawing.Size(409, 336);
             this.dgvmodules.TabIndex = 0;
             // 
             // pnlAddmodule
             // 
-            this.pnlAddmodule.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlAddmodule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(242)))), ((int)(((byte)(248)))));
+            this.pnlAddmodule.Controls.Add(this.lsbNewMouleResources);
+            this.pnlAddmodule.Controls.Add(this.btnAddResource);
             this.pnlAddmodule.Controls.Add(this.btnRegisterModule);
-            this.pnlAddmodule.Controls.Add(this.label12);
+            this.pnlAddmodule.Controls.Add(this.lblNewModuleRegestration);
+            this.pnlAddmodule.Controls.Add(this.textBox7);
             this.pnlAddmodule.Controls.Add(this.txtModuledescription);
+            this.pnlAddmodule.Controls.Add(this.lblModuleResources);
             this.pnlAddmodule.Controls.Add(this.label11);
             this.pnlAddmodule.Controls.Add(this.txtModulecode);
             this.pnlAddmodule.Controls.Add(this.txtModuleName);
@@ -421,103 +412,117 @@ namespace PRG282Project.Presentation
             // 
             // btnRegisterModule
             // 
-            this.btnRegisterModule.Location = new System.Drawing.Point(258, 141);
+            this.btnRegisterModule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegisterModule.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnRegisterModule.Location = new System.Drawing.Point(181, 264);
             this.btnRegisterModule.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegisterModule.Name = "btnRegisterModule";
-            this.btnRegisterModule.Size = new System.Drawing.Size(61, 27);
+            this.btnRegisterModule.Size = new System.Drawing.Size(85, 40);
             this.btnRegisterModule.TabIndex = 8;
             this.btnRegisterModule.Text = "Register";
             this.btnRegisterModule.UseVisualStyleBackColor = true;
             // 
-            // label12
+            // lblNewModuleRegestration
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(26, 9);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(70, 13);
-            this.label12.TabIndex = 7;
-            this.label12.Text = "New Module:";
+            this.lblNewModuleRegestration.AutoSize = true;
+            this.lblNewModuleRegestration.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lblNewModuleRegestration.Location = new System.Drawing.Point(26, 9);
+            this.lblNewModuleRegestration.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNewModuleRegestration.Name = "lblNewModuleRegestration";
+            this.lblNewModuleRegestration.Size = new System.Drawing.Size(270, 30);
+            this.lblNewModuleRegestration.TabIndex = 7;
+            this.lblNewModuleRegestration.Text = "New Module Regestration";
             // 
             // txtModuledescription
             // 
-            this.txtModuledescription.Location = new System.Drawing.Point(134, 95);
+            this.txtModuledescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtModuledescription.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.txtModuledescription.Location = new System.Drawing.Point(144, 166);
             this.txtModuledescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtModuledescription.Name = "txtModuledescription";
-            this.txtModuledescription.Size = new System.Drawing.Size(122, 20);
+            this.txtModuledescription.Size = new System.Drawing.Size(122, 18);
             this.txtModuledescription.TabIndex = 6;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(24, 99);
+            this.label11.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label11.Location = new System.Drawing.Point(12, 166);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(96, 13);
+            this.label11.Size = new System.Drawing.Size(128, 17);
             this.label11.TabIndex = 5;
             this.label11.Text = "Module description";
             // 
             // txtModulecode
             // 
-            this.txtModulecode.Location = new System.Drawing.Point(134, 35);
+            this.txtModulecode.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtModulecode.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.txtModulecode.Location = new System.Drawing.Point(144, 108);
             this.txtModulecode.Margin = new System.Windows.Forms.Padding(2);
             this.txtModulecode.Name = "txtModulecode";
-            this.txtModulecode.Size = new System.Drawing.Size(122, 20);
+            this.txtModulecode.Size = new System.Drawing.Size(122, 18);
             this.txtModulecode.TabIndex = 4;
             // 
             // txtModuleName
             // 
-            this.txtModuleName.Location = new System.Drawing.Point(134, 64);
+            this.txtModuleName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtModuleName.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.txtModuleName.Location = new System.Drawing.Point(144, 137);
             this.txtModuleName.Margin = new System.Windows.Forms.Padding(2);
             this.txtModuleName.Name = "txtModuleName";
-            this.txtModuleName.Size = new System.Drawing.Size(122, 20);
+            this.txtModuleName.Size = new System.Drawing.Size(122, 18);
             this.txtModuleName.TabIndex = 3;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(24, 68);
+            this.label10.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label10.Location = new System.Drawing.Point(47, 137);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(71, 13);
+            this.label10.Size = new System.Drawing.Size(93, 17);
             this.label10.TabIndex = 2;
             this.label10.Text = "Module name";
             // 
             // lblModulecode
             // 
             this.lblModulecode.AutoSize = true;
-            this.lblModulecode.Location = new System.Drawing.Point(26, 39);
+            this.lblModulecode.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblModulecode.Location = new System.Drawing.Point(52, 108);
             this.lblModulecode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblModulecode.Name = "lblModulecode";
-            this.lblModulecode.Size = new System.Drawing.Size(69, 13);
+            this.lblModulecode.Size = new System.Drawing.Size(88, 17);
             this.lblModulecode.TabIndex = 0;
             this.lblModulecode.Text = "Module code";
             // 
             // pnlManageStudents
             // 
-            this.pnlManageStudents.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlManageStudents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(242)))), ((int)(((byte)(248)))));
+            this.pnlManageStudents.Controls.Add(this.pictureBox2);
             this.pnlManageStudents.Controls.Add(this.lblManageStudents);
-            this.pnlManageStudents.Controls.Add(this.rbnSearchUsingStudentNo);
-            this.pnlManageStudents.Controls.Add(this.rbnSearchUsingName);
-            this.pnlManageStudents.Controls.Add(this.textBox1);
-            this.pnlManageStudents.Controls.Add(this.label2);
-            this.pnlManageStudents.Controls.Add(this.textBox2);
-            this.pnlManageStudents.Controls.Add(this.label3);
-            this.pnlManageStudents.Controls.Add(this.dateTimePicker1);
-            this.pnlManageStudents.Controls.Add(this.label4);
-            this.pnlManageStudents.Controls.Add(this.textBox3);
-            this.pnlManageStudents.Controls.Add(this.label5);
-            this.pnlManageStudents.Controls.Add(this.textBox4);
-            this.pnlManageStudents.Controls.Add(this.label6);
-            this.pnlManageStudents.Controls.Add(this.textBox5);
-            this.pnlManageStudents.Controls.Add(this.lblSearchUsing);
-            this.pnlManageStudents.Controls.Add(this.label7);
-            this.pnlManageStudents.Controls.Add(this.txtSearchstudent);
+            this.pnlManageStudents.Controls.Add(this.txtManPhones);
+            this.pnlManageStudents.Controls.Add(this.lblManPhones);
+            this.pnlManageStudents.Controls.Add(this.txtManAddress);
+            this.pnlManageStudents.Controls.Add(this.lblManAddress);
+            this.pnlManageStudents.Controls.Add(this.txtManDateOfBirth);
+            this.pnlManageStudents.Controls.Add(this.lblManDateOfBirth);
+            this.pnlManageStudents.Controls.Add(this.txtManStundentSurname);
+            this.pnlManageStudents.Controls.Add(this.lblManStundentSurname);
+            this.pnlManageStudents.Controls.Add(this.txtManStudentsName);
+            this.pnlManageStudents.Controls.Add(this.lblManStudentsName);
+            this.pnlManageStudents.Controls.Add(this.txtManStudentsNumber);
+            this.pnlManageStudents.Controls.Add(this.lblCurrentStudent);
+            this.pnlManageStudents.Controls.Add(this.lblManSearchStudentNumber);
+            this.pnlManageStudents.Controls.Add(this.lblManStudentsNumber);
+            this.pnlManageStudents.Controls.Add(this.txtSearchStudent);
+            this.pnlManageStudents.Controls.Add(this.btnViewAll);
             this.pnlManageStudents.Controls.Add(this.btnDeletestudent);
             this.pnlManageStudents.Controls.Add(this.btnSearchStudent);
             this.pnlManageStudents.Controls.Add(this.btnUpdatestudent);
             this.pnlManageStudents.Controls.Add(this.dgvStudents);
             this.pnlManageStudents.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlManageStudents.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(150)))), ((int)(((byte)(156)))));
             this.pnlManageStudents.Location = new System.Drawing.Point(0, 447);
             this.pnlManageStudents.Margin = new System.Windows.Forms.Padding(2);
             this.pnlManageStudents.Name = "pnlManageStudents";
@@ -525,22 +530,177 @@ namespace PRG282Project.Presentation
             this.pnlManageStudents.TabIndex = 1;
             this.pnlManageStudents.Visible = false;
             // 
-            // txtSearchstudent
+            // lblManageStudents
             // 
-            this.txtSearchstudent.Location = new System.Drawing.Point(247, 80);
-            this.txtSearchstudent.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSearchstudent.Name = "txtSearchstudent";
-            this.txtSearchstudent.Size = new System.Drawing.Size(218, 20);
-            this.txtSearchstudent.TabIndex = 26;
+            this.lblManageStudents.AutoSize = true;
+            this.lblManageStudents.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lblManageStudents.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblManageStudents.Location = new System.Drawing.Point(212, 15);
+            this.lblManageStudents.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblManageStudents.Name = "lblManageStudents";
+            this.lblManageStudents.Size = new System.Drawing.Size(184, 30);
+            this.lblManageStudents.TabIndex = 40;
+            this.lblManageStudents.Text = "Manage Students";
+            // 
+            // txtManPhones
+            // 
+            this.txtManPhones.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtManPhones.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.txtManPhones.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtManPhones.Location = new System.Drawing.Point(127, 195);
+            this.txtManPhones.Margin = new System.Windows.Forms.Padding(2);
+            this.txtManPhones.Multiline = true;
+            this.txtManPhones.Name = "txtManPhones";
+            this.txtManPhones.Size = new System.Drawing.Size(102, 19);
+            this.txtManPhones.TabIndex = 38;
+            // 
+            // lblManPhones
+            // 
+            this.lblManPhones.AutoSize = true;
+            this.lblManPhones.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblManPhones.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblManPhones.Location = new System.Drawing.Point(76, 195);
+            this.lblManPhones.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblManPhones.Name = "lblManPhones";
+            this.lblManPhones.Size = new System.Drawing.Size(47, 17);
+            this.lblManPhones.TabIndex = 37;
+            this.lblManPhones.Text = "Phone";
+            // 
+            // txtManAddress
+            // 
+            this.txtManAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtManAddress.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.txtManAddress.Location = new System.Drawing.Point(83, 223);
+            this.txtManAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.txtManAddress.Multiline = true;
+            this.txtManAddress.Name = "txtManAddress";
+            this.txtManAddress.Size = new System.Drawing.Size(146, 64);
+            this.txtManAddress.TabIndex = 36;
+            // 
+            // lblManAddress
+            // 
+            this.lblManAddress.AutoSize = true;
+            this.lblManAddress.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblManAddress.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblManAddress.Location = new System.Drawing.Point(22, 223);
+            this.lblManAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblManAddress.Name = "lblManAddress";
+            this.lblManAddress.Size = new System.Drawing.Size(57, 17);
+            this.lblManAddress.TabIndex = 35;
+            this.lblManAddress.Text = "Address";
+            // 
+            // txtManDateOfBirth
+            // 
+            this.txtManDateOfBirth.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.txtManDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtManDateOfBirth.Location = new System.Drawing.Point(127, 161);
+            this.txtManDateOfBirth.Margin = new System.Windows.Forms.Padding(2);
+            this.txtManDateOfBirth.Name = "txtManDateOfBirth";
+            this.txtManDateOfBirth.Size = new System.Drawing.Size(102, 25);
+            this.txtManDateOfBirth.TabIndex = 34;
+            // 
+            // lblManDateOfBirth
+            // 
+            this.lblManDateOfBirth.AutoSize = true;
+            this.lblManDateOfBirth.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblManDateOfBirth.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblManDateOfBirth.Location = new System.Drawing.Point(35, 167);
+            this.lblManDateOfBirth.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblManDateOfBirth.Name = "lblManDateOfBirth";
+            this.lblManDateOfBirth.Size = new System.Drawing.Size(88, 17);
+            this.lblManDateOfBirth.TabIndex = 33;
+            this.lblManDateOfBirth.Text = "Date of Birth";
+            // 
+            // txtManStundentSurname
+            // 
+            this.txtManStundentSurname.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtManStundentSurname.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.txtManStundentSurname.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtManStundentSurname.Location = new System.Drawing.Point(127, 134);
+            this.txtManStundentSurname.Margin = new System.Windows.Forms.Padding(2);
+            this.txtManStundentSurname.Name = "txtManStundentSurname";
+            this.txtManStundentSurname.Size = new System.Drawing.Size(102, 18);
+            this.txtManStundentSurname.TabIndex = 32;
+            // 
+            // lblManStundentSurname
+            // 
+            this.lblManStundentSurname.AutoSize = true;
+            this.lblManStundentSurname.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblManStundentSurname.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblManStundentSurname.Location = new System.Drawing.Point(9, 134);
+            this.lblManStundentSurname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblManStundentSurname.Name = "lblManStundentSurname";
+            this.lblManStundentSurname.Size = new System.Drawing.Size(114, 17);
+            this.lblManStundentSurname.TabIndex = 31;
+            this.lblManStundentSurname.Text = "Student Surname";
+            // 
+            // txtManStudentsName
+            // 
+            this.txtManStudentsName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtManStudentsName.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.txtManStudentsName.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtManStudentsName.Location = new System.Drawing.Point(127, 107);
+            this.txtManStudentsName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtManStudentsName.Name = "txtManStudentsName";
+            this.txtManStudentsName.Size = new System.Drawing.Size(102, 18);
+            this.txtManStudentsName.TabIndex = 30;
+            // 
+            // lblManStudentsName
+            // 
+            this.lblManStudentsName.AutoSize = true;
+            this.lblManStudentsName.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblManStudentsName.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblManStudentsName.Location = new System.Drawing.Point(27, 107);
+            this.lblManStudentsName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblManStudentsName.Name = "lblManStudentsName";
+            this.lblManStudentsName.Size = new System.Drawing.Size(96, 17);
+            this.lblManStudentsName.TabIndex = 29;
+            this.lblManStudentsName.Text = "Student Name";
+            // 
+            // txtManStudentsNumber
+            // 
+            this.txtManStudentsNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtManStudentsNumber.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.txtManStudentsNumber.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtManStudentsNumber.Location = new System.Drawing.Point(127, 80);
+            this.txtManStudentsNumber.Margin = new System.Windows.Forms.Padding(2);
+            this.txtManStudentsNumber.Name = "txtManStudentsNumber";
+            this.txtManStudentsNumber.Size = new System.Drawing.Size(102, 18);
+            this.txtManStudentsNumber.TabIndex = 28;
+            // 
+            // lblManStudentsNumber
+            // 
+            this.lblManStudentsNumber.AutoSize = true;
+            this.lblManStudentsNumber.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblManStudentsNumber.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblManStudentsNumber.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblManStudentsNumber.Location = new System.Drawing.Point(15, 80);
+            this.lblManStudentsNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblManStudentsNumber.Name = "lblManStudentsNumber";
+            this.lblManStudentsNumber.Size = new System.Drawing.Size(108, 17);
+            this.lblManStudentsNumber.TabIndex = 27;
+            this.lblManStudentsNumber.Text = "Student number";
+            // 
+            // txtSearchStudent
+            // 
+            this.txtSearchStudent.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSearchStudent.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.txtSearchStudent.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtSearchStudent.Location = new System.Drawing.Point(258, 102);
+            this.txtSearchStudent.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSearchStudent.Name = "txtSearchStudent";
+            this.txtSearchStudent.Size = new System.Drawing.Size(260, 18);
+            this.txtSearchStudent.TabIndex = 26;
             // 
             // btnDeletestudent
             // 
             this.btnDeletestudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeletestudent.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnDeletestudent.Location = new System.Drawing.Point(157, 275);
+            this.btnDeletestudent.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnDeletestudent.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnDeletestudent.Location = new System.Drawing.Point(144, 295);
             this.btnDeletestudent.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeletestudent.Name = "btnDeletestudent";
-            this.btnDeletestudent.Size = new System.Drawing.Size(72, 27);
+            this.btnDeletestudent.Size = new System.Drawing.Size(85, 40);
             this.btnDeletestudent.TabIndex = 25;
             this.btnDeletestudent.Text = "Delete";
             this.btnDeletestudent.UseVisualStyleBackColor = true;
@@ -548,12 +708,12 @@ namespace PRG282Project.Presentation
             // btnSearchStudent
             // 
             this.btnSearchStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchStudent.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnSearchStudent.Location = new System.Drawing.Point(469, 72);
+            this.btnSearchStudent.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnSearchStudent.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnSearchStudent.Location = new System.Drawing.Point(522, 80);
             this.btnSearchStudent.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchStudent.Name = "btnSearchStudent";
-            this.btnSearchStudent.Size = new System.Drawing.Size(63, 28);
+            this.btnSearchStudent.Size = new System.Drawing.Size(85, 40);
             this.btnSearchStudent.TabIndex = 24;
             this.btnSearchStudent.Text = "Search ";
             this.btnSearchStudent.UseVisualStyleBackColor = true;
@@ -561,11 +721,12 @@ namespace PRG282Project.Presentation
             // btnUpdatestudent
             // 
             this.btnUpdatestudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdatestudent.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnUpdatestudent.Location = new System.Drawing.Point(83, 277);
+            this.btnUpdatestudent.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnUpdatestudent.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnUpdatestudent.Location = new System.Drawing.Point(55, 295);
             this.btnUpdatestudent.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdatestudent.Name = "btnUpdatestudent";
-            this.btnUpdatestudent.Size = new System.Drawing.Size(70, 25);
+            this.btnUpdatestudent.Size = new System.Drawing.Size(85, 40);
             this.btnUpdatestudent.TabIndex = 23;
             this.btnUpdatestudent.Text = "Update";
             this.btnUpdatestudent.UseVisualStyleBackColor = true;
@@ -573,51 +734,40 @@ namespace PRG282Project.Presentation
             // dgvStudents
             // 
             this.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudents.Location = new System.Drawing.Point(247, 104);
+            this.dgvStudents.Location = new System.Drawing.Point(258, 124);
             this.dgvStudents.Margin = new System.Windows.Forms.Padding(2);
             this.dgvStudents.Name = "dgvStudents";
             this.dgvStudents.RowHeadersWidth = 51;
             this.dgvStudents.RowTemplate.Height = 24;
-            this.dgvStudents.Size = new System.Drawing.Size(325, 167);
+            this.dgvStudents.Size = new System.Drawing.Size(349, 211);
             this.dgvStudents.TabIndex = 0;
             // 
             // pnlAddstudent
             // 
-            this.pnlAddstudent.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlAddstudent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(242)))), ((int)(((byte)(248)))));
+            this.pnlAddstudent.Controls.Add(this.panel1);
+            this.pnlAddstudent.Controls.Add(this.lstSelectModules);
+            this.pnlAddstudent.Controls.Add(this.textBox6);
+            this.pnlAddstudent.Controls.Add(this.textBox5);
+            this.pnlAddstudent.Controls.Add(this.textBox4);
+            this.pnlAddstudent.Controls.Add(this.textBox3);
+            this.pnlAddstudent.Controls.Add(this.textBox2);
+            this.pnlAddstudent.Controls.Add(this.textBox1);
             this.pnlAddstudent.Controls.Add(this.lblNewStudentReg);
             this.pnlAddstudent.Controls.Add(this.btnAddImage);
             this.pnlAddstudent.Controls.Add(this.btnRegisterStudent);
-            this.pnlAddstudent.Controls.Add(this.lblModuleAmount);
-            this.pnlAddstudent.Controls.Add(this.lblModule6);
-            this.pnlAddstudent.Controls.Add(this.lblModule5);
-            this.pnlAddstudent.Controls.Add(this.lblModule4);
-            this.pnlAddstudent.Controls.Add(this.lblModule3);
-            this.pnlAddstudent.Controls.Add(this.lblModule2);
-            this.pnlAddstudent.Controls.Add(this.lblModule1);
-            this.pnlAddstudent.Controls.Add(this.cmbModule6);
-            this.pnlAddstudent.Controls.Add(this.cmbModule5);
-            this.pnlAddstudent.Controls.Add(this.cmbModule4);
-            this.pnlAddstudent.Controls.Add(this.cmbModule3);
-            this.pnlAddstudent.Controls.Add(this.cmbModule2);
-            this.pnlAddstudent.Controls.Add(this.cmbModuleAmount);
-            this.pnlAddstudent.Controls.Add(this.cmbModule1);
-            this.pnlAddstudent.Controls.Add(this.txtPhone);
-            this.pnlAddstudent.Controls.Add(this.lblPhone);
+            this.pnlAddstudent.Controls.Add(this.lblNewPhone);
             this.pnlAddstudent.Controls.Add(this.pictureBox1);
-            this.pnlAddstudent.Controls.Add(this.txtAddress);
-            this.pnlAddstudent.Controls.Add(this.lbltxtAddress);
+            this.pnlAddstudent.Controls.Add(this.lblNewAddress);
             this.pnlAddstudent.Controls.Add(this.rbtOther);
-            this.pnlAddstudent.Controls.Add(this.pcrDateOfBirth);
-            this.pnlAddstudent.Controls.Add(this.lblGender);
+            this.pnlAddstudent.Controls.Add(this.lbNewlGender);
             this.pnlAddstudent.Controls.Add(this.rbtFemale);
             this.pnlAddstudent.Controls.Add(this.rbtMale);
-            this.pnlAddstudent.Controls.Add(this.lblDateOfBirth);
-            this.pnlAddstudent.Controls.Add(this.txtStudentsurname);
-            this.pnlAddstudent.Controls.Add(this.lblStudentsurname);
-            this.pnlAddstudent.Controls.Add(this.txtStudentName);
-            this.pnlAddstudent.Controls.Add(this.lblSudentName);
-            this.pnlAddstudent.Controls.Add(this.txtStudentNumber);
-            this.pnlAddstudent.Controls.Add(this.lblStudentNumber);
+            this.pnlAddstudent.Controls.Add(this.lblNewDateOfBirth);
+            this.pnlAddstudent.Controls.Add(this.lblNewStudentsurname);
+            this.pnlAddstudent.Controls.Add(this.lblNewSudentName);
+            this.pnlAddstudent.Controls.Add(this.lblStudentModules);
+            this.pnlAddstudent.Controls.Add(this.lbNewlStudentNumber);
             this.pnlAddstudent.Controls.Add(this.label1);
             this.pnlAddstudent.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlAddstudent.Location = new System.Drawing.Point(0, 0);
@@ -625,28 +775,27 @@ namespace PRG282Project.Presentation
             this.pnlAddstudent.Name = "pnlAddstudent";
             this.pnlAddstudent.Size = new System.Drawing.Size(633, 447);
             this.pnlAddstudent.TabIndex = 0;
-            this.pnlAddstudent.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlAddstudent_Paint);
             // 
             // lblNewStudentReg
             // 
             this.lblNewStudentReg.AutoSize = true;
-            this.lblNewStudentReg.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNewStudentReg.Location = new System.Drawing.Point(205, 23);
+            this.lblNewStudentReg.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNewStudentReg.Location = new System.Drawing.Point(152, 23);
             this.lblNewStudentReg.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNewStudentReg.Name = "lblNewStudentReg";
-            this.lblNewStudentReg.Size = new System.Drawing.Size(237, 24);
+            this.lblNewStudentReg.Size = new System.Drawing.Size(256, 30);
             this.lblNewStudentReg.TabIndex = 23;
             this.lblNewStudentReg.Text = "New student regesration";
             // 
             // btnAddImage
             // 
             this.btnAddImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddImage.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnAddImage.Location = new System.Drawing.Point(499, 136);
+            this.btnAddImage.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddImage.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnAddImage.Location = new System.Drawing.Point(494, 130);
             this.btnAddImage.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddImage.Name = "btnAddImage";
-            this.btnAddImage.Size = new System.Drawing.Size(113, 28);
+            this.btnAddImage.Size = new System.Drawing.Size(100, 34);
             this.btnAddImage.TabIndex = 22;
             this.btnAddImage.Text = "Add Image";
             this.btnAddImage.UseVisualStyleBackColor = true;
@@ -654,284 +803,80 @@ namespace PRG282Project.Presentation
             // btnRegisterStudent
             // 
             this.btnRegisterStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegisterStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnRegisterStudent.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnRegisterStudent.Location = new System.Drawing.Point(247, 390);
+            this.btnRegisterStudent.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnRegisterStudent.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnRegisterStudent.Location = new System.Drawing.Point(243, 394);
             this.btnRegisterStudent.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegisterStudent.Name = "btnRegisterStudent";
-            this.btnRegisterStudent.Size = new System.Drawing.Size(111, 36);
+            this.btnRegisterStudent.Size = new System.Drawing.Size(111, 44);
             this.btnRegisterStudent.TabIndex = 22;
             this.btnRegisterStudent.Text = "Register ";
             this.btnRegisterStudent.UseVisualStyleBackColor = true;
             // 
-            // lblModuleAmount
+            // lblNewPhone
             // 
-            this.lblModuleAmount.AutoSize = true;
-            this.lblModuleAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lblModuleAmount.Location = new System.Drawing.Point(255, 95);
-            this.lblModuleAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblModuleAmount.Name = "lblModuleAmount";
-            this.lblModuleAmount.Size = new System.Drawing.Size(131, 16);
-            this.lblModuleAmount.TabIndex = 21;
-            this.lblModuleAmount.Text = "Amount Of Moudules";
-            // 
-            // lblModule6
-            // 
-            this.lblModule6.AutoSize = true;
-            this.lblModule6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lblModule6.Location = new System.Drawing.Point(255, 263);
-            this.lblModule6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblModule6.Name = "lblModule6";
-            this.lblModule6.Size = new System.Drawing.Size(63, 16);
-            this.lblModule6.TabIndex = 21;
-            this.lblModule6.Text = "Module 6";
-            this.lblModule6.Visible = false;
-            this.lblModule6.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // lblModule5
-            // 
-            this.lblModule5.AutoSize = true;
-            this.lblModule5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lblModule5.Location = new System.Drawing.Point(255, 235);
-            this.lblModule5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblModule5.Name = "lblModule5";
-            this.lblModule5.Size = new System.Drawing.Size(63, 16);
-            this.lblModule5.TabIndex = 21;
-            this.lblModule5.Text = "Module 5";
-            this.lblModule5.Visible = false;
-            this.lblModule5.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // lblModule4
-            // 
-            this.lblModule4.AutoSize = true;
-            this.lblModule4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lblModule4.Location = new System.Drawing.Point(256, 207);
-            this.lblModule4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblModule4.Name = "lblModule4";
-            this.lblModule4.Size = new System.Drawing.Size(63, 16);
-            this.lblModule4.TabIndex = 21;
-            this.lblModule4.Text = "Module 4";
-            this.lblModule4.Visible = false;
-            this.lblModule4.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // lblModule3
-            // 
-            this.lblModule3.AutoSize = true;
-            this.lblModule3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lblModule3.Location = new System.Drawing.Point(255, 179);
-            this.lblModule3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblModule3.Name = "lblModule3";
-            this.lblModule3.Size = new System.Drawing.Size(63, 16);
-            this.lblModule3.TabIndex = 21;
-            this.lblModule3.Text = "Module 3";
-            this.lblModule3.Visible = false;
-            this.lblModule3.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // lblModule2
-            // 
-            this.lblModule2.AutoSize = true;
-            this.lblModule2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lblModule2.Location = new System.Drawing.Point(255, 151);
-            this.lblModule2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblModule2.Name = "lblModule2";
-            this.lblModule2.Size = new System.Drawing.Size(63, 16);
-            this.lblModule2.TabIndex = 21;
-            this.lblModule2.Text = "Module 2";
-            this.lblModule2.Visible = false;
-            this.lblModule2.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // lblModule1
-            // 
-            this.lblModule1.AutoSize = true;
-            this.lblModule1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lblModule1.Location = new System.Drawing.Point(255, 123);
-            this.lblModule1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblModule1.Name = "lblModule1";
-            this.lblModule1.Size = new System.Drawing.Size(63, 16);
-            this.lblModule1.TabIndex = 21;
-            this.lblModule1.Text = "Module 1";
-            this.lblModule1.Visible = false;
-            this.lblModule1.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // cmbModule6
-            // 
-            this.cmbModule6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbModule6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbModule6.Location = new System.Drawing.Point(368, 260);
-            this.cmbModule6.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbModule6.Name = "cmbModule6";
-            this.cmbModule6.Size = new System.Drawing.Size(102, 24);
-            this.cmbModule6.TabIndex = 20;
-            this.cmbModule6.Visible = false;
-            // 
-            // cmbModule5
-            // 
-            this.cmbModule5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbModule5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbModule5.Location = new System.Drawing.Point(368, 232);
-            this.cmbModule5.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbModule5.Name = "cmbModule5";
-            this.cmbModule5.Size = new System.Drawing.Size(102, 24);
-            this.cmbModule5.TabIndex = 20;
-            this.cmbModule5.Visible = false;
-            // 
-            // cmbModule4
-            // 
-            this.cmbModule4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbModule4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbModule4.Location = new System.Drawing.Point(368, 204);
-            this.cmbModule4.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbModule4.Name = "cmbModule4";
-            this.cmbModule4.Size = new System.Drawing.Size(102, 24);
-            this.cmbModule4.TabIndex = 20;
-            this.cmbModule4.Visible = false;
-            // 
-            // cmbModule3
-            // 
-            this.cmbModule3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbModule3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbModule3.Location = new System.Drawing.Point(368, 176);
-            this.cmbModule3.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbModule3.Name = "cmbModule3";
-            this.cmbModule3.Size = new System.Drawing.Size(102, 24);
-            this.cmbModule3.TabIndex = 20;
-            this.cmbModule3.Visible = false;
-            // 
-            // cmbModule2
-            // 
-            this.cmbModule2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbModule2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbModule2.Location = new System.Drawing.Point(368, 148);
-            this.cmbModule2.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbModule2.Name = "cmbModule2";
-            this.cmbModule2.Size = new System.Drawing.Size(102, 24);
-            this.cmbModule2.TabIndex = 20;
-            this.cmbModule2.Visible = false;
-            // 
-            // cmbModuleAmount
-            // 
-            this.cmbModuleAmount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbModuleAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbModuleAmount.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6"});
-            this.cmbModuleAmount.Location = new System.Drawing.Point(418, 92);
-            this.cmbModuleAmount.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbModuleAmount.Name = "cmbModuleAmount";
-            this.cmbModuleAmount.Size = new System.Drawing.Size(52, 24);
-            this.cmbModuleAmount.TabIndex = 20;
-            this.cmbModuleAmount.SelectedValueChanged += new System.EventHandler(this.cmbModuleAmount_SelectedValueChanged);
-            // 
-            // cmbModule1
-            // 
-            this.cmbModule1.BackColor = System.Drawing.SystemColors.Window;
-            this.cmbModule1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbModule1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbModule1.Location = new System.Drawing.Point(368, 120);
-            this.cmbModule1.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbModule1.Name = "cmbModule1";
-            this.cmbModule1.Size = new System.Drawing.Size(102, 24);
-            this.cmbModule1.TabIndex = 20;
-            this.cmbModule1.Visible = false;
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone.Location = new System.Drawing.Point(134, 197);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPhone.Multiline = true;
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(102, 19);
-            this.txtPhone.TabIndex = 19;
-            // 
-            // lblPhone
-            // 
-            this.lblPhone.AutoSize = true;
-            this.lblPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lblPhone.Location = new System.Drawing.Point(14, 200);
-            this.lblPhone.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(47, 16);
-            this.lblPhone.TabIndex = 18;
-            this.lblPhone.Text = "Phone";
+            this.lblNewPhone.AutoSize = true;
+            this.lblNewPhone.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblNewPhone.Location = new System.Drawing.Point(69, 191);
+            this.lblNewPhone.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNewPhone.Name = "lblNewPhone";
+            this.lblNewPhone.Size = new System.Drawing.Size(47, 17);
+            this.lblNewPhone.TabIndex = 18;
+            this.lblNewPhone.Text = "Phone";
             // 
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(499, 22);
+            this.pictureBox1.Location = new System.Drawing.Point(494, 23);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(113, 101);
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
-            // txtAddress
+            // lblNewAddress
             // 
-            this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.Location = new System.Drawing.Point(90, 220);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(2);
-            this.txtAddress.Multiline = true;
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(146, 64);
-            this.txtAddress.TabIndex = 15;
-            // 
-            // lbltxtAddress
-            // 
-            this.lbltxtAddress.AutoSize = true;
-            this.lbltxtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lbltxtAddress.Location = new System.Drawing.Point(14, 223);
-            this.lbltxtAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbltxtAddress.Name = "lbltxtAddress";
-            this.lbltxtAddress.Size = new System.Drawing.Size(59, 16);
-            this.lbltxtAddress.TabIndex = 14;
-            this.lbltxtAddress.Text = "Address";
+            this.lblNewAddress.AutoSize = true;
+            this.lblNewAddress.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblNewAddress.Location = new System.Drawing.Point(59, 215);
+            this.lblNewAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNewAddress.Name = "lblNewAddress";
+            this.lblNewAddress.Size = new System.Drawing.Size(57, 17);
+            this.lblNewAddress.TabIndex = 14;
+            this.lblNewAddress.Text = "Address";
             // 
             // rbtOther
             // 
             this.rbtOther.AutoSize = true;
-            this.rbtOther.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtOther.Location = new System.Drawing.Point(233, 300);
+            this.rbtOther.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtOther.Location = new System.Drawing.Point(197, 298);
             this.rbtOther.Margin = new System.Windows.Forms.Padding(2);
             this.rbtOther.Name = "rbtOther";
-            this.rbtOther.Size = new System.Drawing.Size(58, 20);
+            this.rbtOther.Size = new System.Drawing.Size(59, 21);
             this.rbtOther.TabIndex = 13;
             this.rbtOther.TabStop = true;
             this.rbtOther.Text = "Other";
             this.rbtOther.UseVisualStyleBackColor = true;
             // 
-            // pcrDateOfBirth
+            // lbNewlGender
             // 
-            this.pcrDateOfBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pcrDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.pcrDateOfBirth.Location = new System.Drawing.Point(134, 171);
-            this.pcrDateOfBirth.Margin = new System.Windows.Forms.Padding(2);
-            this.pcrDateOfBirth.Name = "pcrDateOfBirth";
-            this.pcrDateOfBirth.Size = new System.Drawing.Size(102, 22);
-            this.pcrDateOfBirth.TabIndex = 12;
-            // 
-            // lblGender
-            // 
-            this.lblGender.AutoSize = true;
-            this.lblGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lblGender.Location = new System.Drawing.Point(14, 302);
-            this.lblGender.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(53, 16);
-            this.lblGender.TabIndex = 11;
-            this.lblGender.Text = "Gender";
+            this.lbNewlGender.AutoSize = true;
+            this.lbNewlGender.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lbNewlGender.Location = new System.Drawing.Point(15, 300);
+            this.lbNewlGender.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbNewlGender.Name = "lbNewlGender";
+            this.lbNewlGender.Size = new System.Drawing.Size(52, 17);
+            this.lbNewlGender.TabIndex = 11;
+            this.lbNewlGender.Text = "Gender";
             // 
             // rbtFemale
             // 
             this.rbtFemale.AutoSize = true;
-            this.rbtFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtFemale.Location = new System.Drawing.Point(157, 300);
+            this.rbtFemale.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtFemale.Location = new System.Drawing.Point(127, 298);
             this.rbtFemale.Margin = new System.Windows.Forms.Padding(2);
             this.rbtFemale.Name = "rbtFemale";
-            this.rbtFemale.Size = new System.Drawing.Size(72, 20);
+            this.rbtFemale.Size = new System.Drawing.Size(67, 21);
             this.rbtFemale.TabIndex = 10;
             this.rbtFemale.TabStop = true;
             this.rbtFemale.Text = "Female";
@@ -940,90 +885,60 @@ namespace PRG282Project.Presentation
             // rbtMale
             // 
             this.rbtMale.AutoSize = true;
-            this.rbtMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtMale.Location = new System.Drawing.Point(97, 300);
+            this.rbtMale.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtMale.Location = new System.Drawing.Point(70, 298);
             this.rbtMale.Margin = new System.Windows.Forms.Padding(2);
             this.rbtMale.Name = "rbtMale";
-            this.rbtMale.Size = new System.Drawing.Size(56, 20);
+            this.rbtMale.Size = new System.Drawing.Size(55, 21);
             this.rbtMale.TabIndex = 9;
             this.rbtMale.TabStop = true;
             this.rbtMale.Text = "Male";
             this.rbtMale.UseVisualStyleBackColor = true;
             // 
-            // lblDateOfBirth
+            // lblNewDateOfBirth
             // 
-            this.lblDateOfBirth.AutoSize = true;
-            this.lblDateOfBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lblDateOfBirth.Location = new System.Drawing.Point(14, 176);
-            this.lblDateOfBirth.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblDateOfBirth.Name = "lblDateOfBirth";
-            this.lblDateOfBirth.Size = new System.Drawing.Size(80, 16);
-            this.lblDateOfBirth.TabIndex = 7;
-            this.lblDateOfBirth.Text = "Date of Birth";
-            this.lblDateOfBirth.Click += new System.EventHandler(this.label5_Click);
+            this.lblNewDateOfBirth.AutoSize = true;
+            this.lblNewDateOfBirth.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblNewDateOfBirth.Location = new System.Drawing.Point(28, 167);
+            this.lblNewDateOfBirth.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNewDateOfBirth.Name = "lblNewDateOfBirth";
+            this.lblNewDateOfBirth.Size = new System.Drawing.Size(88, 17);
+            this.lblNewDateOfBirth.TabIndex = 7;
+            this.lblNewDateOfBirth.Text = "Date of Birth";
             // 
-            // txtStudentsurname
+            // lblNewStudentsurname
             // 
-            this.txtStudentsurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStudentsurname.Location = new System.Drawing.Point(134, 145);
-            this.txtStudentsurname.Margin = new System.Windows.Forms.Padding(2);
-            this.txtStudentsurname.Name = "txtStudentsurname";
-            this.txtStudentsurname.Size = new System.Drawing.Size(102, 22);
-            this.txtStudentsurname.TabIndex = 6;
+            this.lblNewStudentsurname.AutoSize = true;
+            this.lblNewStudentsurname.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblNewStudentsurname.Location = new System.Drawing.Point(2, 147);
+            this.lblNewStudentsurname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNewStudentsurname.Name = "lblNewStudentsurname";
+            this.lblNewStudentsurname.Size = new System.Drawing.Size(114, 17);
+            this.lblNewStudentsurname.TabIndex = 5;
+            this.lblNewStudentsurname.Text = "Student Surname";
             // 
-            // lblStudentsurname
+            // lblNewSudentName
             // 
-            this.lblStudentsurname.AutoSize = true;
-            this.lblStudentsurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lblStudentsurname.Location = new System.Drawing.Point(14, 148);
-            this.lblStudentsurname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblStudentsurname.Name = "lblStudentsurname";
-            this.lblStudentsurname.Size = new System.Drawing.Size(110, 16);
-            this.lblStudentsurname.TabIndex = 5;
-            this.lblStudentsurname.Text = "Student Surname";
-            this.lblStudentsurname.Click += new System.EventHandler(this.label4_Click);
+            this.lblNewSudentName.AutoSize = true;
+            this.lblNewSudentName.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblNewSudentName.Location = new System.Drawing.Point(20, 122);
+            this.lblNewSudentName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNewSudentName.Name = "lblNewSudentName";
+            this.lblNewSudentName.Size = new System.Drawing.Size(96, 17);
+            this.lblNewSudentName.TabIndex = 3;
+            this.lblNewSudentName.Text = "Student Name";
             // 
-            // txtStudentName
+            // lbNewlStudentNumber
             // 
-            this.txtStudentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStudentName.Location = new System.Drawing.Point(134, 119);
-            this.txtStudentName.Margin = new System.Windows.Forms.Padding(2);
-            this.txtStudentName.Name = "txtStudentName";
-            this.txtStudentName.Size = new System.Drawing.Size(102, 22);
-            this.txtStudentName.TabIndex = 4;
-            // 
-            // lblSudentName
-            // 
-            this.lblSudentName.AutoSize = true;
-            this.lblSudentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lblSudentName.Location = new System.Drawing.Point(14, 122);
-            this.lblSudentName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblSudentName.Name = "lblSudentName";
-            this.lblSudentName.Size = new System.Drawing.Size(93, 16);
-            this.lblSudentName.TabIndex = 3;
-            this.lblSudentName.Text = "Student Name";
-            this.lblSudentName.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // txtStudentNumber
-            // 
-            this.txtStudentNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStudentNumber.Location = new System.Drawing.Point(134, 93);
-            this.txtStudentNumber.Margin = new System.Windows.Forms.Padding(2);
-            this.txtStudentNumber.Name = "txtStudentNumber";
-            this.txtStudentNumber.Size = new System.Drawing.Size(102, 22);
-            this.txtStudentNumber.TabIndex = 2;
-            // 
-            // lblStudentNumber
-            // 
-            this.lblStudentNumber.AutoSize = true;
-            this.lblStudentNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lblStudentNumber.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblStudentNumber.Location = new System.Drawing.Point(14, 95);
-            this.lblStudentNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblStudentNumber.Name = "lblStudentNumber";
-            this.lblStudentNumber.Size = new System.Drawing.Size(101, 16);
-            this.lblStudentNumber.TabIndex = 1;
-            this.lblStudentNumber.Text = "Student number";
+            this.lbNewlStudentNumber.AutoSize = true;
+            this.lbNewlStudentNumber.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lbNewlStudentNumber.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbNewlStudentNumber.Location = new System.Drawing.Point(8, 96);
+            this.lbNewlStudentNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbNewlStudentNumber.Name = "lbNewlStudentNumber";
+            this.lbNewlStudentNumber.Size = new System.Drawing.Size(108, 17);
+            this.lbNewlStudentNumber.TabIndex = 1;
+            this.lbNewlStudentNumber.Text = "Student number";
             // 
             // label1
             // 
@@ -1043,7 +958,7 @@ namespace PRG282Project.Presentation
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimize.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnMinimize.Location = new System.Drawing.Point(750, 1);
+            this.btnMinimize.Location = new System.Drawing.Point(742, 3);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(25, 25);
             this.btnMinimize.TabIndex = 2;
@@ -1059,201 +974,473 @@ namespace PRG282Project.Presentation
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnClose.Location = new System.Drawing.Point(775, 1);
+            this.btnClose.Location = new System.Drawing.Point(767, 3);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(25, 25);
             this.btnClose.TabIndex = 3;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // lblManSearchStudentNumber
+            // 
+            this.lblManSearchStudentNumber.AutoSize = true;
+            this.lblManSearchStudentNumber.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblManSearchStudentNumber.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblManSearchStudentNumber.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblManSearchStudentNumber.Location = new System.Drawing.Point(255, 80);
+            this.lblManSearchStudentNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblManSearchStudentNumber.Name = "lblManSearchStudentNumber";
+            this.lblManSearchStudentNumber.Size = new System.Drawing.Size(154, 17);
+            this.lblManSearchStudentNumber.TabIndex = 27;
+            this.lblManSearchStudentNumber.Text = "Search Student Number";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.btnMinimize);
+            this.panel4.Controls.Add(this.btnClose);
+            this.panel4.Controls.Add(this.lblStudentManagement);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(800, 33);
+            this.panel4.TabIndex = 2;
+            // 
+            // btnStudentsExtra
+            // 
+            this.btnStudentsExtra.BackColor = System.Drawing.Color.Transparent;
+            this.btnStudentsExtra.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStudentsExtra.FlatAppearance.BorderSize = 0;
+            this.btnStudentsExtra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStudentsExtra.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnStudentsExtra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(150)))), ((int)(((byte)(156)))));
+            this.btnStudentsExtra.Location = new System.Drawing.Point(0, 50);
+            this.btnStudentsExtra.Margin = new System.Windows.Forms.Padding(2);
+            this.btnStudentsExtra.Name = "btnStudentsExtra";
+            this.btnStudentsExtra.Size = new System.Drawing.Size(150, 25);
+            this.btnStudentsExtra.TabIndex = 3;
+            this.btnStudentsExtra.Text = "btnStudentsExtra";
+            this.btnStudentsExtra.UseVisualStyleBackColor = false;
+            this.btnStudentsExtra.Visible = false;
+            // 
+            // btnModulesExtra
+            // 
+            this.btnModulesExtra.BackColor = System.Drawing.Color.Transparent;
+            this.btnModulesExtra.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnModulesExtra.FlatAppearance.BorderSize = 0;
+            this.btnModulesExtra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModulesExtra.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnModulesExtra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(150)))), ((int)(((byte)(156)))));
+            this.btnModulesExtra.Location = new System.Drawing.Point(0, 50);
+            this.btnModulesExtra.Margin = new System.Windows.Forms.Padding(2);
+            this.btnModulesExtra.Name = "btnModulesExtra";
+            this.btnModulesExtra.Size = new System.Drawing.Size(150, 25);
+            this.btnModulesExtra.TabIndex = 6;
+            this.btnModulesExtra.Text = "btnModulesExtra";
+            this.btnModulesExtra.UseVisualStyleBackColor = false;
+            this.btnModulesExtra.Visible = false;
+            // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(127, 184);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Multiline = true;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(121, 95);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(102, 19);
-            this.textBox1.TabIndex = 38;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.label2.Location = new System.Drawing.Point(7, 187);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 16);
-            this.label2.TabIndex = 37;
-            this.label2.Text = "Phone";
+            this.textBox1.Size = new System.Drawing.Size(116, 18);
+            this.textBox1.TabIndex = 24;
             // 
             // textBox2
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(83, 207);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Multiline = true;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.textBox2.Location = new System.Drawing.Point(121, 119);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(146, 64);
-            this.textBox2.TabIndex = 36;
+            this.textBox2.Size = new System.Drawing.Size(116, 18);
+            this.textBox2.TabIndex = 24;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.textBox3.Location = new System.Drawing.Point(121, 143);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(116, 18);
+            this.textBox3.TabIndex = 24;
+            // 
+            // textBox4
+            // 
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox4.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.textBox4.Location = new System.Drawing.Point(121, 167);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(116, 18);
+            this.textBox4.TabIndex = 24;
+            // 
+            // textBox5
+            // 
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox5.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.textBox5.Location = new System.Drawing.Point(121, 191);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(116, 18);
+            this.textBox5.TabIndex = 24;
+            // 
+            // textBox6
+            // 
+            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox6.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.textBox6.Location = new System.Drawing.Point(121, 215);
+            this.textBox6.Multiline = true;
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(116, 64);
+            this.textBox6.TabIndex = 24;
+            // 
+            // lstSelectModules
+            // 
+            this.lstSelectModules.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lstSelectModules.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.lstSelectModules.FormattingEnabled = true;
+            this.lstSelectModules.ItemHeight = 17;
+            this.lstSelectModules.Location = new System.Drawing.Point(282, 109);
+            this.lstSelectModules.Name = "lstSelectModules";
+            this.lstSelectModules.Size = new System.Drawing.Size(171, 170);
+            this.lstSelectModules.TabIndex = 25;
+            // 
+            // lblStudentModules
+            // 
+            this.lblStudentModules.AutoSize = true;
+            this.lblStudentModules.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblStudentModules.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblStudentModules.Location = new System.Drawing.Point(279, 87);
+            this.lblStudentModules.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblStudentModules.Name = "lblStudentModules";
+            this.lblStudentModules.Size = new System.Drawing.Size(113, 17);
+            this.lblStudentModules.TabIndex = 1;
+            this.lblStudentModules.Text = "Student Modules";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Location = new System.Drawing.Point(258, 73);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(2, 225);
+            this.panel1.TabIndex = 26;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Location = new System.Drawing.Point(31, 20);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox2.TabIndex = 27;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btnViewAll
+            // 
+            this.btnViewAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewAll.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnViewAll.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnViewAll.Location = new System.Drawing.Point(258, 339);
+            this.btnViewAll.Margin = new System.Windows.Forms.Padding(2);
+            this.btnViewAll.Name = "btnViewAll";
+            this.btnViewAll.Size = new System.Drawing.Size(85, 40);
+            this.btnViewAll.TabIndex = 25;
+            this.btnViewAll.Text = "View All";
+            this.btnViewAll.UseVisualStyleBackColor = true;
+            // 
+            // lblCurrentStudent
+            // 
+            this.lblCurrentStudent.AutoSize = true;
+            this.lblCurrentStudent.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblCurrentStudent.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblCurrentStudent.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblCurrentStudent.Location = new System.Drawing.Point(88, 53);
+            this.lblCurrentStudent.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCurrentStudent.Name = "lblCurrentStudent";
+            this.lblCurrentStudent.Size = new System.Drawing.Size(106, 17);
+            this.lblCurrentStudent.TabIndex = 27;
+            this.lblCurrentStudent.Text = "Current Student";
+            // 
+            // lblStudentManagement
+            // 
+            this.lblStudentManagement.AutoSize = true;
+            this.lblStudentManagement.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStudentManagement.ForeColor = System.Drawing.Color.White;
+            this.lblStudentManagement.Location = new System.Drawing.Point(2, 4);
+            this.lblStudentManagement.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblStudentManagement.Name = "lblStudentManagement";
+            this.lblStudentManagement.Size = new System.Drawing.Size(175, 21);
+            this.lblStudentManagement.TabIndex = 23;
+            this.lblStudentManagement.Text = "Student Management";
+            // 
+            // btnAddResource
+            // 
+            this.btnAddResource.BackColor = System.Drawing.SystemColors.Window;
+            this.btnAddResource.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddResource.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddResource.Location = new System.Drawing.Point(459, 108);
+            this.btnAddResource.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddResource.Name = "btnAddResource";
+            this.btnAddResource.Size = new System.Drawing.Size(44, 22);
+            this.btnAddResource.TabIndex = 8;
+            this.btnAddResource.Text = "Add";
+            this.btnAddResource.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAddResource.UseVisualStyleBackColor = false;
+            // 
+            // lblModuleResources
+            // 
+            this.lblModuleResources.AutoSize = true;
+            this.lblModuleResources.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblModuleResources.Location = new System.Drawing.Point(268, 83);
+            this.lblModuleResources.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblModuleResources.Name = "lblModuleResources";
+            this.lblModuleResources.Size = new System.Drawing.Size(120, 17);
+            this.lblModuleResources.TabIndex = 5;
+            this.lblModuleResources.Text = "Module Resources";
+            // 
+            // lsbNewMouleResources
+            // 
+            this.lsbNewMouleResources.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lsbNewMouleResources.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.lsbNewMouleResources.FormattingEnabled = true;
+            this.lsbNewMouleResources.ItemHeight = 17;
+            this.lsbNewMouleResources.Location = new System.Drawing.Point(271, 134);
+            this.lsbNewMouleResources.Name = "lsbNewMouleResources";
+            this.lsbNewMouleResources.Size = new System.Drawing.Size(228, 170);
+            this.lsbNewMouleResources.TabIndex = 26;
+            // 
+            // textBox7
+            // 
+            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox7.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.Location = new System.Drawing.Point(271, 107);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(184, 22);
+            this.textBox7.TabIndex = 6;
+            // 
+            // lblAddModuleResource
+            // 
+            this.lblAddModuleResource.AutoSize = true;
+            this.lblAddModuleResource.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblAddModuleResource.Location = new System.Drawing.Point(414, 357);
+            this.lblAddModuleResource.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAddModuleResource.Name = "lblAddModuleResource";
+            this.lblAddModuleResource.Size = new System.Drawing.Size(143, 17);
+            this.lblAddModuleResource.TabIndex = 5;
+            this.lblAddModuleResource.Text = "Add Module Resource";
+            // 
+            // textBox8
+            // 
+            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox8.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox8.Location = new System.Drawing.Point(417, 376);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(164, 22);
+            this.textBox8.TabIndex = 6;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.Window;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(585, 377);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(44, 22);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Add";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // lsbMouleResources
+            // 
+            this.lsbMouleResources.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lsbMouleResources.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.lsbMouleResources.FormattingEnabled = true;
+            this.lsbMouleResources.ItemHeight = 17;
+            this.lsbMouleResources.Location = new System.Drawing.Point(420, 195);
+            this.lsbMouleResources.Name = "lsbMouleResources";
+            this.lsbMouleResources.Size = new System.Drawing.Size(212, 153);
+            this.lsbMouleResources.TabIndex = 26;
+            // 
+            // lblModuleManagement
+            // 
+            this.lblModuleManagement.AutoSize = true;
+            this.lblModuleManagement.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lblModuleManagement.Location = new System.Drawing.Point(7, 11);
+            this.lblModuleManagement.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblModuleManagement.Name = "lblModuleManagement";
+            this.lblModuleManagement.Size = new System.Drawing.Size(225, 30);
+            this.lblModuleManagement.TabIndex = 27;
+            this.lblModuleManagement.Text = "Module Management";
+            // 
+            // textBox9
+            // 
+            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox9.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.textBox9.Location = new System.Drawing.Point(419, 140);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(164, 18);
+            this.textBox9.TabIndex = 33;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.label3.Location = new System.Drawing.Point(7, 210);
+            this.label3.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(417, 119);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 16);
-            this.label3.TabIndex = 35;
-            this.label3.Text = "Address";
+            this.label3.Size = new System.Drawing.Size(128, 17);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "Module description";
             // 
-            // dateTimePicker1
+            // textBox10
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(127, 158);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(102, 22);
-            this.dateTimePicker1.TabIndex = 34;
+            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox10.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.textBox10.Location = new System.Drawing.Point(419, 50);
+            this.textBox10.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(164, 18);
+            this.textBox10.TabIndex = 31;
+            // 
+            // textBox11
+            // 
+            this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox11.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.textBox11.Location = new System.Drawing.Point(419, 92);
+            this.textBox11.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(164, 18);
+            this.textBox11.TabIndex = 30;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.label4.Location = new System.Drawing.Point(7, 163);
+            this.label4.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(417, 73);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 16);
-            this.label4.TabIndex = 33;
-            this.label4.Text = "Date of Birth";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(127, 132);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(102, 22);
-            this.textBox3.TabIndex = 32;
+            this.label4.Size = new System.Drawing.Size(93, 17);
+            this.label4.TabIndex = 29;
+            this.label4.Text = "Module name";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.label5.Location = new System.Drawing.Point(7, 135);
+            this.label5.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(416, 29);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(110, 16);
-            this.label5.TabIndex = 31;
-            this.label5.Text = "Student Surname";
+            this.label5.Size = new System.Drawing.Size(88, 17);
+            this.label5.TabIndex = 28;
+            this.label5.Text = "Module code";
             // 
-            // textBox4
+            // lblSearchModule
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(127, 106);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(102, 22);
-            this.textBox4.TabIndex = 30;
+            this.lblSearchModule.AutoSize = true;
+            this.lblSearchModule.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblSearchModule.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblSearchModule.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblSearchModule.Location = new System.Drawing.Point(8, 64);
+            this.lblSearchModule.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSearchModule.Name = "lblSearchModule";
+            this.lblSearchModule.Size = new System.Drawing.Size(99, 17);
+            this.lblSearchModule.TabIndex = 36;
+            this.lblSearchModule.Text = "Search Module";
             // 
-            // label6
+            // textBox12
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.label6.Location = new System.Drawing.Point(7, 109);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(93, 16);
-            this.label6.TabIndex = 29;
-            this.label6.Text = "Student Name";
+            this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox12.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.textBox12.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBox12.Location = new System.Drawing.Point(6, 83);
+            this.textBox12.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(266, 18);
+            this.textBox12.TabIndex = 35;
             // 
-            // textBox5
+            // button3
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(127, 80);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(102, 22);
-            this.textBox5.TabIndex = 28;
+            this.button3.BackColor = System.Drawing.SystemColors.Window;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.button3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button3.Location = new System.Drawing.Point(276, 81);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(68, 22);
+            this.button3.TabIndex = 34;
+            this.button3.Text = "Search ";
+            this.button3.UseVisualStyleBackColor = false;
             // 
-            // label7
+            // btnModuleUpdate
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label7.Location = new System.Drawing.Point(7, 82);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(101, 16);
-            this.label7.TabIndex = 27;
-            this.label7.Text = "Student number";
+            this.btnModuleUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModuleUpdate.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnModuleUpdate.Location = new System.Drawing.Point(423, 402);
+            this.btnModuleUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.btnModuleUpdate.Name = "btnModuleUpdate";
+            this.btnModuleUpdate.Size = new System.Drawing.Size(103, 40);
+            this.btnModuleUpdate.TabIndex = 8;
+            this.btnModuleUpdate.Text = "Update";
+            this.btnModuleUpdate.UseVisualStyleBackColor = true;
             // 
-            // rbnSearchUsingName
+            // btnModuleDelete
             // 
-            this.rbnSearchUsingName.AutoSize = true;
-            this.rbnSearchUsingName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbnSearchUsingName.Location = new System.Drawing.Point(363, 47);
-            this.rbnSearchUsingName.Name = "rbnSearchUsingName";
-            this.rbnSearchUsingName.Size = new System.Drawing.Size(92, 17);
-            this.rbnSearchUsingName.TabIndex = 39;
-            this.rbnSearchUsingName.TabStop = true;
-            this.rbnSearchUsingName.Text = "Student Name";
-            this.rbnSearchUsingName.UseVisualStyleBackColor = true;
+            this.btnModuleDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModuleDelete.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnModuleDelete.Location = new System.Drawing.Point(530, 402);
+            this.btnModuleDelete.Margin = new System.Windows.Forms.Padding(2);
+            this.btnModuleDelete.Name = "btnModuleDelete";
+            this.btnModuleDelete.Size = new System.Drawing.Size(99, 40);
+            this.btnModuleDelete.TabIndex = 8;
+            this.btnModuleDelete.Text = "Delete";
+            this.btnModuleDelete.UseVisualStyleBackColor = true;
             // 
-            // rbnSearchUsingStudentNo
+            // btnViewAllModules
             // 
-            this.rbnSearchUsingStudentNo.AutoSize = true;
-            this.rbnSearchUsingStudentNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbnSearchUsingStudentNo.Location = new System.Drawing.Point(363, 62);
-            this.rbnSearchUsingStudentNo.Name = "rbnSearchUsingStudentNo";
-            this.rbnSearchUsingStudentNo.Size = new System.Drawing.Size(101, 17);
-            this.rbnSearchUsingStudentNo.TabIndex = 39;
-            this.rbnSearchUsingStudentNo.TabStop = true;
-            this.rbnSearchUsingStudentNo.Text = "Student Number";
-            this.rbnSearchUsingStudentNo.UseVisualStyleBackColor = true;
-            this.rbnSearchUsingStudentNo.CheckedChanged += new System.EventHandler(this.rbnSearchUsingStudentNo_CheckedChanged);
+            this.btnViewAllModules.BackColor = System.Drawing.SystemColors.Window;
+            this.btnViewAllModules.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewAllModules.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnViewAllModules.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnViewAllModules.Location = new System.Drawing.Point(346, 81);
+            this.btnViewAllModules.Margin = new System.Windows.Forms.Padding(2);
+            this.btnViewAllModules.Name = "btnViewAllModules";
+            this.btnViewAllModules.Size = new System.Drawing.Size(68, 22);
+            this.btnViewAllModules.TabIndex = 34;
+            this.btnViewAllModules.Text = "View All";
+            this.btnViewAllModules.UseVisualStyleBackColor = false;
             // 
-            // lblSearchUsing
+            // lblModuleResourceView
             // 
-            this.lblSearchUsing.AutoSize = true;
-            this.lblSearchUsing.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lblSearchUsing.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblSearchUsing.Location = new System.Drawing.Point(269, 47);
-            this.lblSearchUsing.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblSearchUsing.Name = "lblSearchUsing";
-            this.lblSearchUsing.Size = new System.Drawing.Size(89, 16);
-            this.lblSearchUsing.TabIndex = 27;
-            this.lblSearchUsing.Text = "Search Using";
-            // 
-            // lblManageStudents
-            // 
-            this.lblManageStudents.AutoSize = true;
-            this.lblManageStudents.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblManageStudents.Location = new System.Drawing.Point(212, 15);
-            this.lblManageStudents.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblManageStudents.Name = "lblManageStudents";
-            this.lblManageStudents.Size = new System.Drawing.Size(172, 24);
-            this.lblManageStudents.TabIndex = 40;
-            this.lblManageStudents.Text = "Manage Students";
+            this.lblModuleResourceView.AutoSize = true;
+            this.lblModuleResourceView.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblModuleResourceView.Location = new System.Drawing.Point(417, 169);
+            this.lblModuleResourceView.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblModuleResourceView.Name = "lblModuleResourceView";
+            this.lblModuleResourceView.Size = new System.Drawing.Size(148, 17);
+            this.lblModuleResourceView.TabIndex = 5;
+            this.lblModuleResourceView.Text = "Module Resource View";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(210)))), ((int)(((byte)(236)))));
             this.ClientSize = new System.Drawing.Size(800, 480);
-            this.Controls.Add(this.btnMinimize);
-            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlMainTop);
+            this.Controls.Add(this.panel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Main";
             this.Text = "Main";
-            this.panel1.ResumeLayout(false);
+            this.pnlMainTop.ResumeLayout(false);
+            this.pnlMainTop.PerformLayout();
             this.pnlModuleOptions.ResumeLayout(false);
             this.pnlStudentOptions.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -1268,54 +1455,44 @@ namespace PRG282Project.Presentation
             this.pnlAddstudent.ResumeLayout(false);
             this.pnlAddstudent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlMainTop;
         private System.Windows.Forms.Button btnInfo;
         private System.Windows.Forms.Button btnStudent;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel pnlAddstudent;
-        private System.Windows.Forms.Label lblDateOfBirth;
-        private System.Windows.Forms.TextBox txtStudentsurname;
-        private System.Windows.Forms.Label lblStudentsurname;
-        private System.Windows.Forms.TextBox txtStudentName;
-        private System.Windows.Forms.Label lblSudentName;
-        private System.Windows.Forms.TextBox txtStudentNumber;
-        private System.Windows.Forms.Label lblStudentNumber;
+        private System.Windows.Forms.Label lblNewDateOfBirth;
+        private System.Windows.Forms.Label lblNewStudentsurname;
+        private System.Windows.Forms.Label lblNewSudentName;
+        private System.Windows.Forms.Label lbNewlStudentNumber;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnRegisterStudent;
-        private System.Windows.Forms.Label lblModule1;
-        private System.Windows.Forms.ComboBox cmbModule1;
-        private System.Windows.Forms.TextBox txtPhone;
-        private System.Windows.Forms.Label lblPhone;
+        private System.Windows.Forms.Label lblNewPhone;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox txtAddress;
-        private System.Windows.Forms.Label lbltxtAddress;
+        private System.Windows.Forms.Label lblNewAddress;
         private System.Windows.Forms.RadioButton rbtOther;
-        private System.Windows.Forms.DateTimePicker pcrDateOfBirth;
-        private System.Windows.Forms.Label lblGender;
+        private System.Windows.Forms.Label lbNewlGender;
         private System.Windows.Forms.RadioButton rbtFemale;
         private System.Windows.Forms.RadioButton rbtMale;
         private System.Windows.Forms.Panel pnlAddmodule;
         private System.Windows.Forms.Label lblModulecode;
         private System.Windows.Forms.Panel pnlManageStudents;
-        private System.Windows.Forms.TextBox txtSearchstudent;
+        private System.Windows.Forms.TextBox txtSearchStudent;
         private System.Windows.Forms.Button btnDeletestudent;
         private System.Windows.Forms.Button btnSearchStudent;
         private System.Windows.Forms.Button btnUpdatestudent;
         private System.Windows.Forms.DataGridView dgvStudents;
         private System.Windows.Forms.Panel pnlManageModules;
-        private System.Windows.Forms.TextBox txtSearchmodule;
-        private System.Windows.Forms.Button btnDeleteModule;
-        private System.Windows.Forms.Button btnUpdateModule;
-        private System.Windows.Forms.Button btnSearchModule;
         private System.Windows.Forms.DataGridView dgvmodules;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblNewModuleRegestration;
         private System.Windows.Forms.TextBox txtModuledescription;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtModulecode;
@@ -1334,34 +1511,58 @@ namespace PRG282Project.Presentation
         private System.Windows.Forms.Button btnManageModule;
         private System.Windows.Forms.Button btnaddmodule;
         private System.Windows.Forms.Button btnModules;
-        private System.Windows.Forms.Label lblModuleAmount;
-        private System.Windows.Forms.ComboBox cmbModule6;
-        private System.Windows.Forms.ComboBox cmbModule5;
-        private System.Windows.Forms.ComboBox cmbModule4;
-        private System.Windows.Forms.ComboBox cmbModule3;
-        private System.Windows.Forms.ComboBox cmbModule2;
-        private System.Windows.Forms.ComboBox cmbModuleAmount;
-        private System.Windows.Forms.Label lblModule6;
-        private System.Windows.Forms.Label lblModule5;
-        private System.Windows.Forms.Label lblModule4;
-        private System.Windows.Forms.Label lblModule3;
-        private System.Windows.Forms.Label lblModule2;
         private System.Windows.Forms.Button btnAddImage;
-        private System.Windows.Forms.RadioButton rbnSearchUsingStudentNo;
-        private System.Windows.Forms.RadioButton rbnSearchUsingName;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label lblSearchUsing;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtManPhones;
+        private System.Windows.Forms.Label lblManPhones;
+        private System.Windows.Forms.TextBox txtManAddress;
+        private System.Windows.Forms.Label lblManAddress;
+        private System.Windows.Forms.DateTimePicker txtManDateOfBirth;
+        private System.Windows.Forms.Label lblManDateOfBirth;
+        private System.Windows.Forms.TextBox txtManStundentSurname;
+        private System.Windows.Forms.Label lblManStundentSurname;
+        private System.Windows.Forms.TextBox txtManStudentsName;
+        private System.Windows.Forms.Label lblManStudentsName;
+        private System.Windows.Forms.TextBox txtManStudentsNumber;
+        private System.Windows.Forms.Label lblManStudentsNumber;
         private System.Windows.Forms.Label lblManageStudents;
+        private System.Windows.Forms.Label lblManSearchStudentNumber;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btnModulesExtra;
+        private System.Windows.Forms.Button btnStudentsExtra;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnViewAll;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ListBox lstSelectModules;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label lblStudentModules;
+        private System.Windows.Forms.Label lblCurrentStudent;
+        private System.Windows.Forms.Label lblStudentManagement;
+        private System.Windows.Forms.Button btnAddResource;
+        private System.Windows.Forms.Label lblSearchModule;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblModuleManagement;
+        private System.Windows.Forms.ListBox lsbMouleResources;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Label lblAddModuleResource;
+        private System.Windows.Forms.ListBox lsbNewMouleResources;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Label lblModuleResources;
+        private System.Windows.Forms.Button btnModuleDelete;
+        private System.Windows.Forms.Button btnModuleUpdate;
+        private System.Windows.Forms.Button btnViewAllModules;
+        private System.Windows.Forms.Label lblModuleResourceView;
     }
 }

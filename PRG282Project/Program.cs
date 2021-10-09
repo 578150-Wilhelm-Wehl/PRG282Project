@@ -53,7 +53,7 @@ namespace PRG282Project
             }
             catch (Exception)
             {
-
+                // create custom exeption
                 MessageBox.Show("Problem occured while creating database");
             }
             
@@ -68,6 +68,7 @@ namespace PRG282Project
                 }
                 catch (Exception ex)
                 {
+                    // create custom exeption
                     MessageBox.Show(ex.Message);
                 }
                 finally

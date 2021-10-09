@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Logic\DataHandler.cs" />
+    <Compile Include="Logic\Exeptions.cs" />
     <Compile Include="Logic\User.cs" />
     <Compile Include="Presentation\Login.cs">
       <SubType>Form</SubType>
