@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data Access\FileHandler.cs" />
     <Compile Include="Logic\DataHandler.cs" />
     <Compile Include="Logic\Exeptions.cs" />
     <Compile Include="Logic\User.cs" />
@@ -92,7 +93,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data Access\" />
     <Folder Include="Database\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

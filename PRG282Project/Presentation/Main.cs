@@ -33,33 +33,83 @@ namespace PRG282Project.Presentation
         private void btnStudent_Click(object sender, EventArgs e)
         {
             pnlModuleOptions.Visible = false;
-            pnlStudentOptions.Visible = true;
+            if (pnlStudentOptions.Visible == false)
+            {
+                pnlStudentOptions.Visible = true;
+            }
+            else
+            {
+                pnlStudentOptions.Visible = false;
+            }
+
         }
 
         private void btnModules_Click(object sender, EventArgs e)
         {
             pnlStudentOptions.Visible = false;
-            pnlModuleOptions.Visible = true;
+            if (pnlModuleOptions.Visible == false)
+            {
+                pnlModuleOptions.Visible = true;
+            }
+            else
+            {
+                pnlModuleOptions.Visible = false;
+            }
         }
 
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
-            handler.MainPanelManger(pnlAddstudent, pnlManageStudents, pnlAddmodule, pnlManageModules, pnlSpare1, pnlSpare2);
+            handler.MainPanelManger(pnlAddstudent, pnlManageStudents, pnlAddmodule, pnlManageModules, pnlInfo, pnlSpare1);
         }
 
         private void btnManagestudents_Click(object sender, EventArgs e)
         {
-            handler.MainPanelManger(pnlManageStudents, pnlAddstudent, pnlAddmodule, pnlManageModules, pnlSpare1, pnlSpare2);
+            handler.MainPanelManger(pnlManageStudents, pnlAddstudent, pnlAddmodule, pnlManageModules, pnlInfo, pnlSpare1);
         }
 
         private void btnaddmodule_Click(object sender, EventArgs e)
         {
-            handler.MainPanelManger(pnlAddmodule, pnlManageStudents, pnlAddstudent,  pnlManageModules, pnlSpare1, pnlSpare2);
+            handler.MainPanelManger(pnlAddmodule, pnlManageStudents, pnlAddstudent,  pnlManageModules, pnlInfo, pnlSpare1);
         }
 
         private void btnManageModule_Click(object sender, EventArgs e)
         {
-            handler.MainPanelManger(pnlManageModules, pnlAddmodule, pnlManageStudents, pnlAddstudent, pnlSpare1, pnlSpare2);
+            handler.MainPanelManger(pnlManageModules, pnlAddmodule, pnlManageStudents, pnlAddstudent, pnlInfo, pnlSpare1);
+        }
+
+        private void btnInfo_Click(object sender, EventArgs e)
+        {
+            handler.MainPanelManger(pnlInfo, pnlManageModules, pnlAddmodule, pnlManageStudents, pnlAddstudent, pnlSpare1);
+        }
+
+        private void button1_MouseHover(object sender, EventArgs e)
+        {
+            lblStudentCount.Visible = true;
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            lblStudentCount.Visible = false;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("You have no messages");
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCurrentStudent_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlAddstudent_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
