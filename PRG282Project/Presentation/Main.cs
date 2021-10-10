@@ -122,46 +122,42 @@ namespace PRG282Project.Presentation
 
         private void btnRegisterStudent_Click(object sender, EventArgs e)
         {
-            //string gender = null;
-            //if (rbtMale.Checked.Equals(true))
-            //{
-            //    gender = "Male";
-            //}
-            //else if (rbtFemale.Checked.Equals(true))
-            //{
-            //    gender = "Female";
-            //}
-            //else if (rbtOther.Checked.Equals(true))
-            //{
-            //    gender = "Other";
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Please select a Gender");
-            //}
+            string gender = null;
+            if (rbtMale.Checked.Equals(true))
+            {
+                gender = "Male";
+            }
+            else if (rbtFemale.Checked.Equals(true))
+            {
+                gender = "Female";
+            }
+            else if (rbtOther.Checked.Equals(true))
+            {
+                gender = "Other";
+            }
+            else
+            {
+                MessageBox.Show("Please select a Gender");
+            }
 
-            //Fhandler.InsertStudent(txtManStudentsName.Text, txtManStundentSurname.Text,  , txtManDateOfBirth.Text, gender, txtManPhones.Text, txtManAddress.Text);
+            Fhandler.InsertStudent(txtStudentName.Text, txtStudentSurname.Text, picbxStudentImage.Image , txtDateOfBirth.Text, gender, txtPhoneNumber.Text, txtAddress.Text);
 
         }
 
         private void btnAddImage_Click(object sender, EventArgs e)
         {
-            // Image image = null;
-            //pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            // // dh.image1();
-            // using (OpenFileDialog odf = new OpenFileDialog() { Filter = "JPG|*.jpg", ValidateNames = true, Multiselect = false })
-
-            // {
-            //     if (odf.ShowDialog() == DialogResult.OK)
-            //        filename = odf.FileName;
-            //     MessageBox.Show("@" + "(" + filename + ")");
-
-            //     pictureBox1.Image = Image.FromFile(filename);
-            //     textBox2.Text = Path.GetFileName(filename);
-            //     textBox1.Text = File.GetCreationTime(filename).ToString();
-            // }
-        }
+            
+                OpenFileDialog open = new OpenFileDialog();
+                // image filters
+                open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; .bmp)|.jpg; *.jpeg; *.gif; *.bmp";
+                if (open.ShowDialog() == DialogResult.OK)
+                {
+                    // display image in picture box
+                    picbxStudentImage.Image = new Bitmap(open.FileName);
+                    picbxStudentImage.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+            }
+        
 
         private void dgvStudents_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -236,6 +232,30 @@ namespace PRG282Project.Presentation
         private void dgvStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnUpdatestudent_Click(object sender, EventArgs e)
+        {
+            string gender = null;
+            if (rbtMale.Checked.Equals(true))
+            {
+                gender = "Male";
+            }
+            else if (rbtFemale.Checked.Equals(true))
+            {
+                gender = "Female";
+            }
+            else if (rbtOther.Checked.Equals(true))
+            {
+                gender = "Other";
+            }
+
+            Fhandler.UpdateStudent(txtStudentName.Text, txtStudentSurname.Text, Convert.ToDateTime(txtDateOfBirth.Text), gender, txtPhoneNumber.Text, txtAddress.Text, Convert.ToInt32(txtStudentNumber.Text));
+        }
+
+        private void btnDeletestudent_Click(object sender, EventArgs e)
+        {
+            Fhandler.DeleteModules(txtStudentNumber.Text);
         }
     }
 }

@@ -109,11 +109,11 @@ namespace PRG282Project.Data_Access
             }
         }
 
-        public void InsertStudent(string StudentName,string StudentSurname, Image StudentImage, string DateofBirth , string Gender,string phonenumber, string address)       {
+        public void InsertStudent(string StudentName, string StudentSurname, Image StudentImage, string DateofBirth, string Gender, string phonenumber, string address) {
             SqlConnection cn = new SqlConnection(connect);
             cn.Open();
 
-            string query = @"INSERT INTO tblStudents( StundentName, StudentSurname, StudentImage, DateOfBirth, Gender, PhoneNumber, StudentAddress)VALUES ('" + StudentName + "','" +StudentSurname + "','" + StudentImage + "','" + DateofBirth +"','" +Gender+ "','" + phonenumber + "','" + address + "')";
+            string query = @"INSERT INTO tblStudents( StundentName, StudentSurname, StudentImage, DateOfBirth, Gender, PhoneNumber, StudentAddress)VALUES ('" + StudentName + "','" + StudentSurname + "','" + StudentImage + "','" + DateofBirth + "','" + Gender + "','" + phonenumber + "','" + address + "')";
             SqlCommand cmd = new SqlCommand(query, cn);
 
             int rows = cmd.ExecuteNonQuery();
@@ -127,17 +127,37 @@ namespace PRG282Project.Data_Access
                 MessageBox.Show("Failed");
             }
         }
-    
+
 
         public void UpdateModules()
         {
 
         }
 
-        public void UpdateStudent()
+
+        public void UpdateStudent(string Name, string Surname, DateTime DateOfBirth, string gender, string phonenumber, string address, int studentnumber)
         {
 
+            string updatequery = "UPDATE tblStudents SET StundentName = '" + Name + "' ,StudentSurname = '" + Surname + "'  , DateOfBirth= '" + DateOfBirth + "' ,Gender= '" + gender + "',PhoneNumber='" + phonenumber + "',StudentAddress= '" + address + "' WHERE StudentNumber = '" + studentnumber + "'";
+            SqlConnection cn = new SqlConnection(connect);
+            cn.Open();
+
+
+            SqlCommand cmd = new SqlCommand(updatequery, cn);
+
+            int rows = cmd.ExecuteNonQuery();
+
+
+            if (rows > 0)
+            {
+                MessageBox.Show("Student updated successfully");
+            }
+            else
+            {
+                MessageBox.Show("Failed to update student information");
+            }
         }
+    
         public void DeleteModules(string ModuleID)
         {
             string DeleteBridgequery = "DELETE FROM tblBridge WHERE ModuleID = " + ModuleID;
@@ -164,10 +184,26 @@ namespace PRG282Project.Data_Access
             }
         }
 
-        public void DeleteStudent()
+        public void DeleteStudent(string studentnumber)
         {
+            SqlConnection cn = new SqlConnection(connect);
+            cn.Open();
 
+            string query = @"DELETE  FROM tblStudents WHERE StudentNumber= '" + studentnumber + "'";
+            SqlCommand cmd = new SqlCommand(query, cn);
+
+            int rows = cmd.ExecuteNonQuery();
+
+            if (rows > 0)
+            {
+                MessageBox.Show("Student Deleted");
+            }
+            else
+            {
+                MessageBox.Show("Student deletion failed");
+            }
         }
+    
 
         public DataTable getStudents()
         {
