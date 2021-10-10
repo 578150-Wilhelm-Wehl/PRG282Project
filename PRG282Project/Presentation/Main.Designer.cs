@@ -145,6 +145,7 @@ namespace PRG282Project.Presentation
             this.lblAmountOfStudents = new System.Windows.Forms.Label();
             this.lblStudentCount = new System.Windows.Forms.Label();
             this.lblStudentManagement = new System.Windows.Forms.Label();
+            this.lsbStudentModules = new System.Windows.Forms.ListBox();
             this.pnlMainTop.SuspendLayout();
             this.pnlModuleOptions.SuspendLayout();
             this.pnlStudentOptions.SuspendLayout();
@@ -914,6 +915,7 @@ namespace PRG282Project.Presentation
             // pnlManageStudents
             // 
             this.pnlManageStudents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(242)))), ((int)(((byte)(248)))));
+            this.pnlManageStudents.Controls.Add(this.lsbStudentModules);
             this.pnlManageStudents.Controls.Add(this.pnlSplitter2);
             this.pnlManageStudents.Controls.Add(this.picManStudent);
             this.pnlManageStudents.Controls.Add(this.lblManageStudents);
@@ -1230,7 +1232,7 @@ namespace PRG282Project.Presentation
             this.dgvStudents.Name = "dgvStudents";
             this.dgvStudents.RowHeadersWidth = 51;
             this.dgvStudents.RowTemplate.Height = 24;
-            this.dgvStudents.Size = new System.Drawing.Size(349, 244);
+            this.dgvStudents.Size = new System.Drawing.Size(349, 137);
             this.dgvStudents.TabIndex = 0;
             this.dgvStudents.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudents_CellClick);
             this.dgvStudents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudents_CellContentClick);
@@ -1653,6 +1655,14 @@ namespace PRG282Project.Presentation
             this.lblStudentManagement.TabIndex = 23;
             this.lblStudentManagement.Text = "Student Management";
             // 
+            // lsbStudentModules
+            // 
+            this.lsbStudentModules.FormattingEnabled = true;
+            this.lsbStudentModules.Location = new System.Drawing.Point(258, 314);
+            this.lsbStudentModules.Name = "lsbStudentModules";
+            this.lsbStudentModules.Size = new System.Drawing.Size(349, 95);
+            this.lsbStudentModules.TabIndex = 42;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1811,5 +1821,6 @@ namespace PRG282Project.Presentation
         private System.Windows.Forms.Label lblStudentCount;
         private System.Windows.Forms.Panel pnlSpare1;
         private System.Windows.Forms.Label lblStudentImg;
+        private System.Windows.Forms.ListBox lsbStudentModules;
     }
 }
