@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using PRG282Project.Data_Access;
+using System.Drawing.Imaging;
+using System.Drawing;
 
 namespace PRG282Project.Data_Access
 {
@@ -61,7 +64,7 @@ namespace PRG282Project.Data_Access
                 int rowsafected = sqlCommand.ExecuteNonQuery();
                 if (rowsafected > 0)
                 {
-                   // add exeption MessageBox.Show("Client has been added");
+                    // add exeption MessageBox.Show("Client has been added");
                 }
                 else
                 {
@@ -79,10 +82,25 @@ namespace PRG282Project.Data_Access
             }
         }
 
-        public void InsertStudent()
-        {
+        public void InsertStudent(string StudentName,string StudentSurname, Image StudentImage, string DateofBirth , string Gender,string phonenumber, string address)       {
+            SqlConnection cn = new SqlConnection(connect);
+            cn.Open();
 
+            string query = @"INSERT INTO tblStudents( StundentName, StudentSurname, StudentImage, DateOfBirth, Gender, PhoneNumber, StudentAddress)VALUES ('" + StudentName + "','" +StudentSurname + "','" + StudentImage + "','" + DateofBirth +"','" +Gender+ "','" + phonenumber + "','" + address + "')";
+            SqlCommand cmd = new SqlCommand(query, cn);
+
+            int rows = cmd.ExecuteNonQuery();
+
+            if (rows > 0)
+            {
+                MessageBox.Show("Inserted");
+            }
+            else
+            {
+                MessageBox.Show("Failed");
+            }
         }
+    
 
         public void UpdateModules()
         {
@@ -101,6 +119,17 @@ namespace PRG282Project.Data_Access
         public void DeleteStudent()
         {
 
+        }
+
+        public DataTable getStudents()
+        {
+            string AllStudentsquery = @"SELECT * FROM tblStudent";
+            SqlDataAdapter adapter = new SqlDataAdapter(AllStudentsquery, connect);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+          
+            return dt;
+            
         }
     }
 }

@@ -8,13 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PRG282Project.Logic;
+using PRG282Project.Data_Access;
+using System.IO;
+
+
 
 namespace PRG282Project.Presentation
 {
     public partial class Main : Form
     {
-        DataHandler handler = new DataHandler();
 
+        DataHandler handler = new DataHandler();
+        FileHandler Fhandler = new FileHandler();
+        //string filename;
         public Main()
         {
             InitializeComponent();
@@ -69,7 +75,7 @@ namespace PRG282Project.Presentation
 
         private void btnaddmodule_Click(object sender, EventArgs e)
         {
-            handler.MainPanelManger(pnlAddmodule, pnlManageStudents, pnlAddstudent,  pnlManageModules, pnlInfo, pnlSpare1);
+            handler.MainPanelManger(pnlAddmodule, pnlManageStudents, pnlAddstudent, pnlManageModules, pnlInfo, pnlSpare1);
         }
 
         private void btnManageModule_Click(object sender, EventArgs e)
@@ -99,7 +105,7 @@ namespace PRG282Project.Presentation
 
         private void Main_Load(object sender, EventArgs e)
         {
-
+            dgvStudents.DataSource = Fhandler.GetStudents();
         }
 
         private void lblCurrentStudent_Click(object sender, EventArgs e)
@@ -110,6 +116,53 @@ namespace PRG282Project.Presentation
         private void pnlAddstudent_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnRegisterStudent_Click(object sender, EventArgs e)
+        {
+            //string gender = null;
+            //if (rbtMale.Checked.Equals(true))
+            //{
+            //    gender = "Male";
+            //}
+            //else if (rbtFemale.Checked.Equals(true))
+            //{
+            //    gender = "Female";
+            //}
+            //else if (rbtOther.Checked.Equals(true))
+            //{
+            //    gender = "Other";
+            //}
+
+
+            //Fhandler.InsertStudent(txtManStudentsName.Text, txtManStundentSurname.Text,  , txtManDateOfBirth.Text, gender, txtManPhones.Text, txtManAddress.Text);
+
+
+
+        }
+
+        private void btnAddImage_Click(object sender, EventArgs e)
+        {
+           // Image image = null;
+           //pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+           // // dh.image1();
+           // using (OpenFileDialog odf = new OpenFileDialog() { Filter = "JPG|*.jpg", ValidateNames = true, Multiselect = false })
+               
+           // {
+           //     if (odf.ShowDialog() == DialogResult.OK)
+           //        filename = odf.FileName;
+           //     MessageBox.Show("@" + "(" + filename + ")");
+
+           //     pictureBox1.Image = Image.FromFile(filename);
+           //     textBox2.Text = Path.GetFileName(filename);
+           //     textBox1.Text = File.GetCreationTime(filename).ToString();
+           // }
+        }
+
+        private void dgvStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }
