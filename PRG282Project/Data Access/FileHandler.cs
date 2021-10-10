@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace PRG282Project.Data_Access
 {
@@ -14,14 +17,22 @@ namespace PRG282Project.Data_Access
 
         }
 
-        public void GetModules()
+        public DataTable GetModules()
         {
-
+            string ViewAllClientsQuery = "SELECT * FROM tblModule";
+            SqlDataAdapter sqlData = new SqlDataAdapter(ViewAllClientsQuery, connect);
+            DataTable DataTableModules = new DataTable();
+            sqlData.Fill(DataTableModules);
+            return DataTableModules;
         }
 
-        public void GetStudents()
+        public DataTable GetStudents()
         {
-
+            string ViewAllClientsQuery = "SELECT * FROM tblStudents";
+            SqlDataAdapter sqlData = new SqlDataAdapter(ViewAllClientsQuery, connect);
+            DataTable DataTableStudents = new DataTable();
+            sqlData.Fill(DataTableStudents);
+            return DataTableStudents;
         }
 
         public void GetStudentModules()
