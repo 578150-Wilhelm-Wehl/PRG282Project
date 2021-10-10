@@ -111,17 +111,20 @@ namespace PRG282Project.Data_Access
         {
 
         }
-        public void DeleteModules(string ModuleCode)
+        public void DeleteModules(string ModuleID)
         {
-            string DeleteBridgeModulequery = @"DELETE FROM tblBridge INNER JOIN tblModule ON tblBridge.ModuleID = tblModule.ModuleID WHERE tblModule.ModuleID = '" + ModuleCode + "'";
-            string DeleteModulesquery = @"DELETE FROM tblModule WHERE ModuleCode = '" + ModuleCode + "'";
+            string DeleteBridgequery = "DELETE FROM tblBridge WHERE ModuleID = " + ModuleID;
+            string DeleteModulesquery = "DELETE FROM tblModule WHERE ModuleID = " + ModuleID;
+            string DeleteResourcequery = "DELETE FROM tblResources WHERE ModuleID = " + ModuleID;
             SqlConnection sqlconnect = new SqlConnection(connect);
-            SqlCommand SQLBridgeCommand = new SqlCommand(DeleteBridgeModulequery, sqlconnect);
+            SqlCommand SQLBridgeCommand = new SqlCommand(DeleteBridgequery, sqlconnect);
+            SqlCommand SQResourceCommand = new SqlCommand(DeleteResourcequery, sqlconnect);
             SqlCommand SQLModuleCommand = new SqlCommand(DeleteModulesquery, sqlconnect);
             try
             {
                 sqlconnect.Open();
                 SQLBridgeCommand.ExecuteNonQuery();
+                SQResourceCommand.ExecuteNonQuery();
                 SQLModuleCommand.ExecuteNonQuery();
             }
             catch (Exception ex)

@@ -55,12 +55,12 @@ namespace PRG282Project.Presentation
             this.lblDevTeam = new System.Windows.Forms.Label();
             this.pnlManageModules = new System.Windows.Forms.Panel();
             this.lblSearchModuleCode = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.txtManModuleSearch = new System.Windows.Forms.TextBox();
             this.btnModuleDelete = new System.Windows.Forms.Button();
             this.btnModuleUpdate = new System.Windows.Forms.Button();
             this.btnViewAllModules = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.txtManModuleDescript = new System.Windows.Forms.TextBox();
+            this.txtManModuleDescription = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtManModuleCode = new System.Windows.Forms.TextBox();
             this.txtManModuleName = new System.Windows.Forms.TextBox();
@@ -69,7 +69,7 @@ namespace PRG282Project.Presentation
             this.lblModuleManagement = new System.Windows.Forms.Label();
             this.lsbMouleResources = new System.Windows.Forms.ListBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtManModuleAddResource = new System.Windows.Forms.TextBox();
             this.dgvmodules = new System.Windows.Forms.DataGridView();
             this.lblModuleResourceView = new System.Windows.Forms.Label();
             this.lblAddModuleResource = new System.Windows.Forms.Label();
@@ -79,12 +79,12 @@ namespace PRG282Project.Presentation
             this.btnAddResource = new System.Windows.Forms.Button();
             this.btnRegisterModule = new System.Windows.Forms.Button();
             this.lblNewModuleRegestration = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.txtModuledescription = new System.Windows.Forms.TextBox();
+            this.txtNewModuleResource = new System.Windows.Forms.TextBox();
+            this.txtNewModuleDescription = new System.Windows.Forms.TextBox();
             this.lblModuleResources = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtModulecode = new System.Windows.Forms.TextBox();
-            this.txtModuleName = new System.Windows.Forms.TextBox();
+            this.txtNewModulecode = new System.Windows.Forms.TextBox();
+            this.txtNewModuleName = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.lblModulecode = new System.Windows.Forms.Label();
             this.pnlManageStudents = new System.Windows.Forms.Panel();
@@ -146,6 +146,8 @@ namespace PRG282Project.Presentation
             this.lblAmountOfStudents = new System.Windows.Forms.Label();
             this.lblStudentCount = new System.Windows.Forms.Label();
             this.lblStudentManagement = new System.Windows.Forms.Label();
+            this.txtManModuleID = new System.Windows.Forms.TextBox();
+            this.lblManModuleID = new System.Windows.Forms.Label();
             this.pnlMainTop.SuspendLayout();
             this.pnlModuleOptions.SuspendLayout();
             this.pnlStudentOptions.SuspendLayout();
@@ -502,21 +504,23 @@ namespace PRG282Project.Presentation
             // 
             this.pnlManageModules.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(242)))), ((int)(((byte)(248)))));
             this.pnlManageModules.Controls.Add(this.lblSearchModuleCode);
-            this.pnlManageModules.Controls.Add(this.textBox12);
+            this.pnlManageModules.Controls.Add(this.txtManModuleSearch);
             this.pnlManageModules.Controls.Add(this.btnModuleDelete);
             this.pnlManageModules.Controls.Add(this.btnModuleUpdate);
             this.pnlManageModules.Controls.Add(this.btnViewAllModules);
             this.pnlManageModules.Controls.Add(this.button3);
-            this.pnlManageModules.Controls.Add(this.txtManModuleDescript);
+            this.pnlManageModules.Controls.Add(this.txtManModuleDescription);
             this.pnlManageModules.Controls.Add(this.label3);
+            this.pnlManageModules.Controls.Add(this.txtManModuleID);
             this.pnlManageModules.Controls.Add(this.txtManModuleCode);
             this.pnlManageModules.Controls.Add(this.txtManModuleName);
             this.pnlManageModules.Controls.Add(this.label4);
+            this.pnlManageModules.Controls.Add(this.lblManModuleID);
             this.pnlManageModules.Controls.Add(this.label5);
             this.pnlManageModules.Controls.Add(this.lblModuleManagement);
             this.pnlManageModules.Controls.Add(this.lsbMouleResources);
             this.pnlManageModules.Controls.Add(this.button2);
-            this.pnlManageModules.Controls.Add(this.textBox8);
+            this.pnlManageModules.Controls.Add(this.txtManModuleAddResource);
             this.pnlManageModules.Controls.Add(this.dgvmodules);
             this.pnlManageModules.Controls.Add(this.lblModuleResourceView);
             this.pnlManageModules.Controls.Add(this.lblAddModuleResource);
@@ -541,16 +545,16 @@ namespace PRG282Project.Presentation
             this.lblSearchModuleCode.TabIndex = 36;
             this.lblSearchModuleCode.Text = "Search Module";
             // 
-            // textBox12
+            // txtManModuleSearch
             // 
-            this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox12.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
-            this.textBox12.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox12.Location = new System.Drawing.Point(5, 175);
-            this.textBox12.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(194, 18);
-            this.textBox12.TabIndex = 35;
+            this.txtManModuleSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtManModuleSearch.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.txtManModuleSearch.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtManModuleSearch.Location = new System.Drawing.Point(5, 175);
+            this.txtManModuleSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.txtManModuleSearch.Name = "txtManModuleSearch";
+            this.txtManModuleSearch.Size = new System.Drawing.Size(194, 18);
+            this.txtManModuleSearch.TabIndex = 35;
             // 
             // btnModuleDelete
             // 
@@ -576,6 +580,7 @@ namespace PRG282Project.Presentation
             this.btnModuleUpdate.TabIndex = 8;
             this.btnModuleUpdate.Text = "Update";
             this.btnModuleUpdate.UseVisualStyleBackColor = true;
+            this.btnModuleUpdate.Click += new System.EventHandler(this.btnModuleUpdate_Click);
             // 
             // btnViewAllModules
             // 
@@ -605,16 +610,16 @@ namespace PRG282Project.Presentation
             this.button3.Text = "Search ";
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // txtManModuleDescript
+            // txtManModuleDescription
             // 
-            this.txtManModuleDescript.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtManModuleDescript.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
-            this.txtManModuleDescript.Location = new System.Drawing.Point(418, 183);
-            this.txtManModuleDescript.Margin = new System.Windows.Forms.Padding(2);
-            this.txtManModuleDescript.Multiline = true;
-            this.txtManModuleDescript.Name = "txtManModuleDescript";
-            this.txtManModuleDescript.Size = new System.Drawing.Size(199, 68);
-            this.txtManModuleDescript.TabIndex = 33;
+            this.txtManModuleDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtManModuleDescription.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.txtManModuleDescription.Location = new System.Drawing.Point(418, 183);
+            this.txtManModuleDescription.Margin = new System.Windows.Forms.Padding(2);
+            this.txtManModuleDescription.Multiline = true;
+            this.txtManModuleDescription.Name = "txtManModuleDescription";
+            this.txtManModuleDescription.Size = new System.Drawing.Size(199, 68);
+            this.txtManModuleDescription.TabIndex = 33;
             // 
             // label3
             // 
@@ -705,15 +710,15 @@ namespace PRG282Project.Presentation
             this.button2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // textBox8
+            // txtManModuleAddResource
             // 
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox8.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(416, 412);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(153, 22);
-            this.textBox8.TabIndex = 6;
+            this.txtManModuleAddResource.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtManModuleAddResource.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtManModuleAddResource.Location = new System.Drawing.Point(416, 412);
+            this.txtManModuleAddResource.Margin = new System.Windows.Forms.Padding(2);
+            this.txtManModuleAddResource.Name = "txtManModuleAddResource";
+            this.txtManModuleAddResource.Size = new System.Drawing.Size(153, 22);
+            this.txtManModuleAddResource.TabIndex = 6;
             // 
             // dgvmodules
             // 
@@ -757,12 +762,12 @@ namespace PRG282Project.Presentation
             this.pnlAddmodule.Controls.Add(this.btnAddResource);
             this.pnlAddmodule.Controls.Add(this.btnRegisterModule);
             this.pnlAddmodule.Controls.Add(this.lblNewModuleRegestration);
-            this.pnlAddmodule.Controls.Add(this.textBox7);
-            this.pnlAddmodule.Controls.Add(this.txtModuledescription);
+            this.pnlAddmodule.Controls.Add(this.txtNewModuleResource);
+            this.pnlAddmodule.Controls.Add(this.txtNewModuleDescription);
             this.pnlAddmodule.Controls.Add(this.lblModuleResources);
             this.pnlAddmodule.Controls.Add(this.label11);
-            this.pnlAddmodule.Controls.Add(this.txtModulecode);
-            this.pnlAddmodule.Controls.Add(this.txtModuleName);
+            this.pnlAddmodule.Controls.Add(this.txtNewModulecode);
+            this.pnlAddmodule.Controls.Add(this.txtNewModuleName);
             this.pnlAddmodule.Controls.Add(this.label10);
             this.pnlAddmodule.Controls.Add(this.lblModulecode);
             this.pnlAddmodule.Dock = System.Windows.Forms.DockStyle.Top;
@@ -817,7 +822,6 @@ namespace PRG282Project.Presentation
             this.btnRegisterModule.TabIndex = 8;
             this.btnRegisterModule.Text = "Register";
             this.btnRegisterModule.UseVisualStyleBackColor = true;
-            this.btnRegisterModule.Click += new System.EventHandler(this.btnRegisterModule_Click);
             // 
             // lblNewModuleRegestration
             // 
@@ -830,26 +834,26 @@ namespace PRG282Project.Presentation
             this.lblNewModuleRegestration.TabIndex = 7;
             this.lblNewModuleRegestration.Text = "New Module Regestration";
             // 
-            // textBox7
+            // txtNewModuleResource
             // 
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(272, 67);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(293, 22);
-            this.textBox7.TabIndex = 6;
+            this.txtNewModuleResource.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNewModuleResource.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNewModuleResource.Location = new System.Drawing.Point(272, 67);
+            this.txtNewModuleResource.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNewModuleResource.Name = "txtNewModuleResource";
+            this.txtNewModuleResource.Size = new System.Drawing.Size(293, 22);
+            this.txtNewModuleResource.TabIndex = 6;
             // 
-            // txtModuledescription
+            // txtNewModuleDescription
             // 
-            this.txtModuledescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtModuledescription.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
-            this.txtModuledescription.Location = new System.Drawing.Point(8, 145);
-            this.txtModuledescription.Margin = new System.Windows.Forms.Padding(2);
-            this.txtModuledescription.Multiline = true;
-            this.txtModuledescription.Name = "txtModuledescription";
-            this.txtModuledescription.Size = new System.Drawing.Size(229, 150);
-            this.txtModuledescription.TabIndex = 6;
+            this.txtNewModuleDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNewModuleDescription.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.txtNewModuleDescription.Location = new System.Drawing.Point(8, 145);
+            this.txtNewModuleDescription.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNewModuleDescription.Multiline = true;
+            this.txtNewModuleDescription.Name = "txtNewModuleDescription";
+            this.txtNewModuleDescription.Size = new System.Drawing.Size(229, 150);
+            this.txtNewModuleDescription.TabIndex = 6;
             // 
             // lblModuleResources
             // 
@@ -873,25 +877,25 @@ namespace PRG282Project.Presentation
             this.label11.TabIndex = 5;
             this.label11.Text = "Module description";
             // 
-            // txtModulecode
+            // txtNewModulecode
             // 
-            this.txtModulecode.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtModulecode.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
-            this.txtModulecode.Location = new System.Drawing.Point(102, 70);
-            this.txtModulecode.Margin = new System.Windows.Forms.Padding(2);
-            this.txtModulecode.Name = "txtModulecode";
-            this.txtModulecode.Size = new System.Drawing.Size(135, 18);
-            this.txtModulecode.TabIndex = 4;
+            this.txtNewModulecode.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNewModulecode.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.txtNewModulecode.Location = new System.Drawing.Point(102, 70);
+            this.txtNewModulecode.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNewModulecode.Name = "txtNewModulecode";
+            this.txtNewModulecode.Size = new System.Drawing.Size(135, 18);
+            this.txtNewModulecode.TabIndex = 4;
             // 
-            // txtModuleName
+            // txtNewModuleName
             // 
-            this.txtModuleName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtModuleName.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
-            this.txtModuleName.Location = new System.Drawing.Point(102, 98);
-            this.txtModuleName.Margin = new System.Windows.Forms.Padding(2);
-            this.txtModuleName.Name = "txtModuleName";
-            this.txtModuleName.Size = new System.Drawing.Size(135, 18);
-            this.txtModuleName.TabIndex = 3;
+            this.txtNewModuleName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNewModuleName.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.txtNewModuleName.Location = new System.Drawing.Point(102, 98);
+            this.txtNewModuleName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNewModuleName.Name = "txtNewModuleName";
+            this.txtNewModuleName.Size = new System.Drawing.Size(135, 18);
+            this.txtNewModuleName.TabIndex = 3;
             // 
             // label10
             // 
@@ -1666,6 +1670,27 @@ namespace PRG282Project.Presentation
             this.lblStudentManagement.TabIndex = 23;
             this.lblStudentManagement.Text = "Student Management";
             // 
+            // txtManModuleID
+            // 
+            this.txtManModuleID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtManModuleID.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.txtManModuleID.Location = new System.Drawing.Point(558, 40);
+            this.txtManModuleID.Margin = new System.Windows.Forms.Padding(2);
+            this.txtManModuleID.Name = "txtManModuleID";
+            this.txtManModuleID.Size = new System.Drawing.Size(59, 18);
+            this.txtManModuleID.TabIndex = 31;
+            // 
+            // lblManModuleID
+            // 
+            this.lblManModuleID.AutoSize = true;
+            this.lblManModuleID.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblManModuleID.Location = new System.Drawing.Point(466, 40);
+            this.lblManModuleID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblManModuleID.Name = "lblManModuleID";
+            this.lblManModuleID.Size = new System.Drawing.Size(88, 17);
+            this.lblManModuleID.TabIndex = 28;
+            this.lblManModuleID.Text = "Module code";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1738,10 +1763,10 @@ namespace PRG282Project.Presentation
         private System.Windows.Forms.Panel pnlManageModules;
         private System.Windows.Forms.DataGridView dgvmodules;
         private System.Windows.Forms.Label lblNewModuleRegestration;
-        private System.Windows.Forms.TextBox txtModuledescription;
+        private System.Windows.Forms.TextBox txtNewModuleDescription;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtModulecode;
-        private System.Windows.Forms.TextBox txtModuleName;
+        private System.Windows.Forms.TextBox txtNewModulecode;
+        private System.Windows.Forms.TextBox txtNewModuleName;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblNewStudentReg;
         private System.Windows.Forms.Button btnRegisterModule;
@@ -1788,9 +1813,9 @@ namespace PRG282Project.Presentation
         private System.Windows.Forms.Label lblStudentManagement;
         private System.Windows.Forms.Button btnAddResource;
         private System.Windows.Forms.Label lblSearchModuleCode;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox txtManModuleSearch;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox txtManModuleDescript;
+        private System.Windows.Forms.TextBox txtManModuleDescription;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtManModuleCode;
         private System.Windows.Forms.TextBox txtManModuleName;
@@ -1799,10 +1824,10 @@ namespace PRG282Project.Presentation
         private System.Windows.Forms.Label lblModuleManagement;
         private System.Windows.Forms.ListBox lsbMouleResources;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtManModuleAddResource;
         private System.Windows.Forms.Label lblAddModuleResource;
         private System.Windows.Forms.ListBox lsbNewMouleResources;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtNewModuleResource;
         private System.Windows.Forms.Label lblModuleResources;
         private System.Windows.Forms.Button btnModuleDelete;
         private System.Windows.Forms.Button btnModuleUpdate;
@@ -1825,5 +1850,7 @@ namespace PRG282Project.Presentation
         private System.Windows.Forms.Panel pnlSpare1;
         private System.Windows.Forms.Label lblStudentImg;
         private System.Windows.Forms.ListBox lsbStudentModules;
+        private System.Windows.Forms.TextBox txtManModuleID;
+        private System.Windows.Forms.Label lblManModuleID;
     }
 }

@@ -135,6 +135,10 @@ namespace PRG282Project.Presentation
             //{
             //    gender = "Other";
             //}
+            //else
+            //{
+            //    MessageBox.Show("Please select a Gender");
+            //}
 
             //Fhandler.InsertStudent(txtManStudentsName.Text, txtManStundentSurname.Text,  , txtManDateOfBirth.Text, gender, txtManPhones.Text, txtManAddress.Text);
 
@@ -196,14 +200,10 @@ namespace PRG282Project.Presentation
             dgvStudents.Columns["StudentImage"].Visible = false;
         }
 
-        private void btnRegisterModule_Click(object sender, EventArgs e)
-        {
-            Fhandler.InsertModules(txtModulecode.Text, txtModuleName.Text, txtModuledescription.Text);
-        }
-
         private void btnModuleDelete_Click(object sender, EventArgs e)
         {
-            Fhandler.DeleteModules(txtManModuleCode.Text);
+            dgvmodules.DataSource = null;
+            Fhandler.DeleteModules(txtManModuleID.Text);
             dgvmodules.DataSource = Fhandler.GetModules();
         }
 
@@ -212,10 +212,16 @@ namespace PRG282Project.Presentation
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.dgvmodules.Rows[e.RowIndex];
+                txtManModuleID.Text = row.Cells["ModuleID"].Value.ToString();
                 txtManModuleCode.Text = row.Cells["ModuleCode"].Value.ToString();
                 txtManModuleName.Text = row.Cells["ModuleName"].Value.ToString(); ;
-                txtManModuleDescript.Text = row.Cells["ModuleDescription"].Value.ToString(); ;
+                txtManModuleDescription.Text = row.Cells["ModuleDescription"].Value.ToString(); ;
             }
+        }
+
+        private void btnModuleUpdate_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
