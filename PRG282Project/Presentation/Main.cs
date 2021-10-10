@@ -105,7 +105,9 @@ namespace PRG282Project.Presentation
 
         private void Main_Load(object sender, EventArgs e)
         {
+            dgvmodules.DataSource = Fhandler.GetModules();
             dgvStudents.DataSource = Fhandler.GetStudents();
+            dgvStudents.Columns["StudentImage"].Visible = false;
         }
 
         private void lblCurrentStudent_Click(object sender, EventArgs e)
@@ -157,25 +159,22 @@ namespace PRG282Project.Presentation
             // }
         }
 
-        private void dgvStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dgvStudents_SelectionChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void dgvStudents_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >=0)
             {
                 DataGridViewRow row = this.dgvStudents.Rows[e.RowIndex];
-                var data = (Byte[])(row.Cells["StudentImage"].Value);
-                var stream = new MemoryStream(data);
-                picManStudent.Image = Image.FromStream(stream);
-                picManStudent.SizeMode = PictureBoxSizeMode.StretchImage;
+                if (row.Cells["StudentImage"].Value != DBNull.Value)
+                {
+                    var data = (Byte[])(row.Cells["StudentImage"].Value);
+                    var stream = new MemoryStream(data);
+                    picManStudent.Image = Image.FromStream(stream);
+                    picManStudent.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+                else
+                {
+                    picManStudent.Image = null;
+                }
                 txtManStudentsNumber.Text = row.Cells["StudentNumber"].Value.ToString();
                 txtManStudentsName.Text = row.Cells["StundentName"].Value.ToString(); ;
                 txtManStundentSurname.Text = row.Cells["StudentSurname"].Value.ToString(); ;
@@ -183,6 +182,18 @@ namespace PRG282Project.Presentation
                 txtManPhones.Text = row.Cells["PhoneNumber"].Value.ToString(); ;
                 txtManAddress.Text = row.Cells["StudentAddress"].Value.ToString();
             }
+        }
+
+        private void btnSearchStudent_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void btnViewAll_Click(object sender, EventArgs e)
+        {
+            dgvStudents.DataSource = Fhandler.GetStudents();
+            dgvStudents.Columns["StudentImage"].Visible = false;
         }
     }
 }

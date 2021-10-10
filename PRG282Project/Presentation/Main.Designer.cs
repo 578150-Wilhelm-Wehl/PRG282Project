@@ -1183,6 +1183,7 @@ namespace PRG282Project.Presentation
             this.btnViewAll.TabIndex = 25;
             this.btnViewAll.Text = "View All";
             this.btnViewAll.UseVisualStyleBackColor = false;
+            this.btnViewAll.Click += new System.EventHandler(this.btnViewAll_Click);
             // 
             // btnDeletestudent
             // 
@@ -1210,6 +1211,7 @@ namespace PRG282Project.Presentation
             this.btnSearchStudent.TabIndex = 24;
             this.btnSearchStudent.Text = "Search ";
             this.btnSearchStudent.UseVisualStyleBackColor = false;
+            this.btnSearchStudent.Click += new System.EventHandler(this.btnSearchStudent_Click);
             // 
             // btnUpdatestudent
             // 
@@ -1235,8 +1237,6 @@ namespace PRG282Project.Presentation
             this.dgvStudents.Size = new System.Drawing.Size(349, 137);
             this.dgvStudents.TabIndex = 0;
             this.dgvStudents.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudents_CellClick);
-            this.dgvStudents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudents_CellContentClick);
-            this.dgvStudents.SelectionChanged += new System.EventHandler(this.dgvStudents_SelectionChanged);
             // 
             // pnlAddstudent
             // 
