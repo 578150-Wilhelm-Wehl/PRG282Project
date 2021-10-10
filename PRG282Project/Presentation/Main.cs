@@ -134,35 +134,55 @@ namespace PRG282Project.Presentation
             //    gender = "Other";
             //}
 
-
             //Fhandler.InsertStudent(txtManStudentsName.Text, txtManStundentSurname.Text,  , txtManDateOfBirth.Text, gender, txtManPhones.Text, txtManAddress.Text);
-
-
 
         }
 
         private void btnAddImage_Click(object sender, EventArgs e)
         {
-           // Image image = null;
-           //pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            // Image image = null;
+            //pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
 
-           // // dh.image1();
-           // using (OpenFileDialog odf = new OpenFileDialog() { Filter = "JPG|*.jpg", ValidateNames = true, Multiselect = false })
-               
-           // {
-           //     if (odf.ShowDialog() == DialogResult.OK)
-           //        filename = odf.FileName;
-           //     MessageBox.Show("@" + "(" + filename + ")");
+            // // dh.image1();
+            // using (OpenFileDialog odf = new OpenFileDialog() { Filter = "JPG|*.jpg", ValidateNames = true, Multiselect = false })
 
-           //     pictureBox1.Image = Image.FromFile(filename);
-           //     textBox2.Text = Path.GetFileName(filename);
-           //     textBox1.Text = File.GetCreationTime(filename).ToString();
-           // }
+            // {
+            //     if (odf.ShowDialog() == DialogResult.OK)
+            //        filename = odf.FileName;
+            //     MessageBox.Show("@" + "(" + filename + ")");
+
+            //     pictureBox1.Image = Image.FromFile(filename);
+            //     textBox2.Text = Path.GetFileName(filename);
+            //     textBox1.Text = File.GetCreationTime(filename).ToString();
+            // }
         }
 
         private void dgvStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
+        }
+
+        private void dgvStudents_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvStudents_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >=0)
+            {
+                DataGridViewRow row = this.dgvStudents.Rows[e.RowIndex];
+                var data = (Byte[])(row.Cells["StudentImage"].Value);
+                var stream = new MemoryStream(data);
+                picManStudent.Image = Image.FromStream(stream);
+                picManStudent.SizeMode = PictureBoxSizeMode.StretchImage;
+                txtManStudentsNumber.Text = row.Cells["StudentNumber"].Value.ToString();
+                txtManStudentsName.Text = row.Cells["StundentName"].Value.ToString(); ;
+                txtManStundentSurname.Text = row.Cells["StudentSurname"].Value.ToString(); ;
+                txtManDateOfBirth.Text = row.Cells["DateOfBirth"].Value.ToString(); ;
+                txtManPhones.Text = row.Cells["PhoneNumber"].Value.ToString(); ;
+                txtManAddress.Text = row.Cells["StudentAddress"].Value.ToString();
+            }
         }
     }
 }
