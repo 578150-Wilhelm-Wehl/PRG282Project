@@ -185,12 +185,21 @@ namespace PRG282Project.Presentation
                 txtManDateOfBirth.Text = row.Cells["DateOfBirth"].Value.ToString(); ;
                 txtManPhones.Text = row.Cells["PhoneNumber"].Value.ToString(); ;
                 txtManAddress.Text = row.Cells["StudentAddress"].Value.ToString();
+
+                lsbStudentModules.Items.Clear();
+
+                foreach (DataRow item in Fhandler.SearchStudentModules(txtManStudentsNumber.Text).Rows)
+                {
+                    string moduleList = item["ModuleCode"].ToString()+ "\t\t"+ item["ModuleName"].ToString()+ "\t\t"+ item["ModuleDescription"].ToString();
+                    lsbStudentModules.Items.Add(moduleList);
+                }
+
             }
         }
 
         private void btnSearchStudent_Click(object sender, EventArgs e)
         {
-
+            dgvStudents.DataSource = Fhandler.SearchStudents(txtSearchStudent.Text);
 
         }
 
@@ -220,6 +229,11 @@ namespace PRG282Project.Presentation
         }
 
         private void btnModuleUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

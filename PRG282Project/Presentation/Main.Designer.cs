@@ -62,9 +62,11 @@ namespace PRG282Project.Presentation
             this.button3 = new System.Windows.Forms.Button();
             this.txtManModuleDescription = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtManModuleID = new System.Windows.Forms.TextBox();
             this.txtManModuleCode = new System.Windows.Forms.TextBox();
             this.txtManModuleName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.lblManModuleID = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lblModuleManagement = new System.Windows.Forms.Label();
             this.lsbMouleResources = new System.Windows.Forms.ListBox();
@@ -146,8 +148,6 @@ namespace PRG282Project.Presentation
             this.lblAmountOfStudents = new System.Windows.Forms.Label();
             this.lblStudentCount = new System.Windows.Forms.Label();
             this.lblStudentManagement = new System.Windows.Forms.Label();
-            this.txtManModuleID = new System.Windows.Forms.TextBox();
-            this.lblManModuleID = new System.Windows.Forms.Label();
             this.pnlMainTop.SuspendLayout();
             this.pnlModuleOptions.SuspendLayout();
             this.pnlStudentOptions.SuspendLayout();
@@ -632,6 +632,16 @@ namespace PRG282Project.Presentation
             this.label3.TabIndex = 32;
             this.label3.Text = "Module description";
             // 
+            // txtManModuleID
+            // 
+            this.txtManModuleID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtManModuleID.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.txtManModuleID.Location = new System.Drawing.Point(558, 40);
+            this.txtManModuleID.Margin = new System.Windows.Forms.Padding(2);
+            this.txtManModuleID.Name = "txtManModuleID";
+            this.txtManModuleID.Size = new System.Drawing.Size(59, 18);
+            this.txtManModuleID.TabIndex = 31;
+            // 
             // txtManModuleCode
             // 
             this.txtManModuleCode.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -662,6 +672,17 @@ namespace PRG282Project.Presentation
             this.label4.Size = new System.Drawing.Size(93, 17);
             this.label4.TabIndex = 29;
             this.label4.Text = "Module name";
+            // 
+            // lblManModuleID
+            // 
+            this.lblManModuleID.AutoSize = true;
+            this.lblManModuleID.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblManModuleID.Location = new System.Drawing.Point(466, 40);
+            this.lblManModuleID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblManModuleID.Name = "lblManModuleID";
+            this.lblManModuleID.Size = new System.Drawing.Size(88, 17);
+            this.lblManModuleID.TabIndex = 28;
+            this.lblManModuleID.Text = "Module code";
             // 
             // label5
             // 
@@ -1252,6 +1273,7 @@ namespace PRG282Project.Presentation
             this.dgvStudents.Size = new System.Drawing.Size(349, 137);
             this.dgvStudents.TabIndex = 0;
             this.dgvStudents.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudents_CellClick);
+            this.dgvStudents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudents_CellContentClick);
             // 
             // pnlAddstudent
             // 
@@ -1669,27 +1691,6 @@ namespace PRG282Project.Presentation
             this.lblStudentManagement.Size = new System.Drawing.Size(175, 21);
             this.lblStudentManagement.TabIndex = 23;
             this.lblStudentManagement.Text = "Student Management";
-            // 
-            // txtManModuleID
-            // 
-            this.txtManModuleID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtManModuleID.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
-            this.txtManModuleID.Location = new System.Drawing.Point(558, 40);
-            this.txtManModuleID.Margin = new System.Windows.Forms.Padding(2);
-            this.txtManModuleID.Name = "txtManModuleID";
-            this.txtManModuleID.Size = new System.Drawing.Size(59, 18);
-            this.txtManModuleID.TabIndex = 31;
-            // 
-            // lblManModuleID
-            // 
-            this.lblManModuleID.AutoSize = true;
-            this.lblManModuleID.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblManModuleID.Location = new System.Drawing.Point(466, 40);
-            this.lblManModuleID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblManModuleID.Name = "lblManModuleID";
-            this.lblManModuleID.Size = new System.Drawing.Size(88, 17);
-            this.lblManModuleID.TabIndex = 28;
-            this.lblManModuleID.Text = "Module code";
             // 
             // Main
             // 

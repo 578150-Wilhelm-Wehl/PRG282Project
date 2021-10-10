@@ -38,16 +38,43 @@ namespace PRG282Project.Data_Access
             return DataTableStudents;
         }
 
-        public DataTable GetStudentModules()
+        public DataTable SearchStudents(string StudentNumber)
         {
-            string GetStudentModulesQuery = "SELECT tblStudents.StudentImage, tblStudents.StudentNumber, tblStudents.StundentName, tblStudents.StudentSurname,tblStudents.DateOfBirth,tblStudents.PhoneNumber,tblStudents.StudentAddress,tblModule.ModuleCode,tblModule.ModuleName FROM tblStudents" +
-            "JOIN tblBridge" +
-            "ON tblStudents.StudentNumber = tblBridge.StudentNumber" +
-            "JOIN tblModule" +
-            "ON tblBridge.ModuleID = tblModule.ModuleID" +
-            "WHERE tblStudents.StudentNumber = 10002";
-            SqlDataAdapter sqlData = new SqlDataAdapter(GetStudentModulesQuery, connect);
+            try
+            {
+                if (!String.IsNullOrEmpty(StudentNumber))
+                {
+                    string GetStudentsQuery = "SELECT * FROM tblStudents WHERE StudentNumber = " + StudentNumber;
+                    SqlDataAdapter sqlData = new SqlDataAdapter(GetStudentsQuery, connect);
+                    DataTable DataTableStudents = new DataTable();
+                    sqlData.Fill(DataTableStudents);
+                    return DataTableStudents;
+                }
+                else
+                {
+                    throw new Exception();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                return null;
+            }
+        }
+
+        public DataTable SearchStudentModules(string StudentNumber)
+        {
+            string GetStudentModulesQuery = "SELECT ts.StudentNumber, tm.ModuleCode, tm.ModuleName, tm.ModuleDescription " +
+            "FROM tblStudents ts " +
+            "JOIN tblBridge tb " +
+            "ON ts.StudentNumber = tb.StudentNumber " +
+            "JOIN tblModule tm " +
+            "ON tb.ModuleID = tm.ModuleID " +
+            "WHERE ts.StudentNumber = " + StudentNumber;
+
+
             DataTable DataTableStudentModules = new DataTable();
+            SqlDataAdapter sqlData = new SqlDataAdapter(GetStudentModulesQuery, connect);
             sqlData.Fill(DataTableStudentModules);
             return DataTableStudentModules;
         }
