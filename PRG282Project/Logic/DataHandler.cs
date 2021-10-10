@@ -130,5 +130,7 @@ namespace PRG282Project.Logic
             panel6.Visible = false;
             panel1.Visible = true;
         }
+
+      
     }
 }
