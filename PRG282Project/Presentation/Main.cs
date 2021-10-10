@@ -101,5 +101,15 @@ namespace PRG282Project.Presentation
         {
 
         }
+
+        private void lblCurrentStudent_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlAddstudent_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

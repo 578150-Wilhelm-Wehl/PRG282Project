@@ -144,6 +144,7 @@ namespace PRG282Project.Presentation
             this.button4 = new System.Windows.Forms.Button();
             this.lblStudentCount = new System.Windows.Forms.Label();
             this.pnlSpare1 = new System.Windows.Forms.Panel();
+            this.lblStudentImg = new System.Windows.Forms.Label();
             this.pnlMainTop.SuspendLayout();
             this.pnlModuleOptions.SuspendLayout();
             this.pnlStudentOptions.SuspendLayout();
@@ -917,6 +918,7 @@ namespace PRG282Project.Presentation
             this.pnlManageStudents.Controls.Add(this.txtManStudentsName);
             this.pnlManageStudents.Controls.Add(this.lblManStudentsName);
             this.pnlManageStudents.Controls.Add(this.txtManStudentsNumber);
+            this.pnlManageStudents.Controls.Add(this.lblStudentImg);
             this.pnlManageStudents.Controls.Add(this.lblCurrentStudent);
             this.pnlManageStudents.Controls.Add(this.lblManSearchStudentNumber);
             this.pnlManageStudents.Controls.Add(this.lblManStudentsNumber);
@@ -938,15 +940,15 @@ namespace PRG282Project.Presentation
             // pnlSplitter2
             // 
             this.pnlSplitter2.BackColor = System.Drawing.Color.Black;
-            this.pnlSplitter2.Location = new System.Drawing.Point(243, 102);
+            this.pnlSplitter2.Location = new System.Drawing.Point(243, 127);
             this.pnlSplitter2.Name = "pnlSplitter2";
-            this.pnlSplitter2.Size = new System.Drawing.Size(2, 225);
+            this.pnlSplitter2.Size = new System.Drawing.Size(2, 280);
             this.pnlSplitter2.TabIndex = 41;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(31, 20);
+            this.pictureBox2.Location = new System.Drawing.Point(145, 63);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(50, 50);
@@ -970,7 +972,7 @@ namespace PRG282Project.Presentation
             this.txtManPhones.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtManPhones.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
             this.txtManPhones.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtManPhones.Location = new System.Drawing.Point(127, 195);
+            this.txtManPhones.Location = new System.Drawing.Point(127, 242);
             this.txtManPhones.Margin = new System.Windows.Forms.Padding(2);
             this.txtManPhones.Multiline = true;
             this.txtManPhones.Name = "txtManPhones";
@@ -982,7 +984,7 @@ namespace PRG282Project.Presentation
             this.lblManPhones.AutoSize = true;
             this.lblManPhones.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblManPhones.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblManPhones.Location = new System.Drawing.Point(76, 195);
+            this.lblManPhones.Location = new System.Drawing.Point(76, 242);
             this.lblManPhones.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblManPhones.Name = "lblManPhones";
             this.lblManPhones.Size = new System.Drawing.Size(47, 17);
@@ -993,11 +995,11 @@ namespace PRG282Project.Presentation
             // 
             this.txtManAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtManAddress.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
-            this.txtManAddress.Location = new System.Drawing.Point(83, 223);
+            this.txtManAddress.Location = new System.Drawing.Point(83, 270);
             this.txtManAddress.Margin = new System.Windows.Forms.Padding(2);
             this.txtManAddress.Multiline = true;
             this.txtManAddress.Name = "txtManAddress";
-            this.txtManAddress.Size = new System.Drawing.Size(146, 64);
+            this.txtManAddress.Size = new System.Drawing.Size(146, 89);
             this.txtManAddress.TabIndex = 36;
             // 
             // lblManAddress
@@ -1005,7 +1007,7 @@ namespace PRG282Project.Presentation
             this.lblManAddress.AutoSize = true;
             this.lblManAddress.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblManAddress.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblManAddress.Location = new System.Drawing.Point(22, 223);
+            this.lblManAddress.Location = new System.Drawing.Point(22, 270);
             this.lblManAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblManAddress.Name = "lblManAddress";
             this.lblManAddress.Size = new System.Drawing.Size(57, 17);
@@ -1016,7 +1018,7 @@ namespace PRG282Project.Presentation
             // 
             this.txtManDateOfBirth.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
             this.txtManDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtManDateOfBirth.Location = new System.Drawing.Point(127, 161);
+            this.txtManDateOfBirth.Location = new System.Drawing.Point(127, 208);
             this.txtManDateOfBirth.Margin = new System.Windows.Forms.Padding(2);
             this.txtManDateOfBirth.Name = "txtManDateOfBirth";
             this.txtManDateOfBirth.Size = new System.Drawing.Size(102, 25);
@@ -1027,7 +1029,7 @@ namespace PRG282Project.Presentation
             this.lblManDateOfBirth.AutoSize = true;
             this.lblManDateOfBirth.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblManDateOfBirth.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblManDateOfBirth.Location = new System.Drawing.Point(35, 167);
+            this.lblManDateOfBirth.Location = new System.Drawing.Point(35, 214);
             this.lblManDateOfBirth.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblManDateOfBirth.Name = "lblManDateOfBirth";
             this.lblManDateOfBirth.Size = new System.Drawing.Size(88, 17);
@@ -1039,7 +1041,7 @@ namespace PRG282Project.Presentation
             this.txtManStundentSurname.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtManStundentSurname.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
             this.txtManStundentSurname.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtManStundentSurname.Location = new System.Drawing.Point(127, 134);
+            this.txtManStundentSurname.Location = new System.Drawing.Point(127, 181);
             this.txtManStundentSurname.Margin = new System.Windows.Forms.Padding(2);
             this.txtManStundentSurname.Name = "txtManStundentSurname";
             this.txtManStundentSurname.Size = new System.Drawing.Size(102, 18);
@@ -1050,7 +1052,7 @@ namespace PRG282Project.Presentation
             this.lblManStundentSurname.AutoSize = true;
             this.lblManStundentSurname.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblManStundentSurname.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblManStundentSurname.Location = new System.Drawing.Point(9, 134);
+            this.lblManStundentSurname.Location = new System.Drawing.Point(9, 181);
             this.lblManStundentSurname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblManStundentSurname.Name = "lblManStundentSurname";
             this.lblManStundentSurname.Size = new System.Drawing.Size(114, 17);
@@ -1062,7 +1064,7 @@ namespace PRG282Project.Presentation
             this.txtManStudentsName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtManStudentsName.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
             this.txtManStudentsName.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtManStudentsName.Location = new System.Drawing.Point(127, 107);
+            this.txtManStudentsName.Location = new System.Drawing.Point(127, 154);
             this.txtManStudentsName.Margin = new System.Windows.Forms.Padding(2);
             this.txtManStudentsName.Name = "txtManStudentsName";
             this.txtManStudentsName.Size = new System.Drawing.Size(102, 18);
@@ -1073,7 +1075,7 @@ namespace PRG282Project.Presentation
             this.lblManStudentsName.AutoSize = true;
             this.lblManStudentsName.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblManStudentsName.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblManStudentsName.Location = new System.Drawing.Point(27, 107);
+            this.lblManStudentsName.Location = new System.Drawing.Point(27, 154);
             this.lblManStudentsName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblManStudentsName.Name = "lblManStudentsName";
             this.lblManStudentsName.Size = new System.Drawing.Size(96, 17);
@@ -1085,7 +1087,7 @@ namespace PRG282Project.Presentation
             this.txtManStudentsNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtManStudentsNumber.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
             this.txtManStudentsNumber.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtManStudentsNumber.Location = new System.Drawing.Point(127, 80);
+            this.txtManStudentsNumber.Location = new System.Drawing.Point(127, 127);
             this.txtManStudentsNumber.Margin = new System.Windows.Forms.Padding(2);
             this.txtManStudentsNumber.Name = "txtManStudentsNumber";
             this.txtManStudentsNumber.Size = new System.Drawing.Size(102, 18);
@@ -1097,12 +1099,13 @@ namespace PRG282Project.Presentation
             this.lblCurrentStudent.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblCurrentStudent.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblCurrentStudent.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblCurrentStudent.Location = new System.Drawing.Point(88, 53);
+            this.lblCurrentStudent.Location = new System.Drawing.Point(17, 42);
             this.lblCurrentStudent.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCurrentStudent.Name = "lblCurrentStudent";
             this.lblCurrentStudent.Size = new System.Drawing.Size(106, 17);
             this.lblCurrentStudent.TabIndex = 27;
             this.lblCurrentStudent.Text = "Current Student";
+            this.lblCurrentStudent.Click += new System.EventHandler(this.lblCurrentStudent_Click);
             // 
             // lblManSearchStudentNumber
             // 
@@ -1110,7 +1113,7 @@ namespace PRG282Project.Presentation
             this.lblManSearchStudentNumber.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblManSearchStudentNumber.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblManSearchStudentNumber.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblManSearchStudentNumber.Location = new System.Drawing.Point(255, 80);
+            this.lblManSearchStudentNumber.Location = new System.Drawing.Point(255, 127);
             this.lblManSearchStudentNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblManSearchStudentNumber.Name = "lblManSearchStudentNumber";
             this.lblManSearchStudentNumber.Size = new System.Drawing.Size(154, 17);
@@ -1123,7 +1126,7 @@ namespace PRG282Project.Presentation
             this.lblManStudentsNumber.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblManStudentsNumber.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblManStudentsNumber.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblManStudentsNumber.Location = new System.Drawing.Point(15, 80);
+            this.lblManStudentsNumber.Location = new System.Drawing.Point(15, 127);
             this.lblManStudentsNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblManStudentsNumber.Name = "lblManStudentsNumber";
             this.lblManStudentsNumber.Size = new System.Drawing.Size(108, 17);
@@ -1135,7 +1138,7 @@ namespace PRG282Project.Presentation
             this.txtSearchStudent.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSearchStudent.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
             this.txtSearchStudent.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtSearchStudent.Location = new System.Drawing.Point(258, 100);
+            this.txtSearchStudent.Location = new System.Drawing.Point(258, 147);
             this.txtSearchStudent.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearchStudent.Name = "txtSearchStudent";
             this.txtSearchStudent.Size = new System.Drawing.Size(224, 18);
@@ -1147,7 +1150,7 @@ namespace PRG282Project.Presentation
             this.btnViewAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewAll.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnViewAll.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnViewAll.Location = new System.Drawing.Point(548, 98);
+            this.btnViewAll.Location = new System.Drawing.Point(548, 145);
             this.btnViewAll.Margin = new System.Windows.Forms.Padding(2);
             this.btnViewAll.Name = "btnViewAll";
             this.btnViewAll.Size = new System.Drawing.Size(59, 22);
@@ -1160,7 +1163,7 @@ namespace PRG282Project.Presentation
             this.btnDeletestudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeletestudent.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnDeletestudent.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnDeletestudent.Location = new System.Drawing.Point(144, 295);
+            this.btnDeletestudent.Location = new System.Drawing.Point(144, 375);
             this.btnDeletestudent.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeletestudent.Name = "btnDeletestudent";
             this.btnDeletestudent.Size = new System.Drawing.Size(85, 40);
@@ -1174,7 +1177,7 @@ namespace PRG282Project.Presentation
             this.btnSearchStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchStudent.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnSearchStudent.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSearchStudent.Location = new System.Drawing.Point(486, 98);
+            this.btnSearchStudent.Location = new System.Drawing.Point(486, 145);
             this.btnSearchStudent.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchStudent.Name = "btnSearchStudent";
             this.btnSearchStudent.Size = new System.Drawing.Size(59, 22);
@@ -1187,7 +1190,7 @@ namespace PRG282Project.Presentation
             this.btnUpdatestudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdatestudent.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnUpdatestudent.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnUpdatestudent.Location = new System.Drawing.Point(55, 295);
+            this.btnUpdatestudent.Location = new System.Drawing.Point(55, 375);
             this.btnUpdatestudent.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdatestudent.Name = "btnUpdatestudent";
             this.btnUpdatestudent.Size = new System.Drawing.Size(85, 40);
@@ -1198,12 +1201,12 @@ namespace PRG282Project.Presentation
             // dgvStudents
             // 
             this.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudents.Location = new System.Drawing.Point(258, 124);
+            this.dgvStudents.Location = new System.Drawing.Point(258, 171);
             this.dgvStudents.Margin = new System.Windows.Forms.Padding(2);
             this.dgvStudents.Name = "dgvStudents";
             this.dgvStudents.RowHeadersWidth = 51;
             this.dgvStudents.RowTemplate.Height = 24;
-            this.dgvStudents.Size = new System.Drawing.Size(349, 211);
+            this.dgvStudents.Size = new System.Drawing.Size(349, 244);
             this.dgvStudents.TabIndex = 0;
             // 
             // pnlAddstudent
@@ -1239,13 +1242,14 @@ namespace PRG282Project.Presentation
             this.pnlAddstudent.Name = "pnlAddstudent";
             this.pnlAddstudent.Size = new System.Drawing.Size(633, 447);
             this.pnlAddstudent.TabIndex = 0;
+            this.pnlAddstudent.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlAddstudent_Paint);
             // 
             // pnlSeperator
             // 
             this.pnlSeperator.BackColor = System.Drawing.Color.Black;
-            this.pnlSeperator.Location = new System.Drawing.Point(258, 73);
+            this.pnlSeperator.Location = new System.Drawing.Point(257, 83);
             this.pnlSeperator.Name = "pnlSeperator";
-            this.pnlSeperator.Size = new System.Drawing.Size(2, 225);
+            this.pnlSeperator.Size = new System.Drawing.Size(2, 280);
             this.pnlSeperator.TabIndex = 26;
             // 
             // lstSelectModules
@@ -1254,26 +1258,26 @@ namespace PRG282Project.Presentation
             this.lstSelectModules.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
             this.lstSelectModules.FormattingEnabled = true;
             this.lstSelectModules.ItemHeight = 17;
-            this.lstSelectModules.Location = new System.Drawing.Point(282, 109);
+            this.lstSelectModules.Location = new System.Drawing.Point(282, 115);
             this.lstSelectModules.Name = "lstSelectModules";
-            this.lstSelectModules.Size = new System.Drawing.Size(171, 170);
+            this.lstSelectModules.Size = new System.Drawing.Size(200, 238);
             this.lstSelectModules.TabIndex = 25;
             // 
             // textBox6
             // 
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox6.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
-            this.textBox6.Location = new System.Drawing.Point(121, 215);
+            this.textBox6.Location = new System.Drawing.Point(121, 245);
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(116, 64);
+            this.textBox6.Size = new System.Drawing.Size(116, 86);
             this.textBox6.TabIndex = 24;
             // 
             // textBox5
             // 
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox5.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
-            this.textBox5.Location = new System.Drawing.Point(121, 191);
+            this.textBox5.Location = new System.Drawing.Point(121, 215);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(116, 18);
             this.textBox5.TabIndex = 24;
@@ -1282,7 +1286,7 @@ namespace PRG282Project.Presentation
             // 
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox4.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
-            this.textBox4.Location = new System.Drawing.Point(121, 167);
+            this.textBox4.Location = new System.Drawing.Point(121, 185);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(116, 18);
             this.textBox4.TabIndex = 24;
@@ -1291,7 +1295,7 @@ namespace PRG282Project.Presentation
             // 
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
-            this.textBox3.Location = new System.Drawing.Point(121, 143);
+            this.textBox3.Location = new System.Drawing.Point(121, 155);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(116, 18);
             this.textBox3.TabIndex = 24;
@@ -1300,7 +1304,7 @@ namespace PRG282Project.Presentation
             // 
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
-            this.textBox2.Location = new System.Drawing.Point(121, 119);
+            this.textBox2.Location = new System.Drawing.Point(121, 125);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(116, 18);
             this.textBox2.TabIndex = 24;
@@ -1330,7 +1334,7 @@ namespace PRG282Project.Presentation
             this.btnAddImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddImage.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddImage.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnAddImage.Location = new System.Drawing.Point(494, 130);
+            this.btnAddImage.Location = new System.Drawing.Point(494, 168);
             this.btnAddImage.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddImage.Name = "btnAddImage";
             this.btnAddImage.Size = new System.Drawing.Size(100, 34);
@@ -1355,7 +1359,7 @@ namespace PRG282Project.Presentation
             // 
             this.lblNewPhone.AutoSize = true;
             this.lblNewPhone.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblNewPhone.Location = new System.Drawing.Point(69, 191);
+            this.lblNewPhone.Location = new System.Drawing.Point(69, 215);
             this.lblNewPhone.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNewPhone.Name = "lblNewPhone";
             this.lblNewPhone.Size = new System.Drawing.Size(47, 17);
@@ -1365,7 +1369,7 @@ namespace PRG282Project.Presentation
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(494, 23);
+            this.pictureBox1.Location = new System.Drawing.Point(494, 55);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 100);
@@ -1376,7 +1380,7 @@ namespace PRG282Project.Presentation
             // 
             this.lblNewAddress.AutoSize = true;
             this.lblNewAddress.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblNewAddress.Location = new System.Drawing.Point(59, 215);
+            this.lblNewAddress.Location = new System.Drawing.Point(59, 245);
             this.lblNewAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNewAddress.Name = "lblNewAddress";
             this.lblNewAddress.Size = new System.Drawing.Size(57, 17);
@@ -1387,7 +1391,7 @@ namespace PRG282Project.Presentation
             // 
             this.rbtOther.AutoSize = true;
             this.rbtOther.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtOther.Location = new System.Drawing.Point(197, 298);
+            this.rbtOther.Location = new System.Drawing.Point(192, 342);
             this.rbtOther.Margin = new System.Windows.Forms.Padding(2);
             this.rbtOther.Name = "rbtOther";
             this.rbtOther.Size = new System.Drawing.Size(59, 21);
@@ -1400,7 +1404,7 @@ namespace PRG282Project.Presentation
             // 
             this.lbNewlGender.AutoSize = true;
             this.lbNewlGender.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lbNewlGender.Location = new System.Drawing.Point(15, 300);
+            this.lbNewlGender.Location = new System.Drawing.Point(10, 344);
             this.lbNewlGender.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbNewlGender.Name = "lbNewlGender";
             this.lbNewlGender.Size = new System.Drawing.Size(52, 17);
@@ -1411,7 +1415,7 @@ namespace PRG282Project.Presentation
             // 
             this.rbtFemale.AutoSize = true;
             this.rbtFemale.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtFemale.Location = new System.Drawing.Point(127, 298);
+            this.rbtFemale.Location = new System.Drawing.Point(122, 342);
             this.rbtFemale.Margin = new System.Windows.Forms.Padding(2);
             this.rbtFemale.Name = "rbtFemale";
             this.rbtFemale.Size = new System.Drawing.Size(67, 21);
@@ -1424,7 +1428,7 @@ namespace PRG282Project.Presentation
             // 
             this.rbtMale.AutoSize = true;
             this.rbtMale.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtMale.Location = new System.Drawing.Point(70, 298);
+            this.rbtMale.Location = new System.Drawing.Point(65, 342);
             this.rbtMale.Margin = new System.Windows.Forms.Padding(2);
             this.rbtMale.Name = "rbtMale";
             this.rbtMale.Size = new System.Drawing.Size(55, 21);
@@ -1437,7 +1441,7 @@ namespace PRG282Project.Presentation
             // 
             this.lblNewDateOfBirth.AutoSize = true;
             this.lblNewDateOfBirth.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblNewDateOfBirth.Location = new System.Drawing.Point(28, 167);
+            this.lblNewDateOfBirth.Location = new System.Drawing.Point(28, 185);
             this.lblNewDateOfBirth.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNewDateOfBirth.Name = "lblNewDateOfBirth";
             this.lblNewDateOfBirth.Size = new System.Drawing.Size(88, 17);
@@ -1448,7 +1452,7 @@ namespace PRG282Project.Presentation
             // 
             this.lblNewStudentsurname.AutoSize = true;
             this.lblNewStudentsurname.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblNewStudentsurname.Location = new System.Drawing.Point(2, 147);
+            this.lblNewStudentsurname.Location = new System.Drawing.Point(2, 159);
             this.lblNewStudentsurname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNewStudentsurname.Name = "lblNewStudentsurname";
             this.lblNewStudentsurname.Size = new System.Drawing.Size(114, 17);
@@ -1459,7 +1463,7 @@ namespace PRG282Project.Presentation
             // 
             this.lblNewSudentName.AutoSize = true;
             this.lblNewSudentName.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblNewSudentName.Location = new System.Drawing.Point(20, 122);
+            this.lblNewSudentName.Location = new System.Drawing.Point(20, 128);
             this.lblNewSudentName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNewSudentName.Name = "lblNewSudentName";
             this.lblNewSudentName.Size = new System.Drawing.Size(96, 17);
@@ -1471,7 +1475,7 @@ namespace PRG282Project.Presentation
             this.lblStudentModules.AutoSize = true;
             this.lblStudentModules.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblStudentModules.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblStudentModules.Location = new System.Drawing.Point(279, 87);
+            this.lblStudentModules.Location = new System.Drawing.Point(279, 93);
             this.lblStudentModules.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStudentModules.Name = "lblStudentModules";
             this.lblStudentModules.Size = new System.Drawing.Size(113, 17);
@@ -1630,6 +1634,20 @@ namespace PRG282Project.Presentation
             this.pnlSpare1.TabIndex = 27;
             this.pnlSpare1.Visible = false;
             // 
+            // lblStudentImg
+            // 
+            this.lblStudentImg.AutoSize = true;
+            this.lblStudentImg.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblStudentImg.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblStudentImg.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblStudentImg.Location = new System.Drawing.Point(39, 82);
+            this.lblStudentImg.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblStudentImg.Name = "lblStudentImg";
+            this.lblStudentImg.Size = new System.Drawing.Size(84, 17);
+            this.lblStudentImg.TabIndex = 27;
+            this.lblStudentImg.Text = "Student Img";
+            this.lblStudentImg.Click += new System.EventHandler(this.lblCurrentStudent_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1787,5 +1805,6 @@ namespace PRG282Project.Presentation
         private System.Windows.Forms.Label lblAmountOfStudents;
         private System.Windows.Forms.Label lblStudentCount;
         private System.Windows.Forms.Panel pnlSpare1;
+        private System.Windows.Forms.Label lblStudentImg;
     }
 }
