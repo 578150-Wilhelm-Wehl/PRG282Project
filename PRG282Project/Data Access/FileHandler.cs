@@ -111,9 +111,27 @@ namespace PRG282Project.Data_Access
         {
 
         }
-        public void DeleteModules()
+        public void DeleteModules(string ModuleCode)
         {
-
+            string DeleteBridgeModulequery = @"DELETE FROM tblBridge INNER JOIN tblModule ON tblBridge.ModuleID = tblModule.ModuleID WHERE tblModule.ModuleID = '" + ModuleCode + "'";
+            string DeleteModulesquery = @"DELETE FROM tblModule WHERE ModuleCode = '" + ModuleCode + "'";
+            SqlConnection sqlconnect = new SqlConnection(connect);
+            SqlCommand SQLBridgeCommand = new SqlCommand(DeleteBridgeModulequery, sqlconnect);
+            SqlCommand SQLModuleCommand = new SqlCommand(DeleteModulesquery, sqlconnect);
+            try
+            {
+                sqlconnect.Open();
+                SQLBridgeCommand.ExecuteNonQuery();
+                SQLModuleCommand.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                sqlconnect.Close();
+            }
         }
 
         public void DeleteStudent()

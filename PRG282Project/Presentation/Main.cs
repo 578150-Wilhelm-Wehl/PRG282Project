@@ -195,5 +195,27 @@ namespace PRG282Project.Presentation
             dgvStudents.DataSource = Fhandler.GetStudents();
             dgvStudents.Columns["StudentImage"].Visible = false;
         }
+
+        private void btnRegisterModule_Click(object sender, EventArgs e)
+        {
+            Fhandler.InsertModules(txtModulecode.Text, txtModuleName.Text, txtModuledescription.Text);
+        }
+
+        private void btnModuleDelete_Click(object sender, EventArgs e)
+        {
+            Fhandler.DeleteModules(txtManModuleCode.Text);
+            dgvmodules.DataSource = Fhandler.GetModules();
+        }
+
+        private void dgvmodules_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgvmodules.Rows[e.RowIndex];
+                txtManModuleCode.Text = row.Cells["ModuleCode"].Value.ToString();
+                txtManModuleName.Text = row.Cells["ModuleName"].Value.ToString(); ;
+                txtManModuleDescript.Text = row.Cells["ModuleDescription"].Value.ToString(); ;
+            }
+        }
     }
 }
