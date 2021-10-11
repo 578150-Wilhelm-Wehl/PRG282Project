@@ -19,7 +19,6 @@ namespace PRG282Project.Presentation
     {
         DataHandler handler = new DataHandler();
         FileHandler Fhandler = new FileHandler();
-        //string filename;
         public Main()
         {
             InitializeComponent();
@@ -43,7 +42,6 @@ namespace PRG282Project.Presentation
             {
                 pnlStudentOptions.Visible = false;
             }
-
         }
         private void btnModules_Click(object sender, EventArgs e)
         {
@@ -95,12 +93,15 @@ namespace PRG282Project.Presentation
             dgvStudents.DataSource = Fhandler.GetStudents();
             dgvStudents.Columns["StudentImage"].Visible = false;
             lblAmountOfStudents.Text = Fhandler.GetStudents().Rows.Count.ToString();
-
-
             foreach (DataRow item in Fhandler.GetModules().Rows)
             {
                 string moduleList = item["ModuleID"].ToString() + "-"+item["ModuleCode"].ToString() + "-" + item["ModuleName"].ToString() + "-" + item["ModuleDescription"].ToString();
                 lstSelectModules.Items.Add(moduleList);
+            }
+            foreach (DataRow item in Fhandler.GetModules().Rows)
+            {
+                string moduleList = item["ModuleCode"].ToString();
+                cmbUpdateModule.Items.Add(moduleList);
             }
         }
         private void btnRegisterStudent_Click(object sender, EventArgs e)
@@ -171,8 +172,6 @@ namespace PRG282Project.Presentation
         }
         private void dgvStudents_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
                 if ((e.RowIndex >= 0) && (e.RowIndex < dgvStudents.RowCount - 1))
                 {
                     DataGridViewRow row = this.dgvStudents.Rows[e.RowIndex];
@@ -199,7 +198,7 @@ namespace PRG282Project.Presentation
 
                     foreach (DataRow item in Fhandler.SearchStudentModules(txtManStudentsNumber.Text).Rows)
                     {
-                        string moduleList = item["ModuleCode"].ToString() + "\t\t" + item["ModuleName"].ToString() + "\t\t" + item["ModuleDescription"].ToString();
+                        string moduleList = item["ModuleID"].ToString()+"\t" + item["ModuleCode"].ToString() + "\t" + item["ModuleName"].ToString() + "\t" + item["ModuleDescription"].ToString();
                         lsbStudentModules.Items.Add(moduleList);
                     }
                 }
@@ -212,11 +211,6 @@ namespace PRG282Project.Presentation
                     txtManAddress.Clear();
                     txtManGender.Clear();
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
         private void btnSearchStudent_Click(object sender, EventArgs e)
         {
@@ -231,7 +225,7 @@ namespace PRG282Project.Presentation
         {
             dgvmodules.DataSource = null;
             Fhandler.DeleteModules(txtManModuleID.Text);
-            dgvmodules.DataSource = Fhandler.GetModules();
+            dgvmodules.DataSource = Fhandler.ViewModules();
         }
         private void dgvmodules_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -265,6 +259,13 @@ namespace PRG282Project.Presentation
                 if (!String.IsNullOrEmpty(txtManModuleCode.Text) && !String.IsNullOrEmpty(txtManModuleName.Text) && !String.IsNullOrEmpty(txtManModuleDescription.Text) && !String.IsNullOrEmpty(txtManModuleID.Text))
                 {
                     Fhandler.UpdateModules(txtManModuleCode.Text, txtManModuleName.Text, txtManModuleDescription.Text, Convert.ToInt32(txtManModuleID.Text));
+                    dgvmodules.DataSource = Fhandler.ViewModules();
+                    string ModID = txtManModuleID.Text;
+                    Fhandler.RemoveAllResoursesOnModID(ModID);
+                    foreach (var item in lsbModuleResources.Items)
+                    {
+                        Fhandler.InsertResource(ModID, item.ToString());
+                    }
                 }
                 else
                 {
@@ -280,10 +281,17 @@ namespace PRG282Project.Presentation
         {
             try
             {
-                if (!String.IsNullOrEmpty(txtManStudentsName.Text)&& !String.IsNullOrEmpty(txtManStundentSurname.Text)&& !String.IsNullOrEmpty(txtManDateOfBirth.Text)&& !String.IsNullOrEmpty(txtManGender.Text)&& !String.IsNullOrEmpty(txtNewPhoneNumber.Text)&& !String.IsNullOrEmpty(txtNewAddress.Text)&& !String.IsNullOrEmpty(txtManStudentsNumber.Text))
+                if (!String.IsNullOrEmpty(txtManStudentsName.Text)&& !String.IsNullOrEmpty(txtManStundentSurname.Text)&& !String.IsNullOrEmpty(txtManGender.Text)&& !String.IsNullOrEmpty(txtManPhones.Text)&& !String.IsNullOrEmpty(txtManAddress.Text)&& !String.IsNullOrEmpty(txtManStudentsNumber.Text))
                 {
-                    Fhandler.UpdateStudent(txtManStudentsName.Text, txtManStundentSurname.Text, Convert.ToDateTime(txtManDateOfBirth.Text), txtManGender.Text, txtNewPhoneNumber.Text, txtNewAddress.Text, Convert.ToInt32(txtManStudentsNumber.Text));
+                    Fhandler.UpdateStudent(txtManStudentsName.Text, txtManStundentSurname.Text, Convert.ToDateTime(txtManDateOfBirth.Text), txtManGender.Text, txtManPhones.Text, txtManAddress.Text, Convert.ToInt32(txtManStudentsNumber.Text));
+                    Fhandler.RemoveAllBridgeOnStuNo(txtManStudentsNumber.Text);
+                    foreach (var item in lsbStudentModules.Items)
+                    {
+                        string[] split = item.ToString().Split('\t');
+                        Fhandler.InsertBridge(txtManStudentsNumber.Text, split[0]);
+                    }
                     dgvStudents.DataSource = Fhandler.GetStudents();
+
                 }
                 else
                 {
@@ -353,6 +361,33 @@ namespace PRG282Project.Presentation
         private void btnViewAllModules_Click(object sender, EventArgs e)
         {
             dgvmodules.DataSource = Fhandler.ViewModules();
+        }
+
+        private void BtnManModRecRemov_Click(object sender, EventArgs e)
+        {
+            lsbModuleResources.Items.Remove(lsbModuleResources.SelectedItem);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            lsbModuleResources.Items.Add(txtManModuleAddResource.Text);
+        }
+
+        private void btnRemoveModStudent_Click(object sender, EventArgs e)
+        {
+            lsbStudentModules.Items.Remove(lsbStudentModules.SelectedItem);
+        }
+
+        private void btnAddModStudent_Click(object sender, EventArgs e)
+        {
+            foreach (DataRow item in Fhandler.GetModules().Rows)
+            {
+                if (cmbUpdateModule.Text == item["ModuleCode"].ToString())
+                {
+                    string moduleList = item["ModuleID"].ToString() + "\t" + item["ModuleCode"].ToString() + "\t" + item["ModuleName"].ToString() + "\t" + item["ModuleDescription"].ToString();
+                    lsbStudentModules.Items.Add(moduleList);
+                }
+            }
         }
     }
 }
