@@ -292,10 +292,11 @@ namespace PRG282Project.Presentation
             {
                 Fhandler.InsertResource(txtNewModulecode.Text, item.ToString());
             }
-            //for (int i = 0; i >= lsbNewModuleResources.Items.Count; i++)
-            //{
-            //    Fhandler.InsertResource(txtNewModulecode.Text, lsbNewModuleResources.Items[i].ToString());
-            //}
+            txtNewModulecode.Clear();
+            txtNewModuleName.Clear();
+            txtNewModuleDescription.Clear();
+            txtNewModuleResource.Clear();
+            lsbNewModuleResources.Items.Clear();
             dgvmodules.DataSource = Fhandler.GetModules();
         }
 

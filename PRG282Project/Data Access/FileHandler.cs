@@ -285,27 +285,32 @@ namespace PRG282Project.Data_Access
             adapter.Fill(FetchStudentDatatable);
             return FetchStudentDatatable;
         }
-        public void InsertResource(string ModuleID, string ResourceLink)
+        public DataTable FetchModuleID(string ModuleCode)
+        {
+            string FetchModuleIDQuery = "SELECT ModuleID FROM tblModule WHERE ModuleCode = '" + ModuleCode + "'";
+            SqlDataAdapter adapter = new SqlDataAdapter(FetchModuleIDQuery, connect);
+            DataTable FetchModuleIDDatatable = new DataTable();
+            adapter.Fill(FetchModuleIDDatatable);
+            return FetchModuleIDDatatable;
+        }
+        public void InsertResource(string ModuleCode, string ResourceLink)
         {
             SqlConnection sqlConnection = new SqlConnection(connect);
             sqlConnection.Open();
             try
             {
-                string InsertResourceQuery = "INSERT INTO tblResources (ModuleID, ResourceLink) VALUES (" + ModuleID + "," + ResourceLink + ")";
+                string ModuleID = string.Empty;
+                foreach (DataRow item in FetchModuleID(ModuleCode).Rows)
+                {
+                    ModuleID += item["StudentNumber"].ToString();
+                }
+                string InsertResourceQuery = "INSERT INTO tblResources (ModuleID, ResouceLink) VALUES (" + ModuleID + ", '" + ResourceLink + "')";
                 SqlCommand sqlCommand = new SqlCommand(InsertResourceQuery, sqlConnection);
-                int rowsaffected = sqlCommand.ExecuteNonQuery();
-                if (rowsaffected > 0)
-                {
-                    // add exception MessageBox.Show("Resource has been added");
-                }
-                else
-                {
-                    throw new Exception();
-                }
+                sqlCommand.ExecuteNonQuery();
             }
             catch (Exception)
             {
-
+                MessageBox.Show("Failed");
                 // add exception MessageBox.Show("Resource has Not been added");
             }
             finally
