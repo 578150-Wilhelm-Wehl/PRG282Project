@@ -43,14 +43,10 @@ namespace PRG282Project.Logic
             }
         }
 
-        public void VeryfyUser(string username, string password, Label wrongCredentials)
+        public bool VeryfyUser(string username, string password, Label wrongCredentials)
         {
             try
             {
-
-
-                Login login = new Login();
-                Main main = new Main();
                 string userPath = Directory.GetCurrentDirectory() + "/ActiveUsers.txt";
                 string[] activeuserlist = File.ReadAllLines(userPath);
                 bool accessgrant = false;
@@ -65,19 +61,12 @@ namespace PRG282Project.Logic
                         break;
                     }
                 }
-                if (accessgrant == true)
-                {
-                    login.Hide();
-                    main.Show();
-                }
-                else
-                {
-                    throw new EXFailedLogin();
-                }
+                return accessgrant;
             }
             catch (EXFailedLogin fl)
             {
                 MessageBox.Show(fl.Message);
+                return false;
             }
         }
 

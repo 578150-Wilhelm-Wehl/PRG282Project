@@ -23,7 +23,17 @@ namespace PRG282Project.Presentation
         private void btnSignMeIn_Click(object sender, EventArgs e)
         {
             DataHandler handler = new DataHandler();
-            handler.VeryfyUser(txtSignInUserName.Text, txtSignInPassword.Text, lblWrongLogin);
+            Main main = new Main();
+            bool Access = handler.VeryfyUser(txtSignInUserName.Text, txtSignInPassword.Text, lblWrongLogin);
+            if (Access == true)
+            {
+                this.Hide();
+                main.Show();
+            }
+            else
+            {
+                MessageBox.Show("User login failed \n Please ensure login details are correct \n Otherwise please create an account");
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
