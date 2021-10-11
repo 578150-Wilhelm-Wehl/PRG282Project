@@ -100,5 +100,21 @@ namespace PRG282Project.Presentation
             txtResetAnswer.Clear();
             txtNewPassword.Clear();
         }
+
+        private void txtSignInUserName_Click(object sender, EventArgs e)
+        {
+            txtSignInUserName.Text = "";
+        }
+
+        private void txtSignInPassword_Click(object sender, EventArgs e)
+        {
+            txtSignInPassword.Text = "";
+            txtSignInPassword.PasswordChar = '*';
+        }
+
+        private void txtSignInPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

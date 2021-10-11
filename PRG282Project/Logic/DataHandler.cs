@@ -24,50 +24,60 @@ namespace PRG282Project.Logic
                 if (username.Length > 2 && regexNewUserName.IsMatch(username) && regexNewUserPassword.IsMatch(password)&& !string.IsNullOrEmpty(secQuestion) && !string.IsNullOrEmpty(secAnswer))
                 {
                     newuser += username+'-'+password+'-'+secQuestion+'-'+secAnswer;
+                    MessageBox.Show("Your user has been created successfully");
                 }
                 else
                 {
-                    throw new Exception();
+                    throw new EXFailedUserCreation();
                 }
                 sw.WriteLine(newuser);
                 sw.Close();
             }
-            catch (Exception)
+            catch (EXFailedUserCreation fuc)
             {
-                //create custom exeption
-                //add a finally
-                MessageBox.Show("Please ensure username and password meet requirements \n Username\n\tno special characters\nPassword\n\t Exclude - | \n\tAtleast one number\n\tAtleast one capital letter");
+                MessageBox.Show(fuc.Message);
+            }
+            finally
+            {
                 sw.Close();
             }
         }
-        
+
         public void VeryfyUser(string username, string password, Label wrongCredentials)
         {
-            Login login = new Login();
-            Main main = new Main();
-            string userPath = Directory.GetCurrentDirectory() + "/ActiveUsers.txt";
-            string[] activeuserlist = File.ReadAllLines(userPath);
-            bool accessgrant = false;
-
-            for (int i = 0; i < activeuserlist.Length; i++)
+            try
             {
-                string[] splitusers = activeuserlist[i].Split('-');
 
-                if (splitusers[0] == username && splitusers[1]==password)
+
+                Login login = new Login();
+                Main main = new Main();
+                string userPath = Directory.GetCurrentDirectory() + "/ActiveUsers.txt";
+                string[] activeuserlist = File.ReadAllLines(userPath);
+                bool accessgrant = false;
+
+                for (int i = 0; i < activeuserlist.Length; i++)
                 {
-                    accessgrant = true;
-                    break;
+                    string[] splitusers = activeuserlist[i].Split('-');
+
+                    if (splitusers[0] == username && splitusers[1] == password)
+                    {
+                        accessgrant = true;
+                        break;
+                    }
+                }
+                if (accessgrant == true)
+                {
+                    login.Hide();
+                    main.Show();
+                }
+                else
+                {
+                    throw new EXFailedLogin();
                 }
             }
-            if (accessgrant == true)
+            catch (EXFailedLogin fl)
             {
-                login.Hide();
-                main.Show();
-            }
-            else
-            { 
-                MessageBox.Show("Please ensure that username and password is correct");
-                wrongCredentials.Visible = true;
+                MessageBox.Show(fl.Message);
             }
         }
 
@@ -80,25 +90,40 @@ namespace PRG282Project.Logic
 
         public void PasswordReset(string Username, string SecAnswer, string newPassword)
         {
-            string userPath = Directory.GetCurrentDirectory() + "/ActiveUsers.txt";
-            string[] activeuserlist = File.ReadAllLines(userPath);
-            string replace = string.Empty;
-            string newdetails = string.Empty;
-
-            for (int i = 0; i < activeuserlist.Length; i++)
+            try
             {
-                string[] splitusers = activeuserlist[i].Split('-');
-
-                if (splitusers[0] == Username && splitusers[3] == SecAnswer)
+                string userPath = Directory.GetCurrentDirectory() + "/ActiveUsers.txt";
+                string[] activeuserlist = File.ReadAllLines(userPath);
+                string replace = string.Empty;
+                string newdetails = string.Empty;
+                bool resetgrant = false;
+                for (int i = 0; i < activeuserlist.Length; i++)
                 {
-                    replace =splitusers[0]+'-'+splitusers[1] + '-' + splitusers[2] + '-' + splitusers[3];
-                    newdetails =splitusers[0] + '-' + newPassword + '-' + splitusers[2] + '-' + splitusers[3];
-                    break;
+                    string[] splitusers = activeuserlist[i].Split('-');
+                    if (splitusers[0] == Username && splitusers[3] == SecAnswer)
+                    {
+                        replace = splitusers[0] + '-' + splitusers[1] + '-' + splitusers[2] + '-' + splitusers[3];
+                        newdetails = splitusers[0] + '-' + newPassword + '-' + splitusers[2] + '-' + splitusers[3];
+                        resetgrant = true;
+                        break;
+                    }
+                }
+                if (resetgrant == true)
+                {
+                    string text = File.ReadAllText(userPath);
+                    text = text.Replace(replace, newdetails);
+                    File.WriteAllText(userPath, text);
+                    MessageBox.Show("Your password has been reset");
+                }
+                else
+                {
+                    throw new EXPasswordResetFailed();
                 }
             }
-            string text = File.ReadAllText(userPath);
-            text = text.Replace(replace, newdetails);
-            File.WriteAllText(userPath, text);
+            catch (Exception prf)
+            {
+                MessageBox.Show(prf.Message);
+            }
         }
 
         public void SecurityQuestion(string username, Label Question)
@@ -130,7 +155,5 @@ namespace PRG282Project.Logic
             panel6.Visible = false;
             panel1.Visible = true;
         }
-
-      
     }
 }

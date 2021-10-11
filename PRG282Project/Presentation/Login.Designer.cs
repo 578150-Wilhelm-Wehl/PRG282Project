@@ -34,9 +34,7 @@ namespace PRG282Project.Presentation
             this.btnSignIn = new System.Windows.Forms.Button();
             this.pnlLoginImge = new System.Windows.Forms.Panel();
             this.pnlLoginSignIn = new System.Windows.Forms.Panel();
-            this.lblPassword = new System.Windows.Forms.Label();
             this.lblWrongLogin = new System.Windows.Forms.Label();
-            this.lblUserName = new System.Windows.Forms.Label();
             this.ckRememberMe = new System.Windows.Forms.CheckBox();
             this.txtSignInPassword = new System.Windows.Forms.TextBox();
             this.txtSignInUserName = new System.Windows.Forms.TextBox();
@@ -58,17 +56,18 @@ namespace PRG282Project.Presentation
             this.pnlPasswordReset = new System.Windows.Forms.Panel();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
+            this.lblResetNewPassword = new System.Windows.Forms.Label();
             this.lblResetAnswer = new System.Windows.Forms.Label();
+            this.lblSecQuest = new System.Windows.Forms.Label();
             this.lblResetQuestion = new System.Windows.Forms.Label();
             this.lblResetPassword = new System.Windows.Forms.Label();
             this.lblResetUserName = new System.Windows.Forms.Label();
+            this.txtNewPassword = new System.Windows.Forms.TextBox();
             this.txtResetAnswer = new System.Windows.Forms.TextBox();
             this.txtResetUserName = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
-            this.lblSecQuest = new System.Windows.Forms.Label();
-            this.lblResetNewPassword = new System.Windows.Forms.Label();
-            this.txtNewPassword = new System.Windows.Forms.TextBox();
+            this.lblUserCredentials = new System.Windows.Forms.Label();
             this.pnlBaseLogin.SuspendLayout();
             this.pnlLoginSignIn.SuspendLayout();
             this.pnlSignUp.SuspendLayout();
@@ -117,9 +116,8 @@ namespace PRG282Project.Presentation
             // 
             // pnlLoginSignIn
             // 
-            this.pnlLoginSignIn.Controls.Add(this.lblPassword);
             this.pnlLoginSignIn.Controls.Add(this.lblWrongLogin);
-            this.pnlLoginSignIn.Controls.Add(this.lblUserName);
+            this.pnlLoginSignIn.Controls.Add(this.lblUserCredentials);
             this.pnlLoginSignIn.Controls.Add(this.ckRememberMe);
             this.pnlLoginSignIn.Controls.Add(this.txtSignInPassword);
             this.pnlLoginSignIn.Controls.Add(this.txtSignInUserName);
@@ -132,37 +130,17 @@ namespace PRG282Project.Presentation
             this.pnlLoginSignIn.Size = new System.Drawing.Size(315, 220);
             this.pnlLoginSignIn.TabIndex = 1;
             // 
-            // lblPassword
-            // 
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(130, 65);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(68, 16);
-            this.lblPassword.TabIndex = 2;
-            this.lblPassword.Text = "Password";
-            // 
             // lblWrongLogin
             // 
             this.lblWrongLogin.AutoSize = true;
             this.lblWrongLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWrongLogin.ForeColor = System.Drawing.Color.Red;
-            this.lblWrongLogin.Location = new System.Drawing.Point(87, 109);
+            this.lblWrongLogin.Location = new System.Drawing.Point(81, 109);
             this.lblWrongLogin.Name = "lblWrongLogin";
             this.lblWrongLogin.Size = new System.Drawing.Size(156, 20);
             this.lblWrongLogin.TabIndex = 2;
             this.lblWrongLogin.Text = "Incorrect Credentials";
             this.lblWrongLogin.Visible = false;
-            // 
-            // lblUserName
-            // 
-            this.lblUserName.AutoSize = true;
-            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserName.Location = new System.Drawing.Point(126, 21);
-            this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(77, 16);
-            this.lblUserName.TabIndex = 2;
-            this.lblUserName.Text = "User Name";
             // 
             // ckRememberMe
             // 
@@ -182,25 +160,27 @@ namespace PRG282Project.Presentation
             this.txtSignInPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSignInPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSignInPassword.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtSignInPassword.Location = new System.Drawing.Point(72, 84);
+            this.txtSignInPassword.Location = new System.Drawing.Point(66, 84);
             this.txtSignInPassword.Name = "txtSignInPassword";
-            this.txtSignInPassword.PasswordChar = '*';
             this.txtSignInPassword.Size = new System.Drawing.Size(181, 22);
             this.txtSignInPassword.TabIndex = 0;
-            this.txtSignInPassword.Text = "Admin";
+            this.txtSignInPassword.Text = "Password";
             this.txtSignInPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSignInPassword.Click += new System.EventHandler(this.txtSignInPassword_Click);
+            this.txtSignInPassword.TextChanged += new System.EventHandler(this.txtSignInPassword_TextChanged);
             // 
             // txtSignInUserName
             // 
             this.txtSignInUserName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSignInUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSignInUserName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtSignInUserName.Location = new System.Drawing.Point(72, 40);
+            this.txtSignInUserName.Location = new System.Drawing.Point(66, 48);
             this.txtSignInUserName.Name = "txtSignInUserName";
             this.txtSignInUserName.Size = new System.Drawing.Size(181, 22);
             this.txtSignInUserName.TabIndex = 0;
-            this.txtSignInUserName.Text = "Admin";
+            this.txtSignInUserName.Text = "Username";
             this.txtSignInUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSignInUserName.Click += new System.EventHandler(this.txtSignInUserName_Click);
             // 
             // btnSignMeIn
             // 
@@ -241,7 +221,7 @@ namespace PRG282Project.Presentation
             this.btnViewPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewPassword.ForeColor = System.Drawing.Color.Gray;
-            this.btnViewPassword.Location = new System.Drawing.Point(249, 84);
+            this.btnViewPassword.Location = new System.Drawing.Point(243, 84);
             this.btnViewPassword.Name = "btnViewPassword";
             this.btnViewPassword.Size = new System.Drawing.Size(34, 22);
             this.btnViewPassword.TabIndex = 0;
@@ -445,6 +425,16 @@ namespace PRG282Project.Presentation
             this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
+            // lblResetNewPassword
+            // 
+            this.lblResetNewPassword.AutoSize = true;
+            this.lblResetNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResetNewPassword.Location = new System.Drawing.Point(8, 150);
+            this.lblResetNewPassword.Name = "lblResetNewPassword";
+            this.lblResetNewPassword.Size = new System.Drawing.Size(98, 16);
+            this.lblResetNewPassword.TabIndex = 5;
+            this.lblResetNewPassword.Text = "New Password";
+            // 
             // lblResetAnswer
             // 
             this.lblResetAnswer.AutoSize = true;
@@ -454,6 +444,17 @@ namespace PRG282Project.Presentation
             this.lblResetAnswer.Size = new System.Drawing.Size(103, 16);
             this.lblResetAnswer.TabIndex = 5;
             this.lblResetAnswer.Text = "Security Answer";
+            // 
+            // lblSecQuest
+            // 
+            this.lblSecQuest.AutoSize = true;
+            this.lblSecQuest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSecQuest.Location = new System.Drawing.Point(43, 92);
+            this.lblSecQuest.Name = "lblSecQuest";
+            this.lblSecQuest.Size = new System.Drawing.Size(229, 16);
+            this.lblSecQuest.TabIndex = 5;
+            this.lblSecQuest.Text = "Your security question will apaer here";
+            this.lblSecQuest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblResetQuestion
             // 
@@ -484,6 +485,18 @@ namespace PRG282Project.Presentation
             this.lblResetUserName.Size = new System.Drawing.Size(77, 16);
             this.lblResetUserName.TabIndex = 6;
             this.lblResetUserName.Text = "User Name";
+            // 
+            // txtNewPassword
+            // 
+            this.txtNewPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNewPassword.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtNewPassword.Location = new System.Drawing.Point(117, 148);
+            this.txtNewPassword.Name = "txtNewPassword";
+            this.txtNewPassword.Size = new System.Drawing.Size(155, 22);
+            this.txtNewPassword.TabIndex = 3;
+            this.txtNewPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNewPassword.Click += new System.EventHandler(this.txtResetAnswer_Click);
             // 
             // txtResetAnswer
             // 
@@ -540,38 +553,15 @@ namespace PRG282Project.Presentation
             this.btnMinimize.UseVisualStyleBackColor = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
-            // lblSecQuest
+            // lblUserCredentials
             // 
-            this.lblSecQuest.AutoSize = true;
-            this.lblSecQuest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSecQuest.Location = new System.Drawing.Point(43, 92);
-            this.lblSecQuest.Name = "lblSecQuest";
-            this.lblSecQuest.Size = new System.Drawing.Size(229, 16);
-            this.lblSecQuest.TabIndex = 5;
-            this.lblSecQuest.Text = "Your security question will apaer here";
-            this.lblSecQuest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblResetNewPassword
-            // 
-            this.lblResetNewPassword.AutoSize = true;
-            this.lblResetNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResetNewPassword.Location = new System.Drawing.Point(8, 150);
-            this.lblResetNewPassword.Name = "lblResetNewPassword";
-            this.lblResetNewPassword.Size = new System.Drawing.Size(98, 16);
-            this.lblResetNewPassword.TabIndex = 5;
-            this.lblResetNewPassword.Text = "New Password";
-            // 
-            // txtNewPassword
-            // 
-            this.txtNewPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNewPassword.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtNewPassword.Location = new System.Drawing.Point(117, 148);
-            this.txtNewPassword.Name = "txtNewPassword";
-            this.txtNewPassword.Size = new System.Drawing.Size(155, 22);
-            this.txtNewPassword.TabIndex = 3;
-            this.txtNewPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtNewPassword.Click += new System.EventHandler(this.txtResetAnswer_Click);
+            this.lblUserCredentials.AutoSize = true;
+            this.lblUserCredentials.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserCredentials.Location = new System.Drawing.Point(105, 21);
+            this.lblUserCredentials.Name = "lblUserCredentials";
+            this.lblUserCredentials.Size = new System.Drawing.Size(118, 16);
+            this.lblUserCredentials.TabIndex = 2;
+            this.lblUserCredentials.Text = "User Login Details";
             // 
             // Login
             // 
@@ -610,9 +600,7 @@ namespace PRG282Project.Presentation
         private System.Windows.Forms.Button btnSignMeIn;
         private System.Windows.Forms.Button btnForgotPassword;
         private System.Windows.Forms.Button btnViewPassword;
-        private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label lblWrongLogin;
-        private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Panel pnlSignUp;
@@ -638,5 +626,6 @@ namespace PRG282Project.Presentation
         private System.Windows.Forms.Label lblSecQuest;
         private System.Windows.Forms.Label lblResetNewPassword;
         private System.Windows.Forms.TextBox txtNewPassword;
+        private System.Windows.Forms.Label lblUserCredentials;
     }
 }
