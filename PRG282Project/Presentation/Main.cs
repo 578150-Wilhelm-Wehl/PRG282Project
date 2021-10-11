@@ -252,8 +252,13 @@ namespace PRG282Project.Presentation
                 txtManModuleID.Text = row.Cells["ModuleID"].Value.ToString();
                 txtManModuleCode.Text = row.Cells["ModuleCode"].Value.ToString();
                 txtManModuleName.Text = row.Cells["ModuleName"].Value.ToString();
-                txtManModuleDescription.Text = row.Cells["ModuleDescription"].Value.ToString(); 
-                
+                txtManModuleDescription.Text = row.Cells["ModuleDescription"].Value.ToString();
+                lsbModuleResources.Items.Clear();
+                foreach (DataRow item in Fhandler.GetResources(txtManModuleID.Text).Rows)
+                {
+                    string ResourceList = item["ResouceLink"].ToString();
+                    lsbModuleResources.Items.Add(ResourceList);
+                }
             }
         }
 
@@ -278,6 +283,25 @@ namespace PRG282Project.Presentation
             Fhandler.DeleteStudent(txtManStudentsNumber.Text);
             dgvStudents.DataSource = Fhandler.GetStudents();
             dgvStudents.Columns["StudentImage"].Visible = false;
+        }
+
+        private void btnRegisterModule_Click(object sender, EventArgs e)
+        {
+            Fhandler.InsertModules(txtNewModulecode.Text, txtNewModuleName.Text, txtNewModuleDescription.Text);
+            foreach (var item in lsbNewModuleResources.SelectedItems)
+            {
+                Fhandler.InsertResource(txtNewModulecode.Text, item.ToString());
+            }
+            //for (int i = 0; i >= lsbNewModuleResources.Items.Count; i++)
+            //{
+            //    Fhandler.InsertResource(txtNewModulecode.Text, lsbNewModuleResources.Items[i].ToString());
+            //}
+            dgvmodules.DataSource = Fhandler.GetModules();
+        }
+
+        private void btnAddResource_Click(object sender, EventArgs e)
+        {
+            lsbNewModuleResources.Items.Add(txtNewModuleResource.Text);
         }
     }
 }

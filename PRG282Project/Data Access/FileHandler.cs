@@ -29,6 +29,15 @@ namespace PRG282Project.Data_Access
             return DataTableModules;
         }
 
+        public DataTable GetResources(string ModuleID)
+        {
+            string GetResourcesQuery = "SELECT * FROM tblResources WHERE ModuleID = " + ModuleID;
+            SqlDataAdapter sqlData = new SqlDataAdapter(GetResourcesQuery, connect);
+            DataTable DataTableModules = new DataTable();
+            sqlData.Fill(DataTableModules);
+            return DataTableModules;
+        }
+
         public DataTable GetStudents()
         {
             string GetStudentsQuery = "SELECT * FROM tblStudents";
@@ -97,10 +106,10 @@ namespace PRG282Project.Data_Access
                 string InsertModules = "INSERT INTO tblModule (ModuleCode, ModuleName, ModuleDescription)" +
                                         "VALUES('" + ModuleCode + "', '" + ModuleName + "', '" + ModuleDescription + "')";
                 SqlCommand sqlCommand = new SqlCommand(InsertModules, sqlConnection);
-                int rowsafected = sqlCommand.ExecuteNonQuery();
-                if (rowsafected > 0)
+                int rowsaffected = sqlCommand.ExecuteNonQuery();
+                if (rowsaffected > 0)
                 {
-                    // add exeption MessageBox.Show("Client has been added");
+                    // add exeption MessageBox.Show("Module has been added");
                 }
                 else
                 {
@@ -110,7 +119,7 @@ namespace PRG282Project.Data_Access
             catch (Exception)
             {
 
-                // add exeption MessageBox.Show("Client has Not been added");
+                // add exeption MessageBox.Show("Module has Not been added");
             }
             finally
             {
@@ -275,6 +284,34 @@ namespace PRG282Project.Data_Access
             DataTable FetchStudentDatatable = new DataTable();
             adapter.Fill(FetchStudentDatatable);
             return FetchStudentDatatable;
+        }
+        public void InsertResource(string ModuleID, string ResourceLink)
+        {
+            SqlConnection sqlConnection = new SqlConnection(connect);
+            sqlConnection.Open();
+            try
+            {
+                string InsertResourceQuery = "INSERT INTO tblResources (ModuleID, ResourceLink) VALUES (" + ModuleID + "," + ResourceLink + ")";
+                SqlCommand sqlCommand = new SqlCommand(InsertResourceQuery, sqlConnection);
+                int rowsaffected = sqlCommand.ExecuteNonQuery();
+                if (rowsaffected > 0)
+                {
+                    // add exception MessageBox.Show("Resource has been added");
+                }
+                else
+                {
+                    throw new Exception();
+                }
+            }
+            catch (Exception)
+            {
+
+                // add exception MessageBox.Show("Resource has Not been added");
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
         }
     }
 }

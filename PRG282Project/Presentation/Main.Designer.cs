@@ -69,7 +69,7 @@ namespace PRG282Project.Presentation
             this.lblManModuleID = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lblModuleManagement = new System.Windows.Forms.Label();
-            this.lsbMouleResources = new System.Windows.Forms.ListBox();
+            this.lsbModuleResources = new System.Windows.Forms.ListBox();
             this.button2 = new System.Windows.Forms.Button();
             this.txtManModuleAddResource = new System.Windows.Forms.TextBox();
             this.dgvmodules = new System.Windows.Forms.DataGridView();
@@ -77,7 +77,7 @@ namespace PRG282Project.Presentation
             this.lblAddModuleResource = new System.Windows.Forms.Label();
             this.pnlAddmodule = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lsbNewMouleResources = new System.Windows.Forms.ListBox();
+            this.lsbNewModuleResources = new System.Windows.Forms.ListBox();
             this.btnAddResource = new System.Windows.Forms.Button();
             this.btnRegisterModule = new System.Windows.Forms.Button();
             this.lblNewModuleRegestration = new System.Windows.Forms.Label();
@@ -97,9 +97,11 @@ namespace PRG282Project.Presentation
             this.txtManPhones = new System.Windows.Forms.TextBox();
             this.lblManPhones = new System.Windows.Forms.Label();
             this.txtManAddress = new System.Windows.Forms.TextBox();
+            this.lblManGender = new System.Windows.Forms.Label();
             this.lblManAddress = new System.Windows.Forms.Label();
             this.txtManDateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.lblManDateOfBirth = new System.Windows.Forms.Label();
+            this.txtManGender = new System.Windows.Forms.TextBox();
             this.txtManStundentSurname = new System.Windows.Forms.TextBox();
             this.lblManStundentSurname = new System.Windows.Forms.Label();
             this.txtManStudentsName = new System.Windows.Forms.TextBox();
@@ -116,11 +118,13 @@ namespace PRG282Project.Presentation
             this.btnUpdatestudent = new System.Windows.Forms.Button();
             this.dgvStudents = new System.Windows.Forms.DataGridView();
             this.pnlAddstudent = new System.Windows.Forms.Panel();
+            this.txtNewDateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.pnlSeperator = new System.Windows.Forms.Panel();
             this.lstSelectModules = new System.Windows.Forms.ListBox();
             this.txtNewAddress = new System.Windows.Forms.TextBox();
             this.txtNewPhoneNumber = new System.Windows.Forms.TextBox();
             this.txtNewStudentSurname = new System.Windows.Forms.TextBox();
+            this.txtNewStudentImagePath = new System.Windows.Forms.TextBox();
             this.txtNewStudentName = new System.Windows.Forms.TextBox();
             this.lblNewStudentReg = new System.Windows.Forms.Label();
             this.btnAddImage = new System.Windows.Forms.Button();
@@ -145,10 +149,6 @@ namespace PRG282Project.Presentation
             this.lblAmountOfStudents = new System.Windows.Forms.Label();
             this.lblStudentCount = new System.Windows.Forms.Label();
             this.lblStudentManagement = new System.Windows.Forms.Label();
-            this.lblManGender = new System.Windows.Forms.Label();
-            this.txtManGender = new System.Windows.Forms.TextBox();
-            this.txtNewDateOfBirth = new System.Windows.Forms.DateTimePicker();
-            this.txtNewStudentImagePath = new System.Windows.Forms.TextBox();
             this.pnlMainTop.SuspendLayout();
             this.pnlModuleOptions.SuspendLayout();
             this.pnlStudentOptions.SuspendLayout();
@@ -178,7 +178,7 @@ namespace PRG282Project.Presentation
             this.pnlMainTop.Controls.Add(this.panel2);
             this.pnlMainTop.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMainTop.Location = new System.Drawing.Point(0, 33);
-            this.pnlMainTop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlMainTop.Margin = new System.Windows.Forms.Padding(2);
             this.pnlMainTop.Name = "pnlMainTop";
             this.pnlMainTop.Size = new System.Drawing.Size(150, 447);
             this.pnlMainTop.TabIndex = 0;
@@ -192,7 +192,7 @@ namespace PRG282Project.Presentation
             this.btnInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(150)))), ((int)(((byte)(156)))));
             this.btnInfo.Location = new System.Drawing.Point(0, 407);
-            this.btnInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInfo.Margin = new System.Windows.Forms.Padding(2);
             this.btnInfo.Name = "btnInfo";
             this.btnInfo.Size = new System.Drawing.Size(150, 40);
             this.btnInfo.TabIndex = 4;
@@ -224,7 +224,7 @@ namespace PRG282Project.Presentation
             this.btnModulesExtra.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnModulesExtra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(150)))), ((int)(((byte)(156)))));
             this.btnModulesExtra.Location = new System.Drawing.Point(0, 50);
-            this.btnModulesExtra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModulesExtra.Margin = new System.Windows.Forms.Padding(2);
             this.btnModulesExtra.Name = "btnModulesExtra";
             this.btnModulesExtra.Size = new System.Drawing.Size(150, 25);
             this.btnModulesExtra.TabIndex = 6;
@@ -241,7 +241,7 @@ namespace PRG282Project.Presentation
             this.btnManageModule.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnManageModule.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(150)))), ((int)(((byte)(156)))));
             this.btnManageModule.Location = new System.Drawing.Point(0, 25);
-            this.btnManageModule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnManageModule.Margin = new System.Windows.Forms.Padding(2);
             this.btnManageModule.Name = "btnManageModule";
             this.btnManageModule.Size = new System.Drawing.Size(150, 25);
             this.btnManageModule.TabIndex = 5;
@@ -258,7 +258,7 @@ namespace PRG282Project.Presentation
             this.btnaddmodule.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnaddmodule.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(150)))), ((int)(((byte)(156)))));
             this.btnaddmodule.Location = new System.Drawing.Point(0, 0);
-            this.btnaddmodule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnaddmodule.Margin = new System.Windows.Forms.Padding(2);
             this.btnaddmodule.Name = "btnaddmodule";
             this.btnaddmodule.Size = new System.Drawing.Size(150, 25);
             this.btnaddmodule.TabIndex = 4;
@@ -275,7 +275,7 @@ namespace PRG282Project.Presentation
             this.btnModules.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModules.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
             this.btnModules.Location = new System.Drawing.Point(0, 182);
-            this.btnModules.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModules.Margin = new System.Windows.Forms.Padding(2);
             this.btnModules.Name = "btnModules";
             this.btnModules.Size = new System.Drawing.Size(150, 40);
             this.btnModules.TabIndex = 9;
@@ -307,7 +307,7 @@ namespace PRG282Project.Presentation
             this.btnStudentsExtra.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnStudentsExtra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(150)))), ((int)(((byte)(156)))));
             this.btnStudentsExtra.Location = new System.Drawing.Point(0, 47);
-            this.btnStudentsExtra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStudentsExtra.Margin = new System.Windows.Forms.Padding(2);
             this.btnStudentsExtra.Name = "btnStudentsExtra";
             this.btnStudentsExtra.Size = new System.Drawing.Size(150, 25);
             this.btnStudentsExtra.TabIndex = 3;
@@ -324,7 +324,7 @@ namespace PRG282Project.Presentation
             this.btnManagestudents.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnManagestudents.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(150)))), ((int)(((byte)(156)))));
             this.btnManagestudents.Location = new System.Drawing.Point(0, 22);
-            this.btnManagestudents.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnManagestudents.Margin = new System.Windows.Forms.Padding(2);
             this.btnManagestudents.Name = "btnManagestudents";
             this.btnManagestudents.Size = new System.Drawing.Size(150, 25);
             this.btnManagestudents.TabIndex = 2;
@@ -341,7 +341,7 @@ namespace PRG282Project.Presentation
             this.btnAddStudent.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddStudent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(150)))), ((int)(((byte)(156)))));
             this.btnAddStudent.Location = new System.Drawing.Point(0, 0);
-            this.btnAddStudent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddStudent.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddStudent.Name = "btnAddStudent";
             this.btnAddStudent.Size = new System.Drawing.Size(150, 22);
             this.btnAddStudent.TabIndex = 1;
@@ -358,7 +358,7 @@ namespace PRG282Project.Presentation
             this.btnStudent.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnStudent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
             this.btnStudent.Location = new System.Drawing.Point(0, 70);
-            this.btnStudent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStudent.Margin = new System.Windows.Forms.Padding(2);
             this.btnStudent.Name = "btnStudent";
             this.btnStudent.Size = new System.Drawing.Size(150, 40);
             this.btnStudent.TabIndex = 0;
@@ -403,7 +403,7 @@ namespace PRG282Project.Presentation
             this.panel3.Controls.Add(this.pnlAddstudent);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(150, 31);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(650, 449);
             this.panel3.TabIndex = 1;
@@ -519,7 +519,7 @@ namespace PRG282Project.Presentation
             this.pnlManageModules.Controls.Add(this.lblManModuleID);
             this.pnlManageModules.Controls.Add(this.label5);
             this.pnlManageModules.Controls.Add(this.lblModuleManagement);
-            this.pnlManageModules.Controls.Add(this.lsbMouleResources);
+            this.pnlManageModules.Controls.Add(this.lsbModuleResources);
             this.pnlManageModules.Controls.Add(this.button2);
             this.pnlManageModules.Controls.Add(this.txtManModuleAddResource);
             this.pnlManageModules.Controls.Add(this.dgvmodules);
@@ -527,7 +527,7 @@ namespace PRG282Project.Presentation
             this.pnlManageModules.Controls.Add(this.lblAddModuleResource);
             this.pnlManageModules.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlManageModules.Location = new System.Drawing.Point(0, 1341);
-            this.pnlManageModules.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlManageModules.Margin = new System.Windows.Forms.Padding(2);
             this.pnlManageModules.Name = "pnlManageModules";
             this.pnlManageModules.Size = new System.Drawing.Size(633, 447);
             this.pnlManageModules.TabIndex = 24;
@@ -552,7 +552,7 @@ namespace PRG282Project.Presentation
             this.txtManModuleSearch.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
             this.txtManModuleSearch.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtManModuleSearch.Location = new System.Drawing.Point(5, 175);
-            this.txtManModuleSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtManModuleSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtManModuleSearch.Name = "txtManModuleSearch";
             this.txtManModuleSearch.Size = new System.Drawing.Size(194, 18);
             this.txtManModuleSearch.TabIndex = 35;
@@ -562,7 +562,7 @@ namespace PRG282Project.Presentation
             this.btnModuleDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModuleDelete.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnModuleDelete.Location = new System.Drawing.Point(121, 95);
-            this.btnModuleDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModuleDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnModuleDelete.Name = "btnModuleDelete";
             this.btnModuleDelete.Size = new System.Drawing.Size(93, 40);
             this.btnModuleDelete.TabIndex = 8;
@@ -575,7 +575,7 @@ namespace PRG282Project.Presentation
             this.btnModuleUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModuleUpdate.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnModuleUpdate.Location = new System.Drawing.Point(14, 95);
-            this.btnModuleUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModuleUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnModuleUpdate.Name = "btnModuleUpdate";
             this.btnModuleUpdate.Size = new System.Drawing.Size(93, 40);
             this.btnModuleUpdate.TabIndex = 8;
@@ -590,7 +590,7 @@ namespace PRG282Project.Presentation
             this.btnViewAllModules.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnViewAllModules.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnViewAllModules.Location = new System.Drawing.Point(275, 173);
-            this.btnViewAllModules.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnViewAllModules.Margin = new System.Windows.Forms.Padding(2);
             this.btnViewAllModules.Name = "btnViewAllModules";
             this.btnViewAllModules.Size = new System.Drawing.Size(68, 22);
             this.btnViewAllModules.TabIndex = 34;
@@ -604,7 +604,7 @@ namespace PRG282Project.Presentation
             this.button3.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.button3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button3.Location = new System.Drawing.Point(203, 173);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(68, 22);
             this.button3.TabIndex = 34;
@@ -616,7 +616,7 @@ namespace PRG282Project.Presentation
             this.txtManModuleDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtManModuleDescription.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
             this.txtManModuleDescription.Location = new System.Drawing.Point(418, 183);
-            this.txtManModuleDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtManModuleDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtManModuleDescription.Multiline = true;
             this.txtManModuleDescription.Name = "txtManModuleDescription";
             this.txtManModuleDescription.Size = new System.Drawing.Size(199, 68);
@@ -638,7 +638,7 @@ namespace PRG282Project.Presentation
             this.txtManModuleID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtManModuleID.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
             this.txtManModuleID.Location = new System.Drawing.Point(558, 40);
-            this.txtManModuleID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtManModuleID.Margin = new System.Windows.Forms.Padding(2);
             this.txtManModuleID.Name = "txtManModuleID";
             this.txtManModuleID.Size = new System.Drawing.Size(59, 18);
             this.txtManModuleID.TabIndex = 31;
@@ -648,7 +648,7 @@ namespace PRG282Project.Presentation
             this.txtManModuleCode.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtManModuleCode.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
             this.txtManModuleCode.Location = new System.Drawing.Point(419, 85);
-            this.txtManModuleCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtManModuleCode.Margin = new System.Windows.Forms.Padding(2);
             this.txtManModuleCode.Name = "txtManModuleCode";
             this.txtManModuleCode.Size = new System.Drawing.Size(198, 18);
             this.txtManModuleCode.TabIndex = 31;
@@ -658,7 +658,7 @@ namespace PRG282Project.Presentation
             this.txtManModuleName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtManModuleName.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
             this.txtManModuleName.Location = new System.Drawing.Point(419, 127);
-            this.txtManModuleName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtManModuleName.Margin = new System.Windows.Forms.Padding(2);
             this.txtManModuleName.Name = "txtManModuleName";
             this.txtManModuleName.Size = new System.Drawing.Size(199, 18);
             this.txtManModuleName.TabIndex = 30;
@@ -707,16 +707,16 @@ namespace PRG282Project.Presentation
             this.lblModuleManagement.TabIndex = 27;
             this.lblModuleManagement.Text = "Module Management";
             // 
-            // lsbMouleResources
+            // lsbModuleResources
             // 
-            this.lsbMouleResources.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lsbMouleResources.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
-            this.lsbMouleResources.FormattingEnabled = true;
-            this.lsbMouleResources.ItemHeight = 17;
-            this.lsbMouleResources.Location = new System.Drawing.Point(416, 281);
-            this.lsbMouleResources.Name = "lsbMouleResources";
-            this.lsbMouleResources.Size = new System.Drawing.Size(201, 102);
-            this.lsbMouleResources.TabIndex = 26;
+            this.lsbModuleResources.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lsbModuleResources.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.lsbModuleResources.FormattingEnabled = true;
+            this.lsbModuleResources.ItemHeight = 17;
+            this.lsbModuleResources.Location = new System.Drawing.Point(416, 281);
+            this.lsbModuleResources.Name = "lsbModuleResources";
+            this.lsbModuleResources.Size = new System.Drawing.Size(201, 102);
+            this.lsbModuleResources.TabIndex = 26;
             // 
             // button2
             // 
@@ -724,7 +724,7 @@ namespace PRG282Project.Presentation
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(573, 412);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(44, 22);
             this.button2.TabIndex = 8;
@@ -737,7 +737,7 @@ namespace PRG282Project.Presentation
             this.txtManModuleAddResource.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtManModuleAddResource.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtManModuleAddResource.Location = new System.Drawing.Point(416, 412);
-            this.txtManModuleAddResource.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtManModuleAddResource.Margin = new System.Windows.Forms.Padding(2);
             this.txtManModuleAddResource.Name = "txtManModuleAddResource";
             this.txtManModuleAddResource.Size = new System.Drawing.Size(153, 22);
             this.txtManModuleAddResource.TabIndex = 6;
@@ -746,7 +746,7 @@ namespace PRG282Project.Presentation
             // 
             this.dgvmodules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvmodules.Location = new System.Drawing.Point(5, 197);
-            this.dgvmodules.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvmodules.Margin = new System.Windows.Forms.Padding(2);
             this.dgvmodules.Name = "dgvmodules";
             this.dgvmodules.RowHeadersWidth = 51;
             this.dgvmodules.RowTemplate.Height = 24;
@@ -780,7 +780,7 @@ namespace PRG282Project.Presentation
             // 
             this.pnlAddmodule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(242)))), ((int)(((byte)(248)))));
             this.pnlAddmodule.Controls.Add(this.panel1);
-            this.pnlAddmodule.Controls.Add(this.lsbNewMouleResources);
+            this.pnlAddmodule.Controls.Add(this.lsbNewModuleResources);
             this.pnlAddmodule.Controls.Add(this.btnAddResource);
             this.pnlAddmodule.Controls.Add(this.btnRegisterModule);
             this.pnlAddmodule.Controls.Add(this.lblNewModuleRegestration);
@@ -794,7 +794,7 @@ namespace PRG282Project.Presentation
             this.pnlAddmodule.Controls.Add(this.lblModulecode);
             this.pnlAddmodule.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlAddmodule.Location = new System.Drawing.Point(0, 894);
-            this.pnlAddmodule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlAddmodule.Margin = new System.Windows.Forms.Padding(2);
             this.pnlAddmodule.Name = "pnlAddmodule";
             this.pnlAddmodule.Size = new System.Drawing.Size(633, 447);
             this.pnlAddmodule.TabIndex = 2;
@@ -808,16 +808,16 @@ namespace PRG282Project.Presentation
             this.panel1.Size = new System.Drawing.Size(2, 300);
             this.panel1.TabIndex = 42;
             // 
-            // lsbNewMouleResources
+            // lsbNewModuleResources
             // 
-            this.lsbNewMouleResources.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lsbNewMouleResources.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
-            this.lsbNewMouleResources.FormattingEnabled = true;
-            this.lsbNewMouleResources.ItemHeight = 17;
-            this.lsbNewMouleResources.Location = new System.Drawing.Point(272, 94);
-            this.lsbNewMouleResources.Name = "lsbNewMouleResources";
-            this.lsbNewMouleResources.Size = new System.Drawing.Size(346, 306);
-            this.lsbNewMouleResources.TabIndex = 26;
+            this.lsbNewModuleResources.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lsbNewModuleResources.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.lsbNewModuleResources.FormattingEnabled = true;
+            this.lsbNewModuleResources.ItemHeight = 17;
+            this.lsbNewModuleResources.Location = new System.Drawing.Point(272, 94);
+            this.lsbNewModuleResources.Name = "lsbNewModuleResources";
+            this.lsbNewModuleResources.Size = new System.Drawing.Size(346, 306);
+            this.lsbNewModuleResources.TabIndex = 26;
             // 
             // btnAddResource
             // 
@@ -825,25 +825,27 @@ namespace PRG282Project.Presentation
             this.btnAddResource.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddResource.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddResource.Location = new System.Drawing.Point(573, 68);
-            this.btnAddResource.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddResource.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddResource.Name = "btnAddResource";
             this.btnAddResource.Size = new System.Drawing.Size(44, 22);
             this.btnAddResource.TabIndex = 8;
             this.btnAddResource.Text = "Add";
             this.btnAddResource.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnAddResource.UseVisualStyleBackColor = false;
+            this.btnAddResource.Click += new System.EventHandler(this.btnAddResource_Click);
             // 
             // btnRegisterModule
             // 
             this.btnRegisterModule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegisterModule.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnRegisterModule.Location = new System.Drawing.Point(152, 299);
-            this.btnRegisterModule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRegisterModule.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegisterModule.Name = "btnRegisterModule";
             this.btnRegisterModule.Size = new System.Drawing.Size(85, 40);
             this.btnRegisterModule.TabIndex = 8;
             this.btnRegisterModule.Text = "Register";
             this.btnRegisterModule.UseVisualStyleBackColor = true;
+            this.btnRegisterModule.Click += new System.EventHandler(this.btnRegisterModule_Click);
             // 
             // lblNewModuleRegestration
             // 
@@ -861,7 +863,7 @@ namespace PRG282Project.Presentation
             this.txtNewModuleResource.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNewModuleResource.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNewModuleResource.Location = new System.Drawing.Point(272, 67);
-            this.txtNewModuleResource.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNewModuleResource.Margin = new System.Windows.Forms.Padding(2);
             this.txtNewModuleResource.Name = "txtNewModuleResource";
             this.txtNewModuleResource.Size = new System.Drawing.Size(293, 22);
             this.txtNewModuleResource.TabIndex = 6;
@@ -871,7 +873,7 @@ namespace PRG282Project.Presentation
             this.txtNewModuleDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNewModuleDescription.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
             this.txtNewModuleDescription.Location = new System.Drawing.Point(8, 145);
-            this.txtNewModuleDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNewModuleDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtNewModuleDescription.Multiline = true;
             this.txtNewModuleDescription.Name = "txtNewModuleDescription";
             this.txtNewModuleDescription.Size = new System.Drawing.Size(229, 150);
@@ -904,7 +906,7 @@ namespace PRG282Project.Presentation
             this.txtNewModulecode.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNewModulecode.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
             this.txtNewModulecode.Location = new System.Drawing.Point(102, 70);
-            this.txtNewModulecode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNewModulecode.Margin = new System.Windows.Forms.Padding(2);
             this.txtNewModulecode.Name = "txtNewModulecode";
             this.txtNewModulecode.Size = new System.Drawing.Size(135, 18);
             this.txtNewModulecode.TabIndex = 4;
@@ -914,7 +916,7 @@ namespace PRG282Project.Presentation
             this.txtNewModuleName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNewModuleName.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
             this.txtNewModuleName.Location = new System.Drawing.Point(102, 98);
-            this.txtNewModuleName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNewModuleName.Margin = new System.Windows.Forms.Padding(2);
             this.txtNewModuleName.Name = "txtNewModuleName";
             this.txtNewModuleName.Size = new System.Drawing.Size(135, 18);
             this.txtNewModuleName.TabIndex = 3;
@@ -974,7 +976,7 @@ namespace PRG282Project.Presentation
             this.pnlManageStudents.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlManageStudents.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(150)))), ((int)(((byte)(156)))));
             this.pnlManageStudents.Location = new System.Drawing.Point(0, 447);
-            this.pnlManageStudents.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlManageStudents.Margin = new System.Windows.Forms.Padding(2);
             this.pnlManageStudents.Name = "pnlManageStudents";
             this.pnlManageStudents.Size = new System.Drawing.Size(633, 447);
             this.pnlManageStudents.TabIndex = 1;
@@ -1000,7 +1002,7 @@ namespace PRG282Project.Presentation
             // 
             this.picManStudent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picManStudent.Location = new System.Drawing.Point(145, 63);
-            this.picManStudent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picManStudent.Margin = new System.Windows.Forms.Padding(2);
             this.picManStudent.Name = "picManStudent";
             this.picManStudent.Size = new System.Drawing.Size(50, 50);
             this.picManStudent.TabIndex = 27;
@@ -1024,7 +1026,7 @@ namespace PRG282Project.Presentation
             this.txtManPhones.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
             this.txtManPhones.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtManPhones.Location = new System.Drawing.Point(127, 242);
-            this.txtManPhones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtManPhones.Margin = new System.Windows.Forms.Padding(2);
             this.txtManPhones.Multiline = true;
             this.txtManPhones.Name = "txtManPhones";
             this.txtManPhones.Size = new System.Drawing.Size(102, 19);
@@ -1047,11 +1049,23 @@ namespace PRG282Project.Presentation
             this.txtManAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtManAddress.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
             this.txtManAddress.Location = new System.Drawing.Point(83, 302);
-            this.txtManAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtManAddress.Margin = new System.Windows.Forms.Padding(2);
             this.txtManAddress.Multiline = true;
             this.txtManAddress.Name = "txtManAddress";
             this.txtManAddress.Size = new System.Drawing.Size(146, 65);
             this.txtManAddress.TabIndex = 36;
+            // 
+            // lblManGender
+            // 
+            this.lblManGender.AutoSize = true;
+            this.lblManGender.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblManGender.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblManGender.Location = new System.Drawing.Point(66, 272);
+            this.lblManGender.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblManGender.Name = "lblManGender";
+            this.lblManGender.Size = new System.Drawing.Size(52, 17);
+            this.lblManGender.TabIndex = 35;
+            this.lblManGender.Text = "Gender";
             // 
             // lblManAddress
             // 
@@ -1070,7 +1084,7 @@ namespace PRG282Project.Presentation
             this.txtManDateOfBirth.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
             this.txtManDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.txtManDateOfBirth.Location = new System.Drawing.Point(127, 208);
-            this.txtManDateOfBirth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtManDateOfBirth.Margin = new System.Windows.Forms.Padding(2);
             this.txtManDateOfBirth.Name = "txtManDateOfBirth";
             this.txtManDateOfBirth.Size = new System.Drawing.Size(102, 25);
             this.txtManDateOfBirth.TabIndex = 34;
@@ -1087,13 +1101,24 @@ namespace PRG282Project.Presentation
             this.lblManDateOfBirth.TabIndex = 33;
             this.lblManDateOfBirth.Text = "Date of Birth";
             // 
+            // txtManGender
+            // 
+            this.txtManGender.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtManGender.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.txtManGender.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtManGender.Location = new System.Drawing.Point(127, 271);
+            this.txtManGender.Margin = new System.Windows.Forms.Padding(2);
+            this.txtManGender.Name = "txtManGender";
+            this.txtManGender.Size = new System.Drawing.Size(102, 18);
+            this.txtManGender.TabIndex = 32;
+            // 
             // txtManStundentSurname
             // 
             this.txtManStundentSurname.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtManStundentSurname.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
             this.txtManStundentSurname.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtManStundentSurname.Location = new System.Drawing.Point(127, 181);
-            this.txtManStundentSurname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtManStundentSurname.Margin = new System.Windows.Forms.Padding(2);
             this.txtManStundentSurname.Name = "txtManStundentSurname";
             this.txtManStundentSurname.Size = new System.Drawing.Size(102, 18);
             this.txtManStundentSurname.TabIndex = 32;
@@ -1116,7 +1141,7 @@ namespace PRG282Project.Presentation
             this.txtManStudentsName.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
             this.txtManStudentsName.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtManStudentsName.Location = new System.Drawing.Point(127, 154);
-            this.txtManStudentsName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtManStudentsName.Margin = new System.Windows.Forms.Padding(2);
             this.txtManStudentsName.Name = "txtManStudentsName";
             this.txtManStudentsName.Size = new System.Drawing.Size(102, 18);
             this.txtManStudentsName.TabIndex = 30;
@@ -1139,7 +1164,7 @@ namespace PRG282Project.Presentation
             this.txtManStudentsNumber.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
             this.txtManStudentsNumber.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtManStudentsNumber.Location = new System.Drawing.Point(127, 127);
-            this.txtManStudentsNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtManStudentsNumber.Margin = new System.Windows.Forms.Padding(2);
             this.txtManStudentsNumber.Name = "txtManStudentsNumber";
             this.txtManStudentsNumber.Size = new System.Drawing.Size(102, 18);
             this.txtManStudentsNumber.TabIndex = 28;
@@ -1204,7 +1229,7 @@ namespace PRG282Project.Presentation
             this.txtSearchStudent.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
             this.txtSearchStudent.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtSearchStudent.Location = new System.Drawing.Point(258, 147);
-            this.txtSearchStudent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSearchStudent.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearchStudent.Name = "txtSearchStudent";
             this.txtSearchStudent.Size = new System.Drawing.Size(224, 18);
             this.txtSearchStudent.TabIndex = 26;
@@ -1216,7 +1241,7 @@ namespace PRG282Project.Presentation
             this.btnViewAll.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnViewAll.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnViewAll.Location = new System.Drawing.Point(548, 145);
-            this.btnViewAll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnViewAll.Margin = new System.Windows.Forms.Padding(2);
             this.btnViewAll.Name = "btnViewAll";
             this.btnViewAll.Size = new System.Drawing.Size(59, 22);
             this.btnViewAll.TabIndex = 25;
@@ -1230,7 +1255,7 @@ namespace PRG282Project.Presentation
             this.btnDeletestudent.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnDeletestudent.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnDeletestudent.Location = new System.Drawing.Point(144, 375);
-            this.btnDeletestudent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDeletestudent.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeletestudent.Name = "btnDeletestudent";
             this.btnDeletestudent.Size = new System.Drawing.Size(85, 40);
             this.btnDeletestudent.TabIndex = 25;
@@ -1245,7 +1270,7 @@ namespace PRG282Project.Presentation
             this.btnSearchStudent.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnSearchStudent.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnSearchStudent.Location = new System.Drawing.Point(486, 145);
-            this.btnSearchStudent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearchStudent.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchStudent.Name = "btnSearchStudent";
             this.btnSearchStudent.Size = new System.Drawing.Size(59, 22);
             this.btnSearchStudent.TabIndex = 24;
@@ -1259,7 +1284,7 @@ namespace PRG282Project.Presentation
             this.btnUpdatestudent.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnUpdatestudent.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnUpdatestudent.Location = new System.Drawing.Point(55, 375);
-            this.btnUpdatestudent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdatestudent.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdatestudent.Name = "btnUpdatestudent";
             this.btnUpdatestudent.Size = new System.Drawing.Size(85, 40);
             this.btnUpdatestudent.TabIndex = 23;
@@ -1271,7 +1296,7 @@ namespace PRG282Project.Presentation
             // 
             this.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStudents.Location = new System.Drawing.Point(258, 171);
-            this.dgvStudents.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvStudents.Margin = new System.Windows.Forms.Padding(2);
             this.dgvStudents.Name = "dgvStudents";
             this.dgvStudents.RowHeadersWidth = 51;
             this.dgvStudents.RowTemplate.Height = 24;
@@ -1308,11 +1333,21 @@ namespace PRG282Project.Presentation
             this.pnlAddstudent.Controls.Add(this.label1);
             this.pnlAddstudent.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlAddstudent.Location = new System.Drawing.Point(0, 0);
-            this.pnlAddstudent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlAddstudent.Margin = new System.Windows.Forms.Padding(2);
             this.pnlAddstudent.Name = "pnlAddstudent";
             this.pnlAddstudent.Size = new System.Drawing.Size(633, 447);
             this.pnlAddstudent.TabIndex = 0;
             this.pnlAddstudent.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlAddstudent_Paint);
+            // 
+            // txtNewDateOfBirth
+            // 
+            this.txtNewDateOfBirth.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.txtNewDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtNewDateOfBirth.Location = new System.Drawing.Point(121, 176);
+            this.txtNewDateOfBirth.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNewDateOfBirth.Name = "txtNewDateOfBirth";
+            this.txtNewDateOfBirth.Size = new System.Drawing.Size(116, 25);
+            this.txtNewDateOfBirth.TabIndex = 35;
             // 
             // pnlSeperator
             // 
@@ -1362,6 +1397,16 @@ namespace PRG282Project.Presentation
             this.txtNewStudentSurname.Size = new System.Drawing.Size(116, 18);
             this.txtNewStudentSurname.TabIndex = 24;
             // 
+            // txtNewStudentImagePath
+            // 
+            this.txtNewStudentImagePath.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNewStudentImagePath.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.txtNewStudentImagePath.Location = new System.Drawing.Point(494, 210);
+            this.txtNewStudentImagePath.Name = "txtNewStudentImagePath";
+            this.txtNewStudentImagePath.Size = new System.Drawing.Size(100, 18);
+            this.txtNewStudentImagePath.TabIndex = 24;
+            this.txtNewStudentImagePath.Visible = false;
+            // 
             // txtNewStudentName
             // 
             this.txtNewStudentName.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -1388,7 +1433,7 @@ namespace PRG282Project.Presentation
             this.btnAddImage.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddImage.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnAddImage.Location = new System.Drawing.Point(494, 168);
-            this.btnAddImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddImage.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddImage.Name = "btnAddImage";
             this.btnAddImage.Size = new System.Drawing.Size(100, 34);
             this.btnAddImage.TabIndex = 22;
@@ -1402,7 +1447,7 @@ namespace PRG282Project.Presentation
             this.btnRegisterStudent.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnRegisterStudent.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnRegisterStudent.Location = new System.Drawing.Point(243, 394);
-            this.btnRegisterStudent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRegisterStudent.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegisterStudent.Name = "btnRegisterStudent";
             this.btnRegisterStudent.Size = new System.Drawing.Size(111, 44);
             this.btnRegisterStudent.TabIndex = 22;
@@ -1425,7 +1470,7 @@ namespace PRG282Project.Presentation
             // 
             this.picbxStudentImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picbxStudentImage.Location = new System.Drawing.Point(494, 55);
-            this.picbxStudentImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picbxStudentImage.Margin = new System.Windows.Forms.Padding(2);
             this.picbxStudentImage.Name = "picbxStudentImage";
             this.picbxStudentImage.Size = new System.Drawing.Size(100, 100);
             this.picbxStudentImage.TabIndex = 17;
@@ -1447,7 +1492,7 @@ namespace PRG282Project.Presentation
             this.rbtOther.AutoSize = true;
             this.rbtOther.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbtOther.Location = new System.Drawing.Point(192, 342);
-            this.rbtOther.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbtOther.Margin = new System.Windows.Forms.Padding(2);
             this.rbtOther.Name = "rbtOther";
             this.rbtOther.Size = new System.Drawing.Size(59, 21);
             this.rbtOther.TabIndex = 13;
@@ -1471,7 +1516,7 @@ namespace PRG282Project.Presentation
             this.rbtFemale.AutoSize = true;
             this.rbtFemale.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbtFemale.Location = new System.Drawing.Point(122, 342);
-            this.rbtFemale.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbtFemale.Margin = new System.Windows.Forms.Padding(2);
             this.rbtFemale.Name = "rbtFemale";
             this.rbtFemale.Size = new System.Drawing.Size(67, 21);
             this.rbtFemale.TabIndex = 10;
@@ -1484,7 +1529,7 @@ namespace PRG282Project.Presentation
             this.rbtMale.AutoSize = true;
             this.rbtMale.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbtMale.Location = new System.Drawing.Point(65, 342);
-            this.rbtMale.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbtMale.Margin = new System.Windows.Forms.Padding(2);
             this.rbtMale.Name = "rbtMale";
             this.rbtMale.Size = new System.Drawing.Size(55, 21);
             this.rbtMale.TabIndex = 9;
@@ -1667,49 +1712,6 @@ namespace PRG282Project.Presentation
             this.lblStudentManagement.TabIndex = 23;
             this.lblStudentManagement.Text = "Student Management";
             // 
-            // lblManGender
-            // 
-            this.lblManGender.AutoSize = true;
-            this.lblManGender.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblManGender.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblManGender.Location = new System.Drawing.Point(66, 272);
-            this.lblManGender.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblManGender.Name = "lblManGender";
-            this.lblManGender.Size = new System.Drawing.Size(52, 17);
-            this.lblManGender.TabIndex = 35;
-            this.lblManGender.Text = "Gender";
-            // 
-            // txtManGender
-            // 
-            this.txtManGender.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtManGender.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
-            this.txtManGender.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtManGender.Location = new System.Drawing.Point(127, 271);
-            this.txtManGender.Margin = new System.Windows.Forms.Padding(2);
-            this.txtManGender.Name = "txtManGender";
-            this.txtManGender.Size = new System.Drawing.Size(102, 18);
-            this.txtManGender.TabIndex = 32;
-            // 
-            // txtNewDateOfBirth
-            // 
-            this.txtNewDateOfBirth.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
-            this.txtNewDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtNewDateOfBirth.Location = new System.Drawing.Point(121, 176);
-            this.txtNewDateOfBirth.Margin = new System.Windows.Forms.Padding(2);
-            this.txtNewDateOfBirth.Name = "txtNewDateOfBirth";
-            this.txtNewDateOfBirth.Size = new System.Drawing.Size(116, 25);
-            this.txtNewDateOfBirth.TabIndex = 35;
-            // 
-            // txtNewStudentImagePath
-            // 
-            this.txtNewStudentImagePath.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNewStudentImagePath.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
-            this.txtNewStudentImagePath.Location = new System.Drawing.Point(494, 210);
-            this.txtNewStudentImagePath.Name = "txtNewStudentImagePath";
-            this.txtNewStudentImagePath.Size = new System.Drawing.Size(100, 18);
-            this.txtNewStudentImagePath.TabIndex = 24;
-            this.txtNewStudentImagePath.Visible = false;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1720,7 +1722,7 @@ namespace PRG282Project.Presentation
             this.Controls.Add(this.pnlMainTop);
             this.Controls.Add(this.panel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Main";
             this.Text = "Main";
             this.Load += new System.EventHandler(this.Main_Load);
@@ -1838,11 +1840,11 @@ namespace PRG282Project.Presentation
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblModuleManagement;
-        private System.Windows.Forms.ListBox lsbMouleResources;
+        private System.Windows.Forms.ListBox lsbModuleResources;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txtManModuleAddResource;
         private System.Windows.Forms.Label lblAddModuleResource;
-        private System.Windows.Forms.ListBox lsbNewMouleResources;
+        private System.Windows.Forms.ListBox lsbNewModuleResources;
         private System.Windows.Forms.TextBox txtNewModuleResource;
         private System.Windows.Forms.Label lblModuleResources;
         private System.Windows.Forms.Button btnModuleDelete;
