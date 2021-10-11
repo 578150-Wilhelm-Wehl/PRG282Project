@@ -33,6 +33,10 @@ namespace PRG282Project
             string connect = "Server=localhost;Integrated security=SSPI;database=master";
             SqlConnection sqlconnect = new SqlConnection(connect);
             string datapath = Directory.GetParent(Directory.GetParent(Environment.CurrentDirectory).ToString()).ToString() + @"\Database";
+            string Testimage1 = Directory.GetParent(Directory.GetParent(Environment.CurrentDirectory).ToString()).ToString() + @"\TestImages\TestImage1.jpeg";
+            string Testimage2 = Directory.GetParent(Directory.GetParent(Environment.CurrentDirectory).ToString()).ToString() + @"\TestImages\TestImage2.jpg";
+            string Testimage3 = Directory.GetParent(Directory.GetParent(Environment.CurrentDirectory).ToString()).ToString() + @"\TestImages\TestImage3.jpg";
+            string Testimage4 = Directory.GetParent(Directory.GetParent(Environment.CurrentDirectory).ToString()).ToString() + @"\TestImages\TestImage4.jpg";
             String Database;
             String Tables;
 
@@ -65,12 +69,8 @@ namespace PRG282Project
              "PhoneNumber NVARCHAR(50)," +
              "StudentAddress NVARCHAR(MAX),)" +
              "INSERT INTO tblStudents(StundentName, StudentSurname, StudentImage, DateOfBirth, Gender, PhoneNumber, StudentAddress)" +
-             "VALUES('Jinny', 'Luckett', null"+
-             //(SELECT * FROM OPENROWSET(BULK N'" + @"C:\Users\spike\Pictures\New folder\download (1).jpg', SINGLE_BLOB) as varbinary)"
-             " ,'2/18/1987', 'Male', '507-341-7167', '467 Mallory Point')," +
-             "('Kayley', 'Alltimes', null"+
-             //(SELECT * FROM OPENROWSET(BULK N'" + @"C:\Users\spike\Pictures\New folder\download.jpg', SINGLE_BLOB) as varbinary)" +
-             ",'8/24/1996', 'Non-binary', '213-514-2850', '4 Straubel Point')," +
+             "VALUES('Jinny', 'Luckett', (SELECT * FROM OPENROWSET(BULK N'"+Testimage1+"', SINGLE_BLOB) as varbinary) ,'2/18/1987', 'Male', '507-341-7167', '467 Mallory Point')," +
+             "('Kayley', 'Alltimes', (SELECT * FROM OPENROWSET(BULK N'"+Testimage2+"', SINGLE_BLOB) as varbinary),'8/24/1996', 'Non-binary', '213-514-2850', '4 Straubel Point')," +
              "('Marcie', 'Kits', null, '8/11/1986', 'Polygender', '913-575-1440', '7 Birchwood Street')," +
              "('Nelia', 'Hale', null, '7/6/1985', 'Non-binary', '350-848-0842', '0971 Loomis Pass')," +
              "('Aymer', 'Angelo', null, '8/5/1991', 'Agender', '171-358-9088', '62305 Lerdahl Road')," +
@@ -80,12 +80,8 @@ namespace PRG282Project
              "('Jase', 'Sangar', null, '5/7/1988', 'Genderfluid', '322-245-2691', '6 La Follette Trail')," +
              "('Ariel', 'Badwick', null, '3/12/1990', 'Polygender', '498-183-9874', '62962 Mccormick Hill')," +
              "('Delores', 'Jakubski', null, '4/25/1985', 'Non-binary', '617-178-4037', '831 Macpherson Park')," +
-             "('Myron', 'Cossans', null"+
-             //(SELECT * FROM OPENROWSET(BULK N'" + @"C:\Users\spike\Pictures\New folder\exam.jpg', SINGLE_BLOB) as varbinary)" +
-             ", '4/16/1993', 'Genderqueer', '608-321-8893', '72359 Northport Court')," +
-             "('Eyde', 'Robrose', null"+
-             //(SELECT * FROM OPENROWSET(BULK N'" + @"C:\Users\spike\Pictures\New folder\images.jpg', SINGLE_BLOB) as varbinary)" +
-             ", '6/11/2000', 'Agender', '730-513-2049', '28 Mccormick Terrace')," +
+             "('Myron', 'Cossans', (SELECT * FROM OPENROWSET(BULK N'"+Testimage3+"', SINGLE_BLOB) as varbinary), '4/16/1993', 'Genderqueer', '608-321-8893', '72359 Northport Court')," +
+             "('Eyde', 'Robrose', (SELECT * FROM OPENROWSET(BULK N'" + Testimage4 + "', SINGLE_BLOB) as varbinary), '6/11/2000', 'Agender', '730-513-2049', '28 Mccormick Terrace')," +
              "('Kippar', 'Schlagh', null, '1/2/1994', 'Genderfluid', '857-196-9652', '92304 School Terrace')," +
              "('Nicki', 'Knowler', null, '8/13/1989', 'Bigender', '384-441-9738', '2526 Weeping Birch Trail')," +
              "('Donnie', 'Frew', null, '10/1/1981', 'Male', '189-101-5269', '902 Hallows Hill')," +
