@@ -185,7 +185,7 @@ namespace PRG282Project.Presentation
         {
             try
             {
-                if (e.RowIndex >= 0)
+                if ((e.RowIndex >= 0) && (e.RowIndex < dgvStudents.RowCount - 1))
                 {
                     DataGridViewRow row = this.dgvStudents.Rows[e.RowIndex];
                     if (row.Cells["StudentImage"].Value != DBNull.Value)
@@ -214,6 +214,15 @@ namespace PRG282Project.Presentation
                         string moduleList = item["ModuleCode"].ToString() + "\t\t" + item["ModuleName"].ToString() + "\t\t" + item["ModuleDescription"].ToString();
                         lsbStudentModules.Items.Add(moduleList);
                     }
+                }
+                else
+                {
+                    txtManStudentsNumber.Clear();
+                    txtManStudentsName.Clear();
+                    txtManStundentSurname.Clear();
+                    txtManPhones.Clear();
+                    txtManAddress.Clear();
+                    txtManGender.Clear();
                 }
             }
             catch (Exception ex)
@@ -245,7 +254,7 @@ namespace PRG282Project.Presentation
 
         private void dgvmodules_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if ((e.RowIndex >= 0) && (e.RowIndex < dgvmodules.RowCount - 1))
             {
                 DataGridViewRow row = this.dgvmodules.Rows[e.RowIndex];
                 txtManModuleID.Text = row.Cells["ModuleID"].Value.ToString();
@@ -258,6 +267,14 @@ namespace PRG282Project.Presentation
                     string ResourceList = item["ResouceLink"].ToString();
                     lsbModuleResources.Items.Add(ResourceList);
                 }
+            }
+            else
+            {
+                txtManModuleID.Clear();
+                txtManModuleCode.Clear();
+                txtManModuleName.Clear();
+                txtManModuleDescription.Clear();
+                lsbModuleResources.Items.Clear();
             }
         }
 

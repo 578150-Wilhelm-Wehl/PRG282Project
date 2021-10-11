@@ -31,11 +31,11 @@ namespace PRG282Project.Data_Access
 
         public DataTable GetResources(string ModuleID)
         {
-            string GetResourcesQuery = "SELECT * FROM tblResources WHERE ModuleID = " + ModuleID;
-            SqlDataAdapter sqlData = new SqlDataAdapter(GetResourcesQuery, connect);
-            DataTable DataTableModules = new DataTable();
-            sqlData.Fill(DataTableModules);
-            return DataTableModules;
+                string GetResourcesQuery = "SELECT * FROM tblResources WHERE ModuleID = " + ModuleID;
+                SqlDataAdapter sqlData = new SqlDataAdapter(GetResourcesQuery, connect);
+                DataTable DataTableModules = new DataTable();
+                sqlData.Fill(DataTableModules);
+                return DataTableModules;
         }
 
         public DataTable GetStudents()
