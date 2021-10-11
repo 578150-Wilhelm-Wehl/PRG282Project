@@ -328,5 +328,15 @@ namespace PRG282Project.Presentation
             lsbNewModuleResources.Items.Add(txtNewModuleResource.Text);
             txtNewModuleResource.Clear();
         }
+
+        private void btnModuleSearch_Click(object sender, EventArgs e)
+        {
+            dgvmodules.DataSource = Fhandler.SearchModules(txtManModuleSearch.Text);
+        }
+
+        private void btnViewAllModules_Click(object sender, EventArgs e)
+        {
+            dgvmodules.DataSource = Fhandler.ViewModules();
+        }
     }
 }

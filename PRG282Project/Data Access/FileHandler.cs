@@ -31,11 +31,11 @@ namespace PRG282Project.Data_Access
 
         public DataTable GetResources(string ModuleID)
         {
-                string GetResourcesQuery = "SELECT * FROM tblResources WHERE ModuleID = " + ModuleID;
-                SqlDataAdapter sqlData = new SqlDataAdapter(GetResourcesQuery, connect);
-                DataTable DataTableModules = new DataTable();
-                sqlData.Fill(DataTableModules);
-                return DataTableModules;
+            string GetResourcesQuery = "SELECT * FROM tblResources WHERE ModuleID = " + ModuleID;
+            SqlDataAdapter sqlData = new SqlDataAdapter(GetResourcesQuery, connect);
+            DataTable DataTableModules = new DataTable();
+            sqlData.Fill(DataTableModules);
+            return DataTableModules;
         }
 
         public DataTable GetStudents()
@@ -75,19 +75,19 @@ namespace PRG282Project.Data_Access
         {
             try
             {
-            string GetStudentModulesQuery = "SELECT ts.StudentNumber, tm.ModuleCode, tm.ModuleName, tm.ModuleDescription " +
-            "FROM tblStudents ts " +
-            "JOIN tblBridge tb " +
-            "ON ts.StudentNumber = tb.StudentNumber " +
-            "JOIN tblModule tm " +
-            "ON tb.ModuleID = tm.ModuleID " +
-            "WHERE ts.StudentNumber = " + StudentNumber;
+                string GetStudentModulesQuery = "SELECT ts.StudentNumber, tm.ModuleCode, tm.ModuleName, tm.ModuleDescription " +
+                "FROM tblStudents ts " +
+                "JOIN tblBridge tb " +
+                "ON ts.StudentNumber = tb.StudentNumber " +
+                "JOIN tblModule tm " +
+                "ON tb.ModuleID = tm.ModuleID " +
+                "WHERE ts.StudentNumber = " + StudentNumber;
 
 
-            DataTable DataTableStudentModules = new DataTable();
-            SqlDataAdapter sqlData = new SqlDataAdapter(GetStudentModulesQuery, connect);
-            sqlData.Fill(DataTableStudentModules);
-            return DataTableStudentModules;
+                DataTable DataTableStudentModules = new DataTable();
+                SqlDataAdapter sqlData = new SqlDataAdapter(GetStudentModulesQuery, connect);
+                sqlData.Fill(DataTableStudentModules);
+                return DataTableStudentModules;
 
             }
             catch (Exception e)
@@ -127,7 +127,8 @@ namespace PRG282Project.Data_Access
             }
         }
 
-        public void InsertStudent(string StudentName, string StudentSurname, string StudentImage, string DateofBirth, string Gender, string phonenumber, string address) {
+        public void InsertStudent(string StudentName, string StudentSurname, string StudentImage, string DateofBirth, string Gender, string phonenumber, string address)
+        {
             SqlConnection cn = new SqlConnection(connect);
             cn.Open();
 
@@ -281,7 +282,7 @@ namespace PRG282Project.Data_Access
             sqlConnection.Open();
             try
             {
-                string InsertBridgeQuery = "INSERT INTO tblBridge (StudentNumber,ModuleID) VALUES ("+StudentNumber +","+ ModuleID+")";
+                string InsertBridgeQuery = "INSERT INTO tblBridge (StudentNumber,ModuleID) VALUES (" + StudentNumber + "," + ModuleID + ")";
                 SqlCommand sqlCommand = new SqlCommand(InsertBridgeQuery, sqlConnection);
                 int rowsafected = sqlCommand.ExecuteNonQuery();
                 if (rowsafected > 0)
@@ -306,7 +307,7 @@ namespace PRG282Project.Data_Access
 
         public DataTable FetchStudent(string StudentName, string StudentSurname, string DateofBirth, string phonenumber, string address)
         {
-           string FetchStudentQuery= "SELECT StudentNumber FROM tblStudents WHERE StundentName = '"+ StudentName + "' AND StudentSurname = '"+ StudentSurname + "' AND DateOfBirth = '"+ DateofBirth + "' AND PhoneNumber = '"+ phonenumber + "' AND StudentAddress = '"+ address + "'";
+            string FetchStudentQuery = "SELECT StudentNumber FROM tblStudents WHERE StundentName = '" + StudentName + "' AND StudentSurname = '" + StudentSurname + "' AND DateOfBirth = '" + DateofBirth + "' AND PhoneNumber = '" + phonenumber + "' AND StudentAddress = '" + address + "'";
             SqlDataAdapter adapter = new SqlDataAdapter(FetchStudentQuery, connect);
             DataTable FetchStudentDatatable = new DataTable();
             adapter.Fill(FetchStudentDatatable);
@@ -340,5 +341,42 @@ namespace PRG282Project.Data_Access
                 sqlConnection.Close();
             }
         }
+
+
+        public DataTable SearchModules(string Modulecode)
+        {
+            try
+            {
+                if (!String.IsNullOrEmpty(Modulecode))
+                {
+                    string GetModulesQuery = "SELECT * FROM tblModule WHERE ModuleCode = '" + Modulecode + "'";
+                    SqlDataAdapter sqlData = new SqlDataAdapter(GetModulesQuery, connect);
+                    DataTable DataTableStudents = new DataTable();
+                    sqlData.Fill(DataTableStudents);
+                    return DataTableStudents;
+                }
+                else
+                {
+                    throw new Exception();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                return null;
+            }
+
+
+        }
+    
+        public DataTable ViewModules()
+        {
+            string ViewModulesQuery = "SELECT * FROM tblModule";
+            SqlDataAdapter sqlData = new SqlDataAdapter(ViewModulesQuery, connect);
+            DataTable DataTableStudents = new DataTable();
+            sqlData.Fill(DataTableStudents);
+            return DataTableStudents;
+        }
     }
 }
+
