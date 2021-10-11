@@ -186,21 +186,35 @@ namespace PRG282Project.Data_Access
 
         public void DeleteStudent(string studentnumber)
         {
-            SqlConnection cn = new SqlConnection(connect);
-            cn.Open();
-
-            string query = @"DELETE  FROM tblStudents WHERE StudentNumber= '" + studentnumber + "'";
-            SqlCommand cmd = new SqlCommand(query, cn);
-
-            int rows = cmd.ExecuteNonQuery();
-
-            if (rows > 0)
+            SqlConnection sqlConnection = new SqlConnection(connect);
+            sqlConnection.Open();
+            try
             {
-                MessageBox.Show("Student Deleted");
+                string DeleteBridgeQuey = @"DELETE  FROM tblBridge WHERE StudentNumber= '" + studentnumber + "'";
+                string DeleteStudentQuery = @"DELETE  FROM tblStudents WHERE StudentNumber= '" + studentnumber + "'";
+                SqlCommand DeleteBridgeComand = new SqlCommand(DeleteBridgeQuey, sqlConnection);
+                SqlCommand DeleteStudentComand = new SqlCommand(DeleteStudentQuery, sqlConnection);
+
+                int tb1rows = DeleteBridgeComand.ExecuteNonQuery();
+                int tb2rows = DeleteStudentComand.ExecuteNonQuery();
+
+                if (tb2rows > 0)
+                {
+                    MessageBox.Show("Student Deleted");
+                }
+                else
+                {
+                    MessageBox.Show("Student deletion failed");
+                }
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("Student deletion failed");
+
+                throw;
+            }
+            finally
+            {
+                sqlConnection.Close();
             }
         }
     

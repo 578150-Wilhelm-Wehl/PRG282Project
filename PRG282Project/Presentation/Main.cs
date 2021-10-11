@@ -108,6 +108,13 @@ namespace PRG282Project.Presentation
             dgvmodules.DataSource = Fhandler.GetModules();
             dgvStudents.DataSource = Fhandler.GetStudents();
             dgvStudents.Columns["StudentImage"].Visible = false;
+
+
+            foreach (DataRow item in Fhandler.GetModules().Rows)
+            {
+                string moduleList = item["ModuleCode"].ToString() + "-" + item["ModuleName"].ToString() + "-" + item["ModuleDescription"].ToString();
+                lstSelectModules.Items.Add(moduleList);
+            }
         }
 
         private void lblCurrentStudent_Click(object sender, EventArgs e)
@@ -140,7 +147,7 @@ namespace PRG282Project.Presentation
                 MessageBox.Show("Please select a Gender");
             }
 
-            Fhandler.InsertStudent(txtStudentName.Text, txtStudentSurname.Text, picbxStudentImage.Image , txtDateOfBirth.Text, gender, txtPhoneNumber.Text, txtAddress.Text);
+            Fhandler.InsertStudent(txtNewStudentName.Text, txtNewStudentSurname.Text, picbxStudentImage.Image , txtNewDateOfBirth.Text, gender, txtNewPhoneNumber.Text, txtNewAddress.Text);
 
         }
 
@@ -236,26 +243,15 @@ namespace PRG282Project.Presentation
 
         private void btnUpdatestudent_Click(object sender, EventArgs e)
         {
-            string gender = null;
-            if (rbtMale.Checked.Equals(true))
-            {
-                gender = "Male";
-            }
-            else if (rbtFemale.Checked.Equals(true))
-            {
-                gender = "Female";
-            }
-            else if (rbtOther.Checked.Equals(true))
-            {
-                gender = "Other";
-            }
-
-            Fhandler.UpdateStudent(txtStudentName.Text, txtStudentSurname.Text, Convert.ToDateTime(txtDateOfBirth.Text), gender, txtPhoneNumber.Text, txtAddress.Text, Convert.ToInt32(txtStudentNumber.Text));
+            Fhandler.UpdateStudent(txtManStudentsName.Text, txtManStundentSurname.Text, Convert.ToDateTime(txtManDateOfBirth.Text), txtManGender.Text, txtNewPhoneNumber.Text, txtNewAddress.Text, Convert.ToInt32(txtManStudentsNumber.Text));
         }
 
         private void btnDeletestudent_Click(object sender, EventArgs e)
         {
-            Fhandler.DeleteModules(txtStudentNumber.Text);
+            dgvStudents.DataSource = null;
+            Fhandler.DeleteStudent(txtManStudentsNumber.Text);
+            dgvStudents.DataSource = Fhandler.GetStudents();
+            dgvStudents.Columns["StudentImage"].Visible = false;
         }
     }
 }
