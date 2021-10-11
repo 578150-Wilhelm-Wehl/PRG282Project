@@ -68,6 +68,10 @@ namespace PRG282Project.Presentation
         {
             DataHandler handler = new DataHandler();
             handler.AddUser(txtSignUpUserName.Text,txtSignUpPassword.Text,cmbSignUpSecurityQuestion.Text,txtSignUpSecurityAnswer.Text);
+            txtSignUpUserName.Clear();
+            txtSignUpPassword.Clear();
+            cmbSignUpSecurityQuestion.Text = "";
+            txtSignUpSecurityAnswer.Clear();
         }
 
         private void btnForgotPassword_Click(object sender, EventArgs e)
@@ -92,6 +96,9 @@ namespace PRG282Project.Presentation
         private void btnReset_Click(object sender, EventArgs e)
         {
             handler.PasswordReset(txtResetUserName.Text,  txtResetAnswer.Text, txtNewPassword.Text);
+            txtResetUserName.Clear();
+            txtResetAnswer.Clear();
+            txtNewPassword.Clear();
         }
     }
 }

@@ -127,10 +127,11 @@ namespace PRG282Project.Presentation
 
         }
 
-        string StuID = String.Empty;
+        
 
         private void btnRegisterStudent_Click(object sender, EventArgs e)
         {
+            string StuID = String.Empty;
             string gender = null;
             if (rbtMale.Checked.Equals(true))
             {
@@ -148,8 +149,6 @@ namespace PRG282Project.Presentation
             {
                 MessageBox.Show("Please select a Gender");
             }
-
-            
 
             Fhandler.InsertStudent(txtNewStudentName.Text, txtNewStudentSurname.Text, txtNewStudentImagePath.Text , txtNewDateOfBirth.Text, gender, txtNewPhoneNumber.Text, txtNewAddress.Text);
             foreach (DataRow item in Fhandler.FetchStudent(txtNewStudentName.Text, txtNewStudentSurname.Text, txtNewDateOfBirth.Text, txtNewPhoneNumber.Text, txtNewAddress.Text).Rows)
@@ -287,22 +286,28 @@ namespace PRG282Project.Presentation
 
         private void btnRegisterModule_Click(object sender, EventArgs e)
         {
+            string ModID = String.Empty;
             Fhandler.InsertModules(txtNewModulecode.Text, txtNewModuleName.Text, txtNewModuleDescription.Text);
-            foreach (var item in lsbNewModuleResources.SelectedItems)
+            
+            foreach (DataRow item in Fhandler.FetchModuleID(txtNewModulecode.Text).Rows)
             {
-                Fhandler.InsertResource(txtNewModulecode.Text, item.ToString());
+                ModID += item[0].ToString();
+            }
+            foreach (var item in lsbNewModuleResources.Items)
+            {
+                Fhandler.InsertResource(ModID, item.ToString());
             }
             txtNewModulecode.Clear();
             txtNewModuleName.Clear();
             txtNewModuleDescription.Clear();
             txtNewModuleResource.Clear();
             lsbNewModuleResources.Items.Clear();
-            dgvmodules.DataSource = Fhandler.GetModules();
         }
 
         private void btnAddResource_Click(object sender, EventArgs e)
         {
             lsbNewModuleResources.Items.Add(txtNewModuleResource.Text);
+            txtNewModuleResource.Clear();
         }
     }
 }

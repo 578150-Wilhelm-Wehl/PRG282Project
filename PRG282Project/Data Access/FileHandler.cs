@@ -293,17 +293,12 @@ namespace PRG282Project.Data_Access
             adapter.Fill(FetchModuleIDDatatable);
             return FetchModuleIDDatatable;
         }
-        public void InsertResource(string ModuleCode, string ResourceLink)
+        public void InsertResource(string ModuleID, string ResourceLink)
         {
             SqlConnection sqlConnection = new SqlConnection(connect);
             sqlConnection.Open();
             try
             {
-                string ModuleID = string.Empty;
-                foreach (DataRow item in FetchModuleID(ModuleCode).Rows)
-                {
-                    ModuleID += item["StudentNumber"].ToString();
-                }
                 string InsertResourceQuery = "INSERT INTO tblResources (ModuleID, ResouceLink) VALUES (" + ModuleID + ", '" + ResourceLink + "')";
                 SqlCommand sqlCommand = new SqlCommand(InsertResourceQuery, sqlConnection);
                 sqlCommand.ExecuteNonQuery();
