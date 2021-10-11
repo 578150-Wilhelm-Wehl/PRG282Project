@@ -280,6 +280,7 @@ namespace PRG282Project.Presentation
 
         private void btnModuleUpdate_Click(object sender, EventArgs e)
         {
+            Fhandler.UpdateModules(txtManModuleCode.Text, txtManModuleName.Text, txtManModuleDescription.Text, Convert.ToInt32(txtManModuleID.Text));
 
         }
 
@@ -291,6 +292,7 @@ namespace PRG282Project.Presentation
         private void btnUpdatestudent_Click(object sender, EventArgs e)
         {
             Fhandler.UpdateStudent(txtManStudentsName.Text, txtManStundentSurname.Text, Convert.ToDateTime(txtManDateOfBirth.Text), txtManGender.Text, txtNewPhoneNumber.Text, txtNewAddress.Text, Convert.ToInt32(txtManStudentsNumber.Text));
+            dgvStudents.DataSource = Fhandler.GetStudents();
         }
 
         private void btnDeletestudent_Click(object sender, EventArgs e)

@@ -148,32 +148,59 @@ namespace PRG282Project.Data_Access
         }
 
 
-        public void UpdateModules()
+        public void UpdateModules(string ModuleCode, string ModuleName, string ModuleDescription, int ModuleID)
         {
-
+            string updatequery = "UPDATE tblModule SET ModuleCode = '" + ModuleCode + "' ,ModuleName = '" + ModuleName + "'  , ModuleDescription= '" + ModuleDescription + "' WHERE ModuleID = " + ModuleID;
+            SqlConnection cn = new SqlConnection(connect);
+            cn.Open();
+            try
+            {
+                SqlCommand cmd = new SqlCommand(updatequery, cn);
+                int rows = cmd.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    MessageBox.Show("Module updated successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Failed to Module student information");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
-
-
         public void UpdateStudent(string Name, string Surname, DateTime DateOfBirth, string gender, string phonenumber, string address, int studentnumber)
         {
 
             string updatequery = "UPDATE tblStudents SET StundentName = '" + Name + "' ,StudentSurname = '" + Surname + "'  , DateOfBirth= '" + DateOfBirth + "' ,Gender= '" + gender + "',PhoneNumber='" + phonenumber + "',StudentAddress= '" + address + "' WHERE StudentNumber = '" + studentnumber + "'";
             SqlConnection cn = new SqlConnection(connect);
             cn.Open();
-
-
-            SqlCommand cmd = new SqlCommand(updatequery, cn);
-
-            int rows = cmd.ExecuteNonQuery();
-
-
-            if (rows > 0)
+            try
             {
-                MessageBox.Show("Student updated successfully");
+                SqlCommand cmd = new SqlCommand(updatequery, cn);
+                int rows = cmd.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    MessageBox.Show("Student updated successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Failed to update student information");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Failed to update student information");
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                cn.Close();
             }
         }
 
