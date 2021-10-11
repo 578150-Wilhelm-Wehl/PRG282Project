@@ -108,6 +108,7 @@ namespace PRG282Project.Presentation
             dgvmodules.DataSource = Fhandler.GetModules();
             dgvStudents.DataSource = Fhandler.GetStudents();
             dgvStudents.Columns["StudentImage"].Visible = false;
+            lblAmountOfStudents.Text = Fhandler.GetStudents().Rows.Count.ToString();
 
 
             foreach (DataRow item in Fhandler.GetModules().Rows)
@@ -131,56 +132,71 @@ namespace PRG282Project.Presentation
 
         private void btnRegisterStudent_Click(object sender, EventArgs e)
         {
-            string StuID = String.Empty;
-            string gender = null;
-            if (rbtMale.Checked.Equals(true))
+            try
             {
-                gender = "Male";
+                string StuID = String.Empty;
+                string gender = null;
+                if (rbtMale.Checked.Equals(true))
+                {
+                    gender = "Male";
+                }
+                else if (rbtFemale.Checked.Equals(true))
+                {
+                    gender = "Female";
+                }
+                else if (rbtOther.Checked.Equals(true))
+                {
+                    gender = "Other";
+                }
+                else
+                {
+                    throw new EXStudentRegestrationFailed();
+                }
+                if (!String.IsNullOrEmpty(txtNewStudentName.Text) && !String.IsNullOrEmpty(txtNewStudentSurname.Text) && !String.IsNullOrEmpty(txtNewStudentImagePath.Text) && !String.IsNullOrEmpty(txtNewDateOfBirth.Text) && !String.IsNullOrEmpty(txtNewPhoneNumber.Text) && !String.IsNullOrEmpty(txtNewAddress.Text))
+                {
+                    Fhandler.InsertStudent(txtNewStudentName.Text, txtNewStudentSurname.Text, txtNewStudentImagePath.Text, txtNewDateOfBirth.Text, gender, txtNewPhoneNumber.Text, txtNewAddress.Text);
+                    foreach (DataRow item in Fhandler.FetchStudent(txtNewStudentName.Text, txtNewStudentSurname.Text, txtNewDateOfBirth.Text, txtNewPhoneNumber.Text, txtNewAddress.Text).Rows)
+                    {
+                        StuID += item["StudentNumber"].ToString();
+                    }
+                    foreach (var item in lstSelectModules.SelectedItems)
+                    {
+                        string[] split = item.ToString().Split('-');
+                        Fhandler.InsertBridge(StuID, split[0]);
+                    }
+                    lblAmountOfStudents.Text = Fhandler.GetStudents().Rows.Count.ToString();
+                    rbtOther.Checked = false;
+                    rbtFemale.Checked = false;
+                    rbtMale.Checked = false;
+                    txtNewStudentName.Clear();
+                    txtNewStudentSurname.Clear();
+                    txtNewStudentImagePath.Clear();
+                    txtNewDateOfBirth.Value = DateTime.Today;
+                    txtNewPhoneNumber.Clear();
+                    txtNewAddress.Clear();
+                }
+                else
+                {
+                    throw new EXStudentRegestrationFailed();
+                }
             }
-            else if (rbtFemale.Checked.Equals(true))
+            catch (EXStudentRegestrationFailed srf)
             {
-                gender = "Female";
+                MessageBox.Show(srf.Message);
             }
-            else if (rbtOther.Checked.Equals(true))
-            {
-                gender = "Other";
-            }
-            else
-            {
-                MessageBox.Show("Please select a Gender");
-            }
-
-            Fhandler.InsertStudent(txtNewStudentName.Text, txtNewStudentSurname.Text, txtNewStudentImagePath.Text , txtNewDateOfBirth.Text, gender, txtNewPhoneNumber.Text, txtNewAddress.Text);
-            foreach (DataRow item in Fhandler.FetchStudent(txtNewStudentName.Text, txtNewStudentSurname.Text, txtNewDateOfBirth.Text, txtNewPhoneNumber.Text, txtNewAddress.Text).Rows)
-            {
-                StuID += item["StudentNumber"].ToString();
-            } 
-            
-            foreach (var item in lstSelectModules.SelectedItems)
-            {
-                string[] split = item.ToString().Split('-');
-                Fhandler.InsertBridge(StuID,split[0]);
-            }
-
-
         }
 
         private void btnAddImage_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
-            // image filters
-            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; .bmp)|.jpg; *.jpeg; *.gif; *.bmp)";
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; .bmp)|*.jpg; *.jpeg; *.gif; *.bmp)";
             if (open.ShowDialog() == DialogResult.OK)
             {
-                // display image in picture box
-
                 picbxStudentImage.Image = new Bitmap(open.FileName);
                 txtNewStudentImagePath.Text = open.FileName;
                 picbxStudentImage.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
-
-
         private void dgvStudents_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try

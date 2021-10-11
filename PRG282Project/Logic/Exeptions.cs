@@ -12,6 +12,7 @@ namespace PRG282Project.Logic
 
     class EXFailedLogin : Exception
     {
+        //
         public EXFailedLogin() : base("User login failed \n Please ensure login details are correct \n Otherwise please create an account")
         {
         }
@@ -19,6 +20,7 @@ namespace PRG282Project.Logic
 
     class EXFailedUserCreation : Exception
     {
+        //
         public EXFailedUserCreation() : base("User could not be created \n Please Make sure that there are no special characters in the username\n The password must contain atleast one number, one lower case and one uppercase character\n the pasword must be 6 to 12 characters long\nNote the pasword cannot contain \"-\" \"|\"")
         {
         }
@@ -26,6 +28,7 @@ namespace PRG282Project.Logic
 
     class EXPasswordResetFailed : Exception
     {
+        //
         public EXPasswordResetFailed() : base("Your Password could not be reset.\n This can be caused by an incorrect username or an invalid security answer")
         {
         }
@@ -48,6 +51,12 @@ namespace PRG282Project.Logic
     class EXModuleNotFound : Exception
     {
         public EXModuleNotFound() : base("User could not be created")
+        {
+        }
+    }
+    class EXStudentRegestrationFailed : Exception
+    {
+        public EXStudentRegestrationFailed() : base("Please Ensure that all fields ar filled out correctly \n If this error continues please contact the development team")
         {
         }
     }
