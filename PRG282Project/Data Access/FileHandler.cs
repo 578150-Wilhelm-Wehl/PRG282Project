@@ -87,8 +87,14 @@ namespace PRG282Project.Data_Access
                 DataTable DataTableStudentModules = new DataTable();
                 SqlDataAdapter sqlData = new SqlDataAdapter(GetStudentModulesQuery, connect);
                 sqlData.Fill(DataTableStudentModules);
-                return DataTableStudentModules;
-
+                if (DataTableStudentModules.Rows.Count >0)
+                {
+                    return DataTableStudentModules;
+                }
+                else
+                {
+                    throw new Exception();
+                }
             }
             catch (Exception e)
             {
@@ -96,7 +102,6 @@ namespace PRG282Project.Data_Access
                 return null;
             }
         }
-
         public void InsertModules(string ModuleCode, string ModuleName, string ModuleDescription)
         {
             SqlConnection sqlConnection = new SqlConnection(connect);
@@ -126,7 +131,6 @@ namespace PRG282Project.Data_Access
                 sqlConnection.Close();
             }
         }
-
         public void InsertStudent(string StudentName, string StudentSurname, string StudentImage, string DateofBirth, string Gender, string phonenumber, string address)
         {
             SqlConnection cn = new SqlConnection(connect);
@@ -147,8 +151,6 @@ namespace PRG282Project.Data_Access
                 MessageBox.Show("Failed");
             }
         }
-
-
         public void UpdateModules(string ModuleCode, string ModuleName, string ModuleDescription, int ModuleID)
         {
             string updatequery = "UPDATE tblModule SET ModuleCode = '" + ModuleCode + "' ,ModuleName = '" + ModuleName + "'  , ModuleDescription= '" + ModuleDescription + "' WHERE ModuleID = " + ModuleID;

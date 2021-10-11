@@ -56,8 +56,31 @@ namespace PRG282Project.Logic
     }
     class EXStudentRegestrationFailed : Exception
     {
+        //
         public EXStudentRegestrationFailed() : base("Please Ensure that all fields ar filled out correctly \n If this error continues please contact the development team")
         {
         }
     }
+    class EXModuleUpdateFailed : Exception
+    {
+        //
+        public EXModuleUpdateFailed() : base("Please ensure that all fields are filled in then click update again")
+        {
+        }
+    }
+    class EXUpdateStudentFailed : Exception
+    {
+        //
+        public EXUpdateStudentFailed() : base("Please ensure that all fields are filled in then click update again")
+        {
+        }
+    }
+    class EXRegisterModuleFailed : Exception
+    {
+        //
+        public EXRegisterModuleFailed() : base("Module Regestration failed \nPlease Ensure that all fields ar filled out correctly")
+        {
+        }
+    }
 }
+

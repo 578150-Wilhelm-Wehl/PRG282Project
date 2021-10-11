@@ -17,7 +17,6 @@ namespace PRG282Project.Presentation
 {
     public partial class Main : Form
     {
-
         DataHandler handler = new DataHandler();
         FileHandler Fhandler = new FileHandler();
         //string filename;
@@ -25,17 +24,14 @@ namespace PRG282Project.Presentation
         {
             InitializeComponent();
         }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
         private void btnStudent_Click(object sender, EventArgs e)
         {
             pnlModuleOptions.Visible = false;
@@ -49,7 +45,6 @@ namespace PRG282Project.Presentation
             }
 
         }
-
         private void btnModules_Click(object sender, EventArgs e)
         {
             pnlStudentOptions.Visible = false;
@@ -62,47 +57,38 @@ namespace PRG282Project.Presentation
                 pnlModuleOptions.Visible = false;
             }
         }
-
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
             handler.MainPanelManger(pnlAddstudent, pnlManageStudents, pnlAddmodule, pnlManageModules, pnlInfo, pnlSpare1);
         }
-
         private void btnManagestudents_Click(object sender, EventArgs e)
         {
             handler.MainPanelManger(pnlManageStudents, pnlAddstudent, pnlAddmodule, pnlManageModules, pnlInfo, pnlSpare1);
         }
-
         private void btnaddmodule_Click(object sender, EventArgs e)
         {
             handler.MainPanelManger(pnlAddmodule, pnlManageStudents, pnlAddstudent, pnlManageModules, pnlInfo, pnlSpare1);
         }
-
         private void btnManageModule_Click(object sender, EventArgs e)
         {
             handler.MainPanelManger(pnlManageModules, pnlAddmodule, pnlManageStudents, pnlAddstudent, pnlInfo, pnlSpare1);
         }
-
         private void btnInfo_Click(object sender, EventArgs e)
         {
             handler.MainPanelManger(pnlInfo, pnlManageModules, pnlAddmodule, pnlManageStudents, pnlAddstudent, pnlSpare1);
         }
-
         private void button1_MouseHover(object sender, EventArgs e)
         {
             lblStudentCount.Visible = true;
         }
-
         private void button1_MouseLeave(object sender, EventArgs e)
         {
             lblStudentCount.Visible = false;
         }
-
         private void button4_Click(object sender, EventArgs e)
         {
             MessageBox.Show("You have no messages");
         }
-
         private void Main_Load(object sender, EventArgs e)
         {
             dgvmodules.DataSource = Fhandler.GetModules();
@@ -117,19 +103,6 @@ namespace PRG282Project.Presentation
                 lstSelectModules.Items.Add(moduleList);
             }
         }
-
-        private void lblCurrentStudent_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnlAddstudent_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        
-
         private void btnRegisterStudent_Click(object sender, EventArgs e)
         {
             try
@@ -185,7 +158,6 @@ namespace PRG282Project.Presentation
                 MessageBox.Show(srf.Message);
             }
         }
-
         private void btnAddImage_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
@@ -245,29 +217,22 @@ namespace PRG282Project.Presentation
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
-    
-
         private void btnSearchStudent_Click(object sender, EventArgs e)
         {
             dgvStudents.DataSource = Fhandler.SearchStudents(txtSearchStudent.Text);
-
         }
-
         private void btnViewAll_Click(object sender, EventArgs e)
         {
             dgvStudents.DataSource = Fhandler.GetStudents();
             dgvStudents.Columns["StudentImage"].Visible = false;
         }
-
         private void btnModuleDelete_Click(object sender, EventArgs e)
         {
             dgvmodules.DataSource = null;
             Fhandler.DeleteModules(txtManModuleID.Text);
             dgvmodules.DataSource = Fhandler.GetModules();
         }
-
         private void dgvmodules_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if ((e.RowIndex >= 0) && (e.RowIndex < dgvmodules.RowCount - 1))
@@ -293,24 +258,43 @@ namespace PRG282Project.Presentation
                 lsbModuleResources.Items.Clear();
             }
         }
-
         private void btnModuleUpdate_Click(object sender, EventArgs e)
         {
-            Fhandler.UpdateModules(txtManModuleCode.Text, txtManModuleName.Text, txtManModuleDescription.Text, Convert.ToInt32(txtManModuleID.Text));
-
+            try
+            {
+                if (!String.IsNullOrEmpty(txtManModuleCode.Text) && !String.IsNullOrEmpty(txtManModuleName.Text) && !String.IsNullOrEmpty(txtManModuleDescription.Text) && !String.IsNullOrEmpty(txtManModuleID.Text))
+                {
+                    Fhandler.UpdateModules(txtManModuleCode.Text, txtManModuleName.Text, txtManModuleDescription.Text, Convert.ToInt32(txtManModuleID.Text));
+                }
+                else
+                {
+                    throw new EXModuleUpdateFailed();
+                }
+            }
+            catch (EXModuleUpdateFailed muf)
+            {
+                MessageBox.Show(muf.Message);
+            }
         }
-
-        private void dgvStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void btnUpdatestudent_Click(object sender, EventArgs e)
         {
-            Fhandler.UpdateStudent(txtManStudentsName.Text, txtManStundentSurname.Text, Convert.ToDateTime(txtManDateOfBirth.Text), txtManGender.Text, txtNewPhoneNumber.Text, txtNewAddress.Text, Convert.ToInt32(txtManStudentsNumber.Text));
-            dgvStudents.DataSource = Fhandler.GetStudents();
+            try
+            {
+                if (!String.IsNullOrEmpty(txtManStudentsName.Text)&& !String.IsNullOrEmpty(txtManStundentSurname.Text)&& !String.IsNullOrEmpty(txtManDateOfBirth.Text)&& !String.IsNullOrEmpty(txtManGender.Text)&& !String.IsNullOrEmpty(txtNewPhoneNumber.Text)&& !String.IsNullOrEmpty(txtNewAddress.Text)&& !String.IsNullOrEmpty(txtManStudentsNumber.Text))
+                {
+                    Fhandler.UpdateStudent(txtManStudentsName.Text, txtManStundentSurname.Text, Convert.ToDateTime(txtManDateOfBirth.Text), txtManGender.Text, txtNewPhoneNumber.Text, txtNewAddress.Text, Convert.ToInt32(txtManStudentsNumber.Text));
+                    dgvStudents.DataSource = Fhandler.GetStudents();
+                }
+                else
+                {
+                    throw new EXUpdateStudentFailed();
+                }
+            }
+            catch (EXUpdateStudentFailed usf)
+            {
+                MessageBox.Show(usf.Message);
+            }
         }
-
         private void btnDeletestudent_Click(object sender, EventArgs e)
         {
             dgvStudents.DataSource = null;
@@ -318,38 +302,54 @@ namespace PRG282Project.Presentation
             dgvStudents.DataSource = Fhandler.GetStudents();
             dgvStudents.Columns["StudentImage"].Visible = false;
         }
-
         private void btnRegisterModule_Click(object sender, EventArgs e)
         {
-            string ModID = String.Empty;
-            Fhandler.InsertModules(txtNewModulecode.Text, txtNewModuleName.Text, txtNewModuleDescription.Text);
-            
-            foreach (DataRow item in Fhandler.FetchModuleID(txtNewModulecode.Text).Rows)
+            try
             {
-                ModID += item[0].ToString();
+                if (!String.IsNullOrEmpty(txtNewModulecode.Text)&& !String.IsNullOrEmpty(txtNewModuleName.Text)&& !String.IsNullOrEmpty(txtNewModuleDescription.Text)&& lsbNewModuleResources.Items.Count>0)
+                {
+                    string ModID = String.Empty;
+                    Fhandler.InsertModules(txtNewModulecode.Text, txtNewModuleName.Text, txtNewModuleDescription.Text);
+                    foreach (DataRow item in Fhandler.FetchModuleID(txtNewModulecode.Text).Rows)
+                    {
+                        ModID += item[0].ToString();
+                    }
+                    foreach (var item in lsbNewModuleResources.Items)
+                    {
+                        Fhandler.InsertResource(ModID, item.ToString());
+                    }
+                    txtNewModulecode.Clear();
+                    txtNewModuleName.Clear();
+                    txtNewModuleDescription.Clear();
+                    txtNewModuleResource.Clear();
+                    lsbNewModuleResources.Items.Clear();
+                }
+                else
+                {
+                    throw new EXRegisterModuleFailed();
+                }
             }
-            foreach (var item in lsbNewModuleResources.Items)
+            catch (EXRegisterModuleFailed rmf)
             {
-                Fhandler.InsertResource(ModID, item.ToString());
+                MessageBox.Show(rmf.Message);
             }
-            txtNewModulecode.Clear();
-            txtNewModuleName.Clear();
-            txtNewModuleDescription.Clear();
-            txtNewModuleResource.Clear();
-            lsbNewModuleResources.Items.Clear();
         }
-
         private void btnAddResource_Click(object sender, EventArgs e)
         {
-            lsbNewModuleResources.Items.Add(txtNewModuleResource.Text);
-            txtNewModuleResource.Clear();
+            if (!String.IsNullOrEmpty(txtNewModuleResource.Text))
+            {
+                lsbNewModuleResources.Items.Add(txtNewModuleResource.Text);
+                txtNewModuleResource.Clear();
+            }
+            else
+            {
+                MessageBox.Show("PLease add resource URL to the resource text box");
+            }
         }
-
         private void btnModuleSearch_Click(object sender, EventArgs e)
         {
             dgvmodules.DataSource = Fhandler.SearchModules(txtManModuleSearch.Text);
         }
-
         private void btnViewAllModules_Click(object sender, EventArgs e)
         {
             dgvmodules.DataSource = Fhandler.ViewModules();
