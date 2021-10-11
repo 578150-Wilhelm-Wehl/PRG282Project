@@ -112,7 +112,7 @@ namespace PRG282Project.Presentation
 
             foreach (DataRow item in Fhandler.GetModules().Rows)
             {
-                string moduleList = item["ModuleCode"].ToString() + "-" + item["ModuleName"].ToString() + "-" + item["ModuleDescription"].ToString();
+                string moduleList = item["ModuleID"].ToString() + "-"+item["ModuleCode"].ToString() + "-" + item["ModuleName"].ToString() + "-" + item["ModuleDescription"].ToString();
                 lstSelectModules.Items.Add(moduleList);
             }
         }
@@ -126,6 +126,8 @@ namespace PRG282Project.Presentation
         {
 
         }
+
+        string StuID = String.Empty;
 
         private void btnRegisterStudent_Click(object sender, EventArgs e)
         {
@@ -147,58 +149,81 @@ namespace PRG282Project.Presentation
                 MessageBox.Show("Please select a Gender");
             }
 
-            Fhandler.InsertStudent(txtNewStudentName.Text, txtNewStudentSurname.Text, picbxStudentImage.Image , txtNewDateOfBirth.Text, gender, txtNewPhoneNumber.Text, txtNewAddress.Text);
+            
+
+            Fhandler.InsertStudent(txtNewStudentName.Text, txtNewStudentSurname.Text, txtNewStudentImagePath.Text , txtNewDateOfBirth.Text, gender, txtNewPhoneNumber.Text, txtNewAddress.Text);
+            foreach (DataRow item in Fhandler.FetchStudent(txtNewStudentName.Text, txtNewStudentSurname.Text, txtNewDateOfBirth.Text, txtNewPhoneNumber.Text, txtNewAddress.Text).Rows)
+            {
+                StuID += item["StudentNumber"].ToString();
+            } 
+            
+            foreach (var item in lstSelectModules.SelectedItems)
+            {
+                string[] split = item.ToString().Split('-');
+                Fhandler.InsertBridge(StuID,split[0]);
+            }
+
 
         }
 
         private void btnAddImage_Click(object sender, EventArgs e)
         {
-            
-                OpenFileDialog open = new OpenFileDialog();
-                // image filters
-                open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; .bmp)|.jpg; *.jpeg; *.gif; *.bmp";
-                if (open.ShowDialog() == DialogResult.OK)
-                {
-                    // display image in picture box
-                    picbxStudentImage.Image = new Bitmap(open.FileName);
-                    picbxStudentImage.SizeMode = PictureBoxSizeMode.StretchImage;
-                }
+            OpenFileDialog open = new OpenFileDialog();
+            // image filters
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; .bmp)|.jpg; *.jpeg; *.gif; *.bmp)";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                // display image in picture box
+
+                picbxStudentImage.Image = new Bitmap(open.FileName);
+                txtNewStudentImagePath.Text = open.FileName;
+                picbxStudentImage.SizeMode = PictureBoxSizeMode.StretchImage;
             }
-        
+        }
+
 
         private void dgvStudents_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >=0)
+            try
             {
-                DataGridViewRow row = this.dgvStudents.Rows[e.RowIndex];
-                if (row.Cells["StudentImage"].Value != DBNull.Value)
+                if (e.RowIndex >= 0)
                 {
-                    var data = (Byte[])(row.Cells["StudentImage"].Value);
-                    var stream = new MemoryStream(data);
-                    picManStudent.Image = Image.FromStream(stream);
-                    picManStudent.SizeMode = PictureBoxSizeMode.StretchImage;
-                }
-                else
-                {
-                    picManStudent.Image = null;
-                }
-                txtManStudentsNumber.Text = row.Cells["StudentNumber"].Value.ToString();
-                txtManStudentsName.Text = row.Cells["StundentName"].Value.ToString(); ;
-                txtManStundentSurname.Text = row.Cells["StudentSurname"].Value.ToString(); ;
-                txtManDateOfBirth.Text = row.Cells["DateOfBirth"].Value.ToString(); ;
-                txtManPhones.Text = row.Cells["PhoneNumber"].Value.ToString(); ;
-                txtManAddress.Text = row.Cells["StudentAddress"].Value.ToString();
+                    DataGridViewRow row = this.dgvStudents.Rows[e.RowIndex];
+                    if (row.Cells["StudentImage"].Value != DBNull.Value)
+                    {
+                        var data = (Byte[])(row.Cells["StudentImage"].Value);
+                        var stream = new MemoryStream(data);
+                        picManStudent.Image = Image.FromStream(stream);
+                        picManStudent.SizeMode = PictureBoxSizeMode.StretchImage;
+                    }
+                    else
+                    {
+                        picManStudent.Image = null;
+                    }
+                    txtManStudentsNumber.Text = row.Cells["StudentNumber"].Value.ToString();
+                    txtManStudentsName.Text = row.Cells["StundentName"].Value.ToString(); ;
+                    txtManStundentSurname.Text = row.Cells["StudentSurname"].Value.ToString(); ;
+                    txtManDateOfBirth.Text = row.Cells["DateOfBirth"].Value.ToString(); ;
+                    txtManPhones.Text = row.Cells["PhoneNumber"].Value.ToString(); ;
+                    txtManAddress.Text = row.Cells["StudentAddress"].Value.ToString();
+                    txtManGender.Text = row.Cells["Gender"].Value.ToString();
 
-                lsbStudentModules.Items.Clear();
+                    lsbStudentModules.Items.Clear();
 
-                foreach (DataRow item in Fhandler.SearchStudentModules(txtManStudentsNumber.Text).Rows)
-                {
-                    string moduleList = item["ModuleCode"].ToString()+ "\t\t"+ item["ModuleName"].ToString()+ "\t\t"+ item["ModuleDescription"].ToString();
-                    lsbStudentModules.Items.Add(moduleList);
+                    foreach (DataRow item in Fhandler.SearchStudentModules(txtManStudentsNumber.Text).Rows)
+                    {
+                        string moduleList = item["ModuleCode"].ToString() + "\t\t" + item["ModuleName"].ToString() + "\t\t" + item["ModuleDescription"].ToString();
+                        lsbStudentModules.Items.Add(moduleList);
+                    }
                 }
-
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
+    
 
         private void btnSearchStudent_Click(object sender, EventArgs e)
         {
@@ -226,8 +251,9 @@ namespace PRG282Project.Presentation
                 DataGridViewRow row = this.dgvmodules.Rows[e.RowIndex];
                 txtManModuleID.Text = row.Cells["ModuleID"].Value.ToString();
                 txtManModuleCode.Text = row.Cells["ModuleCode"].Value.ToString();
-                txtManModuleName.Text = row.Cells["ModuleName"].Value.ToString(); ;
-                txtManModuleDescription.Text = row.Cells["ModuleDescription"].Value.ToString(); ;
+                txtManModuleName.Text = row.Cells["ModuleName"].Value.ToString();
+                txtManModuleDescription.Text = row.Cells["ModuleDescription"].Value.ToString(); 
+                
             }
         }
 

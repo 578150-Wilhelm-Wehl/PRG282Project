@@ -148,6 +148,7 @@ namespace PRG282Project.Presentation
             this.lblManGender = new System.Windows.Forms.Label();
             this.txtManGender = new System.Windows.Forms.TextBox();
             this.txtNewDateOfBirth = new System.Windows.Forms.DateTimePicker();
+            this.txtNewStudentImagePath = new System.Windows.Forms.TextBox();
             this.pnlMainTop.SuspendLayout();
             this.pnlModuleOptions.SuspendLayout();
             this.pnlStudentOptions.SuspendLayout();
@@ -1288,6 +1289,7 @@ namespace PRG282Project.Presentation
             this.pnlAddstudent.Controls.Add(this.txtNewAddress);
             this.pnlAddstudent.Controls.Add(this.txtNewPhoneNumber);
             this.pnlAddstudent.Controls.Add(this.txtNewStudentSurname);
+            this.pnlAddstudent.Controls.Add(this.txtNewStudentImagePath);
             this.pnlAddstudent.Controls.Add(this.txtNewStudentName);
             this.pnlAddstudent.Controls.Add(this.lblNewStudentReg);
             this.pnlAddstudent.Controls.Add(this.btnAddImage);
@@ -1698,6 +1700,16 @@ namespace PRG282Project.Presentation
             this.txtNewDateOfBirth.Size = new System.Drawing.Size(116, 25);
             this.txtNewDateOfBirth.TabIndex = 35;
             // 
+            // txtNewStudentImagePath
+            // 
+            this.txtNewStudentImagePath.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNewStudentImagePath.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.txtNewStudentImagePath.Location = new System.Drawing.Point(494, 210);
+            this.txtNewStudentImagePath.Name = "txtNewStudentImagePath";
+            this.txtNewStudentImagePath.Size = new System.Drawing.Size(100, 18);
+            this.txtNewStudentImagePath.TabIndex = 24;
+            this.txtNewStudentImagePath.Visible = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1859,5 +1871,6 @@ namespace PRG282Project.Presentation
         private System.Windows.Forms.Label lblManGender;
         private System.Windows.Forms.TextBox txtManGender;
         private System.Windows.Forms.DateTimePicker txtNewDateOfBirth;
+        private System.Windows.Forms.TextBox txtNewStudentImagePath;
     }
 }

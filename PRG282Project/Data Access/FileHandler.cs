@@ -64,6 +64,8 @@ namespace PRG282Project.Data_Access
 
         public DataTable SearchStudentModules(string StudentNumber)
         {
+            try
+            {
             string GetStudentModulesQuery = "SELECT ts.StudentNumber, tm.ModuleCode, tm.ModuleName, tm.ModuleDescription " +
             "FROM tblStudents ts " +
             "JOIN tblBridge tb " +
@@ -77,6 +79,13 @@ namespace PRG282Project.Data_Access
             SqlDataAdapter sqlData = new SqlDataAdapter(GetStudentModulesQuery, connect);
             sqlData.Fill(DataTableStudentModules);
             return DataTableStudentModules;
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                return null;
+            }
         }
 
         public void InsertModules(string ModuleCode, string ModuleName, string ModuleDescription)
@@ -109,11 +118,12 @@ namespace PRG282Project.Data_Access
             }
         }
 
-        public void InsertStudent(string StudentName, string StudentSurname, Image StudentImage, string DateofBirth, string Gender, string phonenumber, string address) {
+        public void InsertStudent(string StudentName, string StudentSurname, string StudentImage, string DateofBirth, string Gender, string phonenumber, string address) {
             SqlConnection cn = new SqlConnection(connect);
             cn.Open();
 
-            string query = @"INSERT INTO tblStudents( StundentName, StudentSurname, StudentImage, DateOfBirth, Gender, PhoneNumber, StudentAddress)VALUES ('" + StudentName + "','" + StudentSurname + "','" + StudentImage + "','" + DateofBirth + "','" + Gender + "','" + phonenumber + "','" + address + "')";
+
+            string query = @"INSERT INTO tblStudents( StundentName, StudentSurname, StudentImage, DateOfBirth, Gender, PhoneNumber, StudentAddress)VALUES ('" + StudentName + "','" + StudentSurname + "',(SELECT * FROM OPENROWSET(BULK N'" + StudentImage + "', SINGLE_BLOB)as varbinary),'" + DateofBirth + "','" + Gender + "','" + phonenumber + "','" + address + "')";
             SqlCommand cmd = new SqlCommand(query, cn);
 
             int rows = cmd.ExecuteNonQuery();
@@ -157,7 +167,7 @@ namespace PRG282Project.Data_Access
                 MessageBox.Show("Failed to update student information");
             }
         }
-    
+
         public void DeleteModules(string ModuleID)
         {
             string DeleteBridgequery = "DELETE FROM tblBridge WHERE ModuleID = " + ModuleID;
@@ -217,7 +227,7 @@ namespace PRG282Project.Data_Access
                 sqlConnection.Close();
             }
         }
-    
+
 
         public DataTable getStudents()
         {
@@ -225,9 +235,46 @@ namespace PRG282Project.Data_Access
             SqlDataAdapter adapter = new SqlDataAdapter(AllStudentsquery, connect);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
-          
+
             return dt;
-            
+        }
+
+        public void InsertBridge(string StudentNumber, string ModuleID)
+        {
+            SqlConnection sqlConnection = new SqlConnection(connect);
+            sqlConnection.Open();
+            try
+            {
+                string InsertBridgeQuery = "INSERT INTO tblBridge (StudentNumber,ModuleID) VALUES ("+StudentNumber +","+ ModuleID+")";
+                SqlCommand sqlCommand = new SqlCommand(InsertBridgeQuery, sqlConnection);
+                int rowsafected = sqlCommand.ExecuteNonQuery();
+                if (rowsafected > 0)
+                {
+                    // add exeption MessageBox.Show("Client has been added");
+                }
+                else
+                {
+                    throw new Exception();
+                }
+            }
+            catch (Exception)
+            {
+
+                // add exeption MessageBox.Show("Client has Not been added");
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+        }
+
+        public DataTable FetchStudent(string StudentName, string StudentSurname, string DateofBirth, string phonenumber, string address)
+        {
+           string FetchStudentQuery= "SELECT StudentNumber FROM tblStudents WHERE StundentName = '"+ StudentName + "' AND StudentSurname = '"+ StudentSurname + "' AND DateOfBirth = '"+ DateofBirth + "' AND PhoneNumber = '"+ phonenumber + "' AND StudentAddress = '"+ address + "'";
+            SqlDataAdapter adapter = new SqlDataAdapter(FetchStudentQuery, connect);
+            DataTable FetchStudentDatatable = new DataTable();
+            adapter.Fill(FetchStudentDatatable);
+            return FetchStudentDatatable;
         }
     }
 }
