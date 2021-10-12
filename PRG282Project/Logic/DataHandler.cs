@@ -21,7 +21,7 @@ namespace PRG282Project.Logic
             var regexNewUserPassword = new Regex("(?=.*[a-z])(?=.*[A-Z])([^|-]+){6,12}");
             try
             {
-                if (username.Length > 2 && regexNewUserName.IsMatch(username) && regexNewUserPassword.IsMatch(password)&& !string.IsNullOrEmpty(secQuestion) && !string.IsNullOrEmpty(secAnswer))
+                if (username.Length > 2 && regexNewUserName.IsMatch(username) && regexNewUserPassword.IsMatch(password) && !string.IsNullOrEmpty(secQuestion) && !string.IsNullOrEmpty(secAnswer))
                 {
                     newuser += username+'-'+password+'-'+secQuestion+'-'+secAnswer;
                     MessageBox.Show("Your user has been created successfully");
@@ -81,6 +81,8 @@ namespace PRG282Project.Logic
         {
             try
             {
+                var regexNewUserName = new Regex("^[a-zA-Z0-9 ]*$");
+                var regexNewUserPassword = new Regex("(?=.*[a-z])(?=.*[A-Z])([^|-]+){6,12}");
                 string userPath = Directory.GetCurrentDirectory() + "/ActiveUsers.txt";
                 string[] activeuserlist = File.ReadAllLines(userPath);
                 string replace = string.Empty;
@@ -89,7 +91,7 @@ namespace PRG282Project.Logic
                 for (int i = 0; i < activeuserlist.Length; i++)
                 {
                     string[] splitusers = activeuserlist[i].Split('-');
-                    if (splitusers[0] == Username && splitusers[3] == SecAnswer)
+                    if (splitusers[0] == Username && splitusers[3] == SecAnswer && regexNewUserName.IsMatch(Username) && regexNewUserPassword.IsMatch(newPassword))
                     {
                         replace = splitusers[0] + '-' + splitusers[1] + '-' + splitusers[2] + '-' + splitusers[3];
                         newdetails = splitusers[0] + '-' + newPassword + '-' + splitusers[2] + '-' + splitusers[3];
